@@ -1675,7 +1675,7 @@ tpl:'<div class="fancybox-share"><h1>{{SHARE}}</h1><p><a class="fancybox-share__
                   templates: {
                     item({ item, components, html }) {
                       if (item.thumbnail == '') {
-                        item.thumbnail = drupalSettings.path.baseUrl + '/themes/custom/petronas/images/search-placeholder.png';
+                        item.thumbnail = drupalSettings.path.baseUrl + '/themes/custom/matrix/images/search-placeholder.png';
                       }
 
                       return html`<div class="aa-ItemWrapper">
