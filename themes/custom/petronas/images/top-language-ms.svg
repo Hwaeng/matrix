@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20">
+  <g id="Group_5500" data-name="Group 5500" transform="translate(-1141 -16)">
+    <g id="Rectangle_3249" data-name="Rectangle 3249" transform="translate(1141 16)" fill="none" stroke="#fff" stroke-width="1.5">
+      <rect width="21" height="20" rx="8" stroke="none"/>
+      <rect x="0.75" y="0.75" width="19.5" height="18.5" rx="7.25" fill="none"/>
+    </g>
+    <text id="EN" transform="translate(1146 29)" fill="#fff" font-size="8" font-family="MuseoSans-700, 'Museo Sans \37 00'" font-weight="700"><tspan x="0" y="0">EN</tspan></text>
+  </g>
+</svg>
