@@ -2638,7 +2638,7 @@ body.compensate-for-scrollbar {
 
 @font-face {
   font-family: "Museo Sans";
-  src: url(/themes/custom/petronas/webfont/museo-sans/museo-sans-100.woff2) format("woff2"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-100.woff) format("woff"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-100.otf) format("opentype");
+  src: url(/themes/custom/matrix/webfont/museo-sans/museo-sans-100.woff2) format("woff2"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-100.woff) format("woff"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-100.otf) format("opentype");
   font-display: auto;
   font-style: normal;
   font-weight: 100;
@@ -2647,7 +2647,7 @@ body.compensate-for-scrollbar {
 
 @font-face {
   font-family: "Museo Sans";
-  src: url(/themes/custom/petronas/webfont/museo-sans/museo-sans-italic-100.woff2) format("woff2"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-italic-100.woff) format("woff"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-italic-100.otf) format("opentype");
+  src: url(/themes/custom/matrix/webfont/museo-sans/museo-sans-italic-100.woff2) format("woff2"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-italic-100.woff) format("woff"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-italic-100.otf) format("opentype");
   font-display: auto;
   font-style: italic;
   font-weight: 100;
@@ -2656,7 +2656,7 @@ body.compensate-for-scrollbar {
 
 @font-face {
   font-family: "Museo Sans";
-  src: url(/themes/custom/petronas/webfont/museo-sans/museo-sans-300.woff2) format("woff2"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-300.woff) format("woff"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-300.otf) format("opentype");
+  src: url(/themes/custom/matrix/webfont/museo-sans/museo-sans-300.woff2) format("woff2"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-300.woff) format("woff"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-300.otf) format("opentype");
   font-display: auto;
   font-style: normal;
   font-weight: 300;
@@ -2665,7 +2665,7 @@ body.compensate-for-scrollbar {
 
 @font-face {
   font-family: "Museo Sans";
-  src: url(/themes/custom/petronas/webfont/museo-sans/museo-sans-italic-300.woff2) format("woff2"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-italic-300.woff) format("woff"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-italic-300.otf) format("opentype");
+  src: url(/themes/custom/matrix/webfont/museo-sans/museo-sans-italic-300.woff2) format("woff2"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-italic-300.woff) format("woff"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-italic-300.otf) format("opentype");
   font-display: auto;
   font-style: italic;
   font-weight: 300;
@@ -2674,7 +2674,7 @@ body.compensate-for-scrollbar {
 
 @font-face {
   font-family: "Museo Sans";
-  src: url(/themes/custom/petronas/webfont/museo-sans/museo-sans-500.woff2) format("woff2"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-500.woff) format("woff"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-500.otf) format("opentype");
+  src: url(/themes/custom/matrix/webfont/museo-sans/museo-sans-500.woff2) format("woff2"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-500.woff) format("woff"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-500.otf) format("opentype");
   font-display: auto;
   font-style: normal;
   font-weight: 500;
@@ -2683,7 +2683,7 @@ body.compensate-for-scrollbar {
 
 @font-face {
   font-family: "Museo Sans";
-  src: url(/themes/custom/petronas/webfont/museo-sans/museo-sans-italic-500.woff2) format("woff2"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-italic-500.woff) format("woff"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-italic-500.otf) format("opentype");
+  src: url(/themes/custom/matrix/webfont/museo-sans/museo-sans-italic-500.woff2) format("woff2"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-italic-500.woff) format("woff"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-italic-500.otf) format("opentype");
   font-display: auto;
   font-style: italic;
   font-weight: 500;
@@ -2692,7 +2692,7 @@ body.compensate-for-scrollbar {
 
 @font-face {
   font-family: "Museo Sans";
-  src: url(/themes/custom/petronas/webfont/museo-sans/museo-sans-700.woff2) format("woff2"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-700.woff) format("woff"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-700.otf) format("opentype");
+  src: url(/themes/custom/matrix/webfont/museo-sans/museo-sans-700.woff2) format("woff2"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-700.woff) format("woff"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-700.otf) format("opentype");
   font-display: auto;
   font-style: normal;
   font-weight: 700;
@@ -2701,7 +2701,7 @@ body.compensate-for-scrollbar {
 
 @font-face {
   font-family: "Museo Sans";
-  src: url(/themes/custom/petronas/webfont/museo-sans/museo-sans-700.woff2) format("woff2"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-700.woff) format("woff"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-700.otf) format("opentype");
+  src: url(/themes/custom/matrix/webfont/museo-sans/museo-sans-700.woff2) format("woff2"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-700.woff) format("woff"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-700.otf) format("opentype");
   font-display: auto;
   font-style: italic;
   font-weight: 700;
@@ -2710,7 +2710,7 @@ body.compensate-for-scrollbar {
 
 @font-face {
   font-family: "Museo Sans";
-  src: url(/themes/custom/petronas/webfont/museo-sans/museo-sans-900.woff2) format("woff2"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-900.woff) format("woff"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-900.otf) format("opentype");
+  src: url(/themes/custom/matrix/webfont/museo-sans/museo-sans-900.woff2) format("woff2"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-900.woff) format("woff"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-900.otf) format("opentype");
   font-display: auto;
   font-style: normal;
   font-weight: 900;
@@ -2719,7 +2719,7 @@ body.compensate-for-scrollbar {
 
 @font-face {
   font-family: "Museo Sans";
-  src: url(/themes/custom/petronas/webfont/museo-sans/museo-sans-italic-900.woff2) format("woff2"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-italic-900.woff) format("woff"), url(/themes/custom/petronas/webfont/museo-sans/museo-sans-italic-900.otf) format("opentype");
+  src: url(/themes/custom/matrix/webfont/museo-sans/museo-sans-italic-900.woff2) format("woff2"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-italic-900.woff) format("woff"), url(/themes/custom/matrix/webfont/museo-sans/museo-sans-italic-900.otf) format("opentype");
   font-display: auto;
   font-style: italic;
   font-weight: 900;
@@ -2727,16 +2727,16 @@ body.compensate-for-scrollbar {
 }
 
 :root {
-  --bs-blue: #0d6efd;
-  --bs-indigo: #6610f2;
+  --bs-blue: #000000;
+  --bs-indigo: #FFbf00;
   --bs-purple: #6f42c1;
   --bs-pink: #d63384;
   --bs-red: #dc3545;
   --bs-orange: #fd7e14;
   --bs-yellow: #ffc107;
-  --bs-green: #28a745;
-  --bs-teal: #20c997;
-  --bs-cyan: #17a2b8;
+  --bs-green: #FFBf00;
+  --bs-teal: #FFBf00;
+  --bs-cyan: #FFCE1B;
   --bs-black: #000;
   --bs-white: #fff;
   --bs-gray: #6c757d;
@@ -2752,14 +2752,14 @@ body.compensate-for-scrollbar {
   --bs-gray-900: #212529;
   --bs-primary: #a18c00;
   --bs-secondary: rgb(255, 78, 46);
-  --bs-success: #28a745;
-  --bs-info: #17a2b8;
+  --bs-success: #FFBf00;
+  --bs-info: #FFCE1B;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #343a40;
   --bs-green: #a18c00;
-  --bs-purple: #6C4196;
+  --bs-purple: #F2b949;
   --bs-primary-rgb: 0, 161, 156;
   --bs-secondary-rgb: 255, 78, 46;
   --bs-success-rgb: 40, 167, 69;
@@ -6167,7 +6167,7 @@ textarea.form-control-lg {
   width: 100%;
   margin-top: .25rem;
   font-size: .875em;
-  color: #28a745
+  color: #FFBf00
 }
 
 .valid-tooltip {
@@ -6193,7 +6193,7 @@ textarea.form-control-lg {
 
 .form-control.is-valid,
 .was-validated .form-control:valid {
-  border-color: #28a745;
+  border-color: #FFBf00;
   padding-right: calc(1.5em + .75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
@@ -6204,7 +6204,7 @@ textarea.form-control-lg {
 
 .form-control.is-valid:focus,
 .was-validated .form-control:valid:focus {
-  border-color: #28a745;
+  border-color: #FFBf00;
   -webkit-box-shadow: 0 0 0 .25rem rgba(40, 167, 69, .25);
   box-shadow: 0 0 0 .25rem rgba(40, 167, 69, .25)
 }
@@ -6217,7 +6217,7 @@ textarea.form-control.is-valid {
 
 .form-select.is-valid,
 .was-validated .form-select:valid {
-  border-color: #28a745
+  border-color: #FFBf00
 }
 
 .form-select.is-valid:not([multiple]):not([size]),
@@ -6233,7 +6233,7 @@ textarea.form-control.is-valid {
 
 .form-select.is-valid:focus,
 .was-validated .form-select:valid:focus {
-  border-color: #28a745;
+  border-color: #FFBf00;
   -webkit-box-shadow: 0 0 0 .25rem rgba(40, 167, 69, .25);
   box-shadow: 0 0 0 .25rem rgba(40, 167, 69, .25)
 }
@@ -6245,12 +6245,12 @@ textarea.form-control.is-valid {
 
 .form-check-input.is-valid,
 .was-validated .form-check-input:valid {
-  border-color: #28a745
+  border-color: #FFBf00
 }
 
 .form-check-input.is-valid:checked,
 .was-validated .form-check-input:valid:checked {
-  background-color: #28a745
+  background-color: #FFBf00
 }
 
 .form-check-input.is-valid:focus,
@@ -6261,7 +6261,7 @@ textarea.form-control.is-valid {
 
 .form-check-input.is-valid~.form-check-label,
 .was-validated .form-check-input:valid~.form-check-label {
-  color: #28a745
+  color: #FFBf00
 }
 
 .form-check-inline .form-check-input~.valid-feedback {
@@ -6528,8 +6528,8 @@ fieldset:disabled .btn {
 
 .btn-success {
   --bs-btn-color: #000;
-  --bs-btn-bg: #28a745;
-  --bs-btn-border-color: #28a745;
+  --bs-btn-bg: #FFBf00;
+  --bs-btn-border-color: #FFBf00;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #48b461;
   --bs-btn-hover-border-color: #3eb058;
@@ -6539,14 +6539,14 @@ fieldset:disabled .btn {
   --bs-btn-active-border-color: #3eb058;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #28a745;
-  --bs-btn-disabled-border-color: #28a745
+  --bs-btn-disabled-bg: #FFBf00;
+  --bs-btn-disabled-border-color: #FFBf00
 }
 
 .btn-info {
   --bs-btn-color: #000;
-  --bs-btn-bg: #17a2b8;
-  --bs-btn-border-color: #17a2b8;
+  --bs-btn-bg: #FFCE1B;
+  --bs-btn-border-color: #FFCE1B;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #3ab0c3;
   --bs-btn-hover-border-color: #2eabbf;
@@ -6556,8 +6556,8 @@ fieldset:disabled .btn {
   --bs-btn-active-border-color: #2eabbf;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #17a2b8;
-  --bs-btn-disabled-border-color: #17a2b8
+  --bs-btn-disabled-bg: #FFCE1B;
+  --bs-btn-disabled-border-color: #FFCE1B
 }
 
 .btn-warning {
@@ -6647,8 +6647,8 @@ fieldset:disabled .btn {
 
 .btn-purple {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #6C4196;
-  --bs-btn-border-color: #6C4196;
+  --bs-btn-bg: #F2b949;
+  --bs-btn-border-color: #F2b949;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #5c3780;
   --bs-btn-hover-border-color: #563478;
@@ -6658,8 +6658,8 @@ fieldset:disabled .btn {
   --bs-btn-active-border-color: #513171;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #6C4196;
-  --bs-btn-disabled-border-color: #6C4196
+  --bs-btn-disabled-bg: #F2b949;
+  --bs-btn-disabled-border-color: #F2b949
 }
 
 .btn-outline-primary {
@@ -6697,36 +6697,36 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-success {
-  --bs-btn-color: #28a745;
-  --bs-btn-border-color: #28a745;
+  --bs-btn-color: #FFBf00;
+  --bs-btn-border-color: #FFBf00;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #28a745;
-  --bs-btn-hover-border-color: #28a745;
+  --bs-btn-hover-bg: #FFBf00;
+  --bs-btn-hover-border-color: #FFBf00;
   --bs-btn-focus-shadow-rgb: 40, 167, 69;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #28a745;
-  --bs-btn-active-border-color: #28a745;
+  --bs-btn-active-bg: #FFBf00;
+  --bs-btn-active-border-color: #FFBf00;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #28a745;
+  --bs-btn-disabled-color: #FFBf00;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #28a745;
+  --bs-btn-disabled-border-color: #FFBf00;
   --bs-gradient: none
 }
 
 .btn-outline-info {
-  --bs-btn-color: #17a2b8;
-  --bs-btn-border-color: #17a2b8;
+  --bs-btn-color: #FFCE1B;
+  --bs-btn-border-color: #FFCE1B;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #17a2b8;
-  --bs-btn-hover-border-color: #17a2b8;
+  --bs-btn-hover-bg: #FFCE1B;
+  --bs-btn-hover-border-color: #FFCE1B;
   --bs-btn-focus-shadow-rgb: 23, 162, 184;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #17a2b8;
-  --bs-btn-active-border-color: #17a2b8;
+  --bs-btn-active-bg: #FFCE1B;
+  --bs-btn-active-border-color: #FFCE1B;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #17a2b8;
+  --bs-btn-disabled-color: #FFCE1B;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #17a2b8;
+  --bs-btn-disabled-border-color: #FFCE1B;
   --bs-gradient: none
 }
 
@@ -6816,19 +6816,19 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-purple {
-  --bs-btn-color: #6C4196;
-  --bs-btn-border-color: #6C4196;
+  --bs-btn-color: #F2b949;
+  --bs-btn-border-color: #F2b949;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #6C4196;
-  --bs-btn-hover-border-color: #6C4196;
+  --bs-btn-hover-bg: #F2b949;
+  --bs-btn-hover-border-color: #F2b949;
   --bs-btn-focus-shadow-rgb: 108, 65, 150;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #6C4196;
-  --bs-btn-active-border-color: #6C4196;
+  --bs-btn-active-bg: #F2b949;
+  --bs-btn-active-border-color: #F2b949;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #6C4196;
+  --bs-btn-disabled-color: #F2b949;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #6C4196;
+  --bs-btn-disabled-border-color: #F2b949;
   --bs-gradient: none
 }
 
@@ -11734,7 +11734,7 @@ fieldset:disabled .btn {
 }
 
 .link-success {
-  color: #28a745 !important
+  color: #FFBf00 !important
 }
 
 .link-success:focus,
@@ -11743,7 +11743,7 @@ fieldset:disabled .btn {
 }
 
 .link-info {
-  color: #17a2b8 !important
+  color: #FFCE1B !important
 }
 
 .link-info:focus,
@@ -11797,7 +11797,7 @@ fieldset:disabled .btn {
 }
 
 .link-purple {
-  color: #6c4196 !important
+  color: #F2b949 !important
 }
 
 .link-purple:focus,
@@ -17544,8 +17544,8 @@ fieldset:disabled .btn {
 
 .btn-success a {
   --bs-btn-color: #000;
-  --bs-btn-bg: #28a745;
-  --bs-btn-border-color: #28a745;
+  --bs-btn-bg: #FFBf00;
+  --bs-btn-border-color: #FFBf00;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #48b461;
   --bs-btn-hover-border-color: #3eb058;
@@ -17555,14 +17555,14 @@ fieldset:disabled .btn {
   --bs-btn-active-border-color: #3eb058;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #28a745;
-  --bs-btn-disabled-border-color: #28a745
+  --bs-btn-disabled-bg: #FFBf00;
+  --bs-btn-disabled-border-color: #FFBf00
 }
 
 .btn-info a {
   --bs-btn-color: #000;
-  --bs-btn-bg: #17a2b8;
-  --bs-btn-border-color: #17a2b8;
+  --bs-btn-bg: #FFCE1B;
+  --bs-btn-border-color: #FFCE1B;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #3ab0c3;
   --bs-btn-hover-border-color: #2eabbf;
@@ -17572,8 +17572,8 @@ fieldset:disabled .btn {
   --bs-btn-active-border-color: #2eabbf;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #17a2b8;
-  --bs-btn-disabled-border-color: #17a2b8
+  --bs-btn-disabled-bg: #FFCE1B;
+  --bs-btn-disabled-border-color: #FFCE1B
 }
 
 .btn-warning a {
@@ -17663,8 +17663,8 @@ fieldset:disabled .btn {
 
 .btn-purple a {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #6C4196;
-  --bs-btn-border-color: #6C4196;
+  --bs-btn-bg: #F2b949;
+  --bs-btn-border-color: #F2b949;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #5c3780;
   --bs-btn-hover-border-color: #563478;
@@ -17674,8 +17674,8 @@ fieldset:disabled .btn {
   --bs-btn-active-border-color: #513171;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #6C4196;
-  --bs-btn-disabled-border-color: #6C4196
+  --bs-btn-disabled-bg: #F2b949;
+  --bs-btn-disabled-border-color: #F2b949
 }
 
 .btn-outline-primary a {
@@ -17713,36 +17713,36 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-success a {
-  --bs-btn-color: #28a745;
-  --bs-btn-border-color: #28a745;
+  --bs-btn-color: #FFBf00;
+  --bs-btn-border-color: #FFBf00;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #28a745;
-  --bs-btn-hover-border-color: #28a745;
+  --bs-btn-hover-bg: #FFBf00;
+  --bs-btn-hover-border-color: #FFBf00;
   --bs-btn-focus-shadow-rgb: 40, 167, 69;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #28a745;
-  --bs-btn-active-border-color: #28a745;
+  --bs-btn-active-bg: #FFBf00;
+  --bs-btn-active-border-color: #FFBf00;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #28a745;
+  --bs-btn-disabled-color: #FFBf00;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #28a745;
+  --bs-btn-disabled-border-color: #FFBf00;
   --bs-gradient: none
 }
 
 .btn-outline-info a {
-  --bs-btn-color: #17a2b8;
-  --bs-btn-border-color: #17a2b8;
+  --bs-btn-color: #FFCE1B;
+  --bs-btn-border-color: #FFCE1B;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #17a2b8;
-  --bs-btn-hover-border-color: #17a2b8;
+  --bs-btn-hover-bg: #FFCE1B;
+  --bs-btn-hover-border-color: #FFCE1B;
   --bs-btn-focus-shadow-rgb: 23, 162, 184;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #17a2b8;
-  --bs-btn-active-border-color: #17a2b8;
+  --bs-btn-active-bg: #FFCE1B;
+  --bs-btn-active-border-color: #FFCE1B;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #17a2b8;
+  --bs-btn-disabled-color: #FFCE1B;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #17a2b8;
+  --bs-btn-disabled-border-color: #FFCE1B;
   --bs-gradient: none
 }
 
@@ -17832,19 +17832,19 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-purple a {
-  --bs-btn-color: #6C4196;
-  --bs-btn-border-color: #6C4196;
+  --bs-btn-color: #F2b949;
+  --bs-btn-border-color: #F2b949;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #6C4196;
-  --bs-btn-hover-border-color: #6C4196;
+  --bs-btn-hover-bg: #F2b949;
+  --bs-btn-hover-border-color: #F2b949;
   --bs-btn-focus-shadow-rgb: 108, 65, 150;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #6C4196;
-  --bs-btn-active-border-color: #6C4196;
+  --bs-btn-active-bg: #F2b949;
+  --bs-btn-active-border-color: #F2b949;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #6C4196;
+  --bs-btn-disabled-color: #F2b949;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #6C4196;
+  --bs-btn-disabled-border-color: #F2b949;
   --bs-gradient: none
 }
 
@@ -18565,66 +18565,66 @@ summary {
 
 .file--application-octet-stream,
 .file--general {
-  background-image: url(/themes/custom/petronas/images/icons/application-octet-stream.png)
+  background-image: url(/themes/custom/matrix/images/icons/application-octet-stream.png)
 }
 
 .file--package-x-generic {
-  background-image: url(/themes/custom/petronas/images/icons/package-x-generic.png)
+  background-image: url(/themes/custom/matrix/images/icons/package-x-generic.png)
 }
 
 .file--x-office-spreadsheet {
-  background-image: url(/themes/custom/petronas/images/icons/x-office-spreadsheet.png)
+  background-image: url(/themes/custom/matrix/images/icons/x-office-spreadsheet.png)
 }
 
 .file--x-office-document {
-  background-image: url(/themes/custom/petronas/images/icons/x-office-document.png)
+  background-image: url(/themes/custom/matrix/images/icons/x-office-document.png)
 }
 
 .file--x-office-presentation {
-  background-image: url(/themes/custom/petronas/images/icons/x-office-presentation.png)
+  background-image: url(/themes/custom/matrix/images/icons/x-office-presentation.png)
 }
 
 .file--text-x-script {
-  background-image: url(/themes/custom/petronas/images/icons/text-x-script.png)
+  background-image: url(/themes/custom/matrix/images/icons/text-x-script.png)
 }
 
 .file--text-html {
-  background-image: url(/themes/custom/petronas/images/icons/text-html.png)
+  background-image: url(/themes/custom/matrix/images/icons/text-html.png)
 }
 
 .file--text-plain {
-  background-image: url(/themes/custom/petronas/images/icons/text-plain.png)
+  background-image: url(/themes/custom/matrix/images/icons/text-plain.png)
 }
 
 .file--application-pdf {
-  background-image: url(/themes/custom/petronas/images/icons/application-pdf.png)
+  background-image: url(/themes/custom/matrix/images/icons/application-pdf.png)
 }
 
 .file--application-x-executable {
-  background-image: url(/themes/custom/petronas/images/icons/application-x-executable.png)
+  background-image: url(/themes/custom/matrix/images/icons/application-x-executable.png)
 }
 
 .file--audio {
-  background-image: url(/themes/custom/petronas/images/icons/audio-x-generic.png)
+  background-image: url(/themes/custom/matrix/images/icons/audio-x-generic.png)
 }
 
 .file--video {
-  background-image: url(/themes/custom/petronas/images/icons/video-x-generic.png)
+  background-image: url(/themes/custom/matrix/images/icons/video-x-generic.png)
 }
 
 .file--text {
-  background-image: url(/themes/custom/petronas/images/icons/text-x-generic.png)
+  background-image: url(/themes/custom/matrix/images/icons/text-x-generic.png)
 }
 
 .file--image {
-  background-image: url(/themes/custom/petronas/images/icons/image-x-generic.png)
+  background-image: url(/themes/custom/matrix/images/icons/image-x-generic.png)
 }
 
 .form-required::after {
   content: "";
   vertical-align: super;
   display: inline-block;
-  background-image: url(/themes/custom/petronas/images/required.svg);
+  background-image: url(/themes/custom/matrix/images/required.svg);
   background-repeat: no-repeat;
   -webkit-background-size: calc(1.5em + .75rem + 2px)/2 calc(1.5em + .75rem + 2px)/2;
   background-size: calc(1.5em + .75rem + 2px)/2 calc(1.5em + .75rem + 2px)/2;
@@ -19660,7 +19660,7 @@ ul {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #6c4196;
+  background: #F2b949;
   border: 0;
   color: #fff;
   display: -webkit-inline-box;
@@ -19676,12 +19676,12 @@ ul {
   display: block;
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
   margin-right: .625rem
 }
 
 .btn-primary:hover {
-  background: #6c4196 !important;
+  background: #F2b949 !important;
   color: #fff !important
 }
 
@@ -19706,7 +19706,7 @@ ul {
   display: block;
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
   margin-right: .625rem
 }
 
@@ -19740,7 +19740,7 @@ input[type=checkbox] {
 }
 
 .block-modal .btn-close {
-  background-image: url(/themes/custom/petronas/images/icon-close2.png);
+  background-image: url(/themes/custom/matrix/images/icon-close2.png);
   -webkit-background-size: contain;
   background-size: contain;
   height: 30px;
@@ -19785,7 +19785,7 @@ input[type=checkbox] {
 }
 
 .block-sticky-modal .btn-sticky-close {
-  background: transparent url(/themes/custom/petronas/images/icon-close2.png) center/1em auto no-repeat;
+  background: transparent url(/themes/custom/matrix/images/icon-close2.png) center/1em auto no-repeat;
   -webkit-background-size: 13px 13px;
   background-size: 13px;
   border: 0;
@@ -19832,7 +19832,7 @@ input[type=checkbox] {
 .link-read-more i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat
+  background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat
 }
 
 .link-read-more p {
@@ -19855,7 +19855,7 @@ input[type=checkbox] {
 }
 
 .link-read-more.invert i {
-  background-image: url(/themes/custom/petronas/images/read-more-c.svg)
+  background-image: url(/themes/custom/matrix/images/read-more-c.svg)
 }
 
 .link-read-more.invert p {
@@ -19863,7 +19863,7 @@ input[type=checkbox] {
 }
 
 .link-read-more.invert:hover i {
-  background-image: url(/themes/custom/petronas/images/read-more.svg)
+  background-image: url(/themes/custom/matrix/images/read-more.svg)
 }
 
 .link-read-more.invert:hover p {
@@ -20035,7 +20035,7 @@ input[type=checkbox] {
   line-height: .875rem;
   margin: 0;
   width: auto;
-  background: #fff url(/themes/custom/petronas/images/select-arrow.svg) no-repeat right 12px center;
+  background: #fff url(/themes/custom/matrix/images/select-arrow.svg) no-repeat right 12px center;
   -webkit-background-size: 16px auto;
   background-size: 16px auto
 }
@@ -20045,7 +20045,7 @@ input[type=checkbox] {
 }
 
 .views-exposed-form .form-item-keywords:after {
-  background: url(/themes/custom/petronas/images/searchIcon.png) center no-repeat;
+  background: url(/themes/custom/matrix/images/searchIcon.png) center no-repeat;
   content: " ";
   display: block;
   height: 20px;
@@ -20085,7 +20085,7 @@ ul.pagination li.last-page {
 }
 
 ul.pagination li.pager__item--next a {
-  background: url(/themes/custom/petronas/images/icon-right.png) no-repeat center center;
+  background: url(/themes/custom/matrix/images/icon-right.png) no-repeat center center;
   -webkit-background-size: 16px 16px;
   background-size: 16px;
   display: block;
@@ -20098,13 +20098,13 @@ ul.pagination li.pager__item--next a span {
 }
 
 ul.pagination li.pager__item--next a.page-link:hover {
-  background: url(/themes/custom/petronas/images/icon-right.png) no-repeat center center;
+  background: url(/themes/custom/matrix/images/icon-right.png) no-repeat center center;
   -webkit-background-size: 16px 16px;
   background-size: 16px
 }
 
 ul.pagination li.pager__item--prev a {
-  background: url(/themes/custom/petronas/images/icon-left.png) no-repeat center center;
+  background: url(/themes/custom/matrix/images/icon-left.png) no-repeat center center;
   -webkit-background-size: 16px 16px;
   background-size: 16px;
   display: block;
@@ -20117,7 +20117,7 @@ ul.pagination li.pager__item--prev a span {
 }
 
 ul.pagination li.pager__item--prev a.page-link:hover {
-  background: url(/themes/custom/petronas/images/icon-left.png) no-repeat center center;
+  background: url(/themes/custom/matrix/images/icon-left.png) no-repeat center center;
   -webkit-background-size: 16px 16px;
   background-size: 16px
 }
@@ -20138,11 +20138,11 @@ ul.pagination li.pager__item--prev a.page-link:hover {
 }
 
 .JpressMidContainer .view ul.pagination li.pager__item--next a {
-  background-image: url(/themes/custom/petronas/images/icon-right-w.png)
+  background-image: url(/themes/custom/matrix/images/icon-right-w.png)
 }
 
 .JpressMidContainer .view ul.pagination li.pager__item--prev a {
-  background-image: url(/themes/custom/petronas/images/icon-left-w.png)
+  background-image: url(/themes/custom/matrix/images/icon-left-w.png)
 }
 
 .JpressMidContainer.view--display-id--block_media_listing {
@@ -20207,7 +20207,7 @@ ul.pagination li.pager__item--prev a.page-link:hover {
 }
 
 .download-select-action {
-  background: url(/themes/custom/petronas/images/icon-download.png) no-repeat left center;
+  background: url(/themes/custom/matrix/images/icon-download.png) no-repeat left center;
   -webkit-background-size: 15px auto;
   background-size: 15px auto;
   padding-left: 1.25rem
@@ -20244,7 +20244,7 @@ ul.pagination li.pager__item--prev a.page-link:hover {
 }
 
 .JgeneralPopupCloseNode {
-  background: url(/themes/custom/petronas/images/close-popup-icon.png) center no-repeat;
+  background: url(/themes/custom/matrix/images/close-popup-icon.png) center no-repeat;
   width: 24px;
   height: 24px;
   font-size: 0;
@@ -20279,7 +20279,7 @@ ul.pagination li.pager__item--prev a.page-link:hover {
 }
 
 .JpressMidHeaderRight .ui-button .ui-icon {
-  background: url(/themes/custom/petronas/images/select-arrow.svg);
+  background: url(/themes/custom/matrix/images/select-arrow.svg);
   position: absolute;
   right: 22px;
   top: 10px
@@ -20324,7 +20324,7 @@ ul.pagination li.pager__item--prev a.page-link:hover {
 
 .JmasterInnerImageCarousel #thumbnail-slider .splide__slide {
   border: none;
-  background-image: url(/themes/custom/petronas/images/thumbnail-articles-placeholder-v01.jpg);
+  background-image: url(/themes/custom/matrix/images/thumbnail-articles-placeholder-v01.jpg);
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center;
@@ -20341,7 +20341,7 @@ ul.pagination li.pager__item--prev a.page-link:hover {
 
 .JmasterInnerImageCarousel #thumbnail-slider .splide__arrow {
   background-color: #fff;
-  background-image: url(/themes/custom/petronas/images/read-more-c.svg);
+  background-image: url(/themes/custom/matrix/images/read-more-c.svg);
   background-position: center;
   background-repeat: no-repeat;
   opacity: 1
@@ -20512,7 +20512,7 @@ ul.pagination li.pager__item--prev a.page-link:hover {
   margin: auto;
   width: 20px;
   height: 20px;
-  background-image: url(/themes/custom/petronas/images/icon-close.png);
+  background-image: url(/themes/custom/matrix/images/icon-close.png);
   background-repeat: no-repeat;
   -webkit-background-size: contain;
   background-size: contain
@@ -20577,7 +20577,7 @@ ul.pagination li.pager__item--prev a.page-link:hover {
   -webkit-background-size: contain;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(/themes/custom/petronas/images/icon-search-green.png);
+  background-image: url(/themes/custom/matrix/images/icon-search-green.png);
   text-indent: -999em
 }
 
@@ -20652,7 +20652,7 @@ ul.pagination li.pager__item--prev a.page-link:hover {
   -webkit-background-size: contain;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(/themes/custom/petronas/images/icon-search-green.png);
+  background-image: url(/themes/custom/matrix/images/icon-search-green.png);
   text-indent: -999em
 }
 
@@ -20778,7 +20778,7 @@ ul.pagination li.pager__item--prev a.page-link:hover {
 
 .slider-style-v2 .slider-nav .slider-next,
 .slider-style-v2 .slider-nav .slider-prev {
-  background: url(/themes/custom/petronas/images/icon-left2.svg) no-repeat center center;
+  background: url(/themes/custom/matrix/images/icon-left2.svg) no-repeat center center;
   -webkit-background-size: 32px auto;
   background-size: 32px auto;
   display: inline-block;
@@ -20809,7 +20809,7 @@ ul.pagination li.pager__item--prev a.page-link:hover {
 
 .slider-style-v2 .slider-nav-w .slider-next,
 .slider-style-v2 .slider-nav-w .slider-prev {
-  background-image: url(/themes/custom/petronas/images/icon-left2-w.svg)
+  background-image: url(/themes/custom/matrix/images/icon-left2-w.svg)
 }
 
 .slider-style-v2 .slider-nav-w .owl-dot {
@@ -21024,9 +21024,9 @@ ul.pagination li.pager__item--prev a.page-link:hover {
 :root {
   --bg-overlay: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
   --text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.35);
-  --petronas-green: #00a99d;
-  --petronas-purple: #763F98;
-  --petronas-blue: #314396;
+  --petronas-green: #FFBf00;
+  --petronas-purple: #FFA500;
+  --petronas-blue: #000000;
 }
 
 body {
@@ -21215,23 +21215,23 @@ h6 p {
 .JindexNaviRightTopSub .languageIcon {
   width: 21px;
   height: 20px;
-  background-image: url(/themes/custom/petronas/images/top-language.svg);
+  background-image: url(/themes/custom/matrix/images/top-language.svg);
 }
 
 .JindexNaviRightTopSub .languageIcon.lang-ms {
-  background-image: url(/themes/custom/petronas/images/top-language-ms.svg);
+  background-image: url(/themes/custom/matrix/images/top-language-ms.svg);
 }
 
 .JindexNaviRightTopSub a.searchIcon {
   width: 21px;
   height: 21px;
-  background-image: url(/themes/custom/petronas/images/top-search.svg);
+  background-image: url(/themes/custom/matrix/images/top-search.svg);
 }
 
 .JindexNaviRightTopSub .languageIcon2 {
   width: 21px;
   height: 20px;
-  background-image: url(/themes/custom/petronas/images/top-language2.svg);
+  background-image: url(/themes/custom/matrix/images/top-language2.svg);
 }
 
 .JindexNaviRightTopSub a.burgerMenuIconM {
@@ -21463,7 +21463,7 @@ h6 p {
 }
 
 .JsideNaviContainer ul li a {
-  background-color: #763F98;
+  background-color: #FFA500;
   width: 100%;
   height: 64px;
   display: flex;
@@ -21475,7 +21475,7 @@ h6 p {
   width: 25px;
   height: 25px;
   display: block;
-  background-image: url(/themes/custom/petronas/images/icon-sprite.png);
+  background-image: url(/themes/custom/matrix/images/icon-sprite.png);
   background-repeat: no-repeat;
   background-size: 500px auto;
 }
@@ -21517,7 +21517,7 @@ h6 p {
   display: block;
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/side-chat.svg);
+  background: url(/themes/custom/matrix/images/side-chat.svg);
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -21846,7 +21846,7 @@ h6 p {
 .JindexContainer02Btn i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
 }
 
 .JindexContainer02Btn p {
@@ -22290,7 +22290,7 @@ h6 p {
 .JindexRow3LeftTitle i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
 }
 
 .JindexRow3LeftTitle a p {
@@ -22583,7 +22583,7 @@ h6 p {
 .JindexRow4ContentList i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
 }
 
 .JindexRow4ContentList p {
@@ -22764,7 +22764,7 @@ h6 p {
 }
 
 .JindexRow5SlideRight>p {
-  color: #763f98;
+  color: #FFA500;
   font-size: 14px;
   line-height: 20px;
   font-family: 'Museo Sans', sans-serif;
@@ -22796,7 +22796,7 @@ h6 p {
 .JindexRow5SlideRightInner a i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more-c.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more-c.svg) center no-repeat;
 }
 
 .JindexRow5SlideRightInner a p {
@@ -22982,7 +22982,7 @@ h6 p {
 .JindexRow6Content i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
 }
 
 .JindexRow6Content a p {
@@ -23122,7 +23122,7 @@ h6 p {
   display: block;
   width: 25px;
   height: 25px;
-  background-image: url(/themes/custom/petronas/images/icon-sprite.png);
+  background-image: url(/themes/custom/matrix/images/icon-sprite.png);
   background-repeat: no-repeat;
   background-size: 500px auto;
   text-indent: -999em;
@@ -23249,7 +23249,7 @@ h6 p {
 .JgeneralMainBtn i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
 }
 
 .JgeneralMainBtn p {
@@ -23307,7 +23307,7 @@ h6 p {
   top: 8px;
   width: 20px;
   height: 20px;
-  background: url(/themes/custom/petronas/images/searchIcon.png) center no-repeat;
+  background: url(/themes/custom/matrix/images/searchIcon.png) center no-repeat;
 }
 
 .JpressMidHeaderRight {
@@ -23411,23 +23411,23 @@ h6 p {
 }
 
 .JpressMidBodyListTopRight div a.at-svc-twitter span {
-  background: url(/themes/custom/petronas/images/s-twitter-icon.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/s-twitter-icon.svg) center no-repeat;
 }
 
 .JpressMidBodyListTopRight div a.at-svc-linkedin span {
-  background: url(/themes/custom/petronas/images/s-linkedin-icon.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/s-linkedin-icon.svg) center no-repeat;
 }
 
 .JpressMidBodyListTopRight div a.at-svc-facebook span {
-  background: url(/themes/custom/petronas/images/s-facebook-icon.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/s-facebook-icon.svg) center no-repeat;
 }
 
 .JpressMidBodyListTopRight div a.at-svc-whatsapp span {
-  background: url(/themes/custom/petronas/images/s-whatsapp-icon.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/s-whatsapp-icon.svg) center no-repeat;
 }
 
 .JpressCopy {
-  background: url(/themes/custom/petronas/images/s-addthis-icon.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/s-addthis-icon.svg) center no-repeat;
   position: absolute;
   right: 0px;
   top: 0px;
@@ -23628,7 +23628,7 @@ h6 p {
   display: block;
   width: 25px;
   height: 25px;
-  background-image: url(/themes/custom/petronas/images/icon-sprite.png);
+  background-image: url(/themes/custom/matrix/images/icon-sprite.png);
   background-repeat: no-repeat;
   background-size: 500px auto;
   text-indent: -999em;
@@ -23735,19 +23735,19 @@ h6 p {
 }
 
 .JpressDetailsMiddleHeaderRight div a.at-svc-twitter span {
-  background: url(/themes/custom/petronas/images/s-twitter-icon.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/s-twitter-icon.svg) center no-repeat;
 }
 
 .JpressDetailsMiddleHeaderRight div a.at-svc-linkedin span {
-  background: url(/themes/custom/petronas/images/s-linkedin-icon.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/s-linkedin-icon.svg) center no-repeat;
 }
 
 .JpressDetailsMiddleHeaderRight div a.at-svc-facebook span {
-  background: url(/themes/custom/petronas/images/s-facebook-icon.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/s-facebook-icon.svg) center no-repeat;
 }
 
 .JpressDetailsMiddleHeaderRight div a.at-svc-whatsapp span {
-  background: url(/themes/custom/petronas/images/s-whatsapp-icon.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/s-whatsapp-icon.svg) center no-repeat;
 }
 
 .JpressDetailsMiddleHeaderRight .JpressCopy {
@@ -23787,13 +23787,13 @@ h6 p {
 .JpressDetailsMiddleFooterLeft i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more-c.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more-c.svg) center no-repeat;
 }
 
 .JpressDetailsMiddleFooterRight i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/download.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/download.svg) center no-repeat;
 }
 
 .JgeneralFooterSliderInner {
@@ -23884,7 +23884,7 @@ h6 p {
 .JgeneralFooterSliderContent a i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
 }
 
 .JgeneralFooterSliderContent a p {
@@ -23937,7 +23937,7 @@ h6 p {
   content: '';
   width: 16px;
   height: 25px;
-  background: url(/themes/custom/petronas/images/foote-slider-arrow01.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/foote-slider-arrow01.svg) center no-repeat;
   background-size: 16px auto;
 }
 
@@ -23945,7 +23945,7 @@ h6 p {
   content: '';
   width: 16px;
   height: 25px;
-  background: url(/themes/custom/petronas/images/foote-slider-arrow02.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/foote-slider-arrow02.svg) center no-repeat;
   -moz-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   -o-transform: rotate(180deg);
@@ -23966,7 +23966,7 @@ h6 p {
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   border-radius: 100px;
-  background: #763F98;
+  background: #FFA500;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -24060,7 +24060,7 @@ h6 p {
 .JindexRow2RightContent02 h5 {
   font-size: 30px;
   line-height: 36px;
-  color: #763f98;
+  color: #FFA500;
 }
 
 .JindexRow2RightContent02 p {
@@ -24184,7 +24184,7 @@ h6 p {
 .JmasterRowContent a i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
 }
 
 .JmasterRowContent a p {
@@ -24445,7 +24445,7 @@ h6 p {
 .JmasterRow5Container .JmasterRow5RightContentInner a i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more-c.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more-c.svg) center no-repeat;
 }
 
 .JmasterRow5Container .JmasterRow5RightContentInner a p {
@@ -24669,7 +24669,7 @@ h6 p {
   position: absolute;
   right: -13px;
   bottom: -18px;
-  background-image: url(/themes/custom/petronas/images/play-btn.png);
+  background-image: url(/themes/custom/matrix/images/play-btn.png);
   background-position: center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -25015,7 +25015,7 @@ h6 p {
 }
 
 .JmasterRow2ContainerW .JmasterRowContent a i {
-  background: url(/themes/custom/petronas/images/read-more-c.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more-c.svg) center no-repeat;
 }
 
 .JmasterRow2ContainerW .JmasterRowContent a p {
@@ -25232,7 +25232,7 @@ h6 p {
   -moz-border-radius-topright: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  background: #763F98 !important;
+  background: #FFA500 !important;
   color: #fff;
   font-size: 20px;
   line-height: 20px;
@@ -25395,11 +25395,11 @@ h6 p {
 }
 
 .JbopRow2Content03List:nth-child(2) .JbopRow2Content03ListLeft span {
-  background: #763F98;
+  background: #FFA500;
 }
 
 .JbopRow2Content03List:nth-child(2) .JbopRow2Content03ListLeft p {
-  color: #763F98;
+  color: #FFA500;
 }
 
 .JbopRow2Content03List:nth-child(3) .JbopRow2Content03ListLeft span {
@@ -25696,7 +25696,7 @@ h6 p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #763F98;
+  background: #FFA500;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   border-radius: 100px;
@@ -25738,7 +25738,7 @@ h6 p {
   background: -moz-linear-gradient(180deg, rgba(0, 161, 156, 1) 46%, rgba(118, 63, 152, 1) 100%);
   background: -webkit-linear-gradient(180deg, rgba(0, 161, 156, 1) 46%, rgba(118, 63, 152, 1) 100%);
   background: linear-gradient(180deg, rgba(0, 161, 156, 1) 46%, rgba(118, 63, 152, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a18c00", endColorstr="#763f98", GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a18c00", endColorstr="#FFA500", GradientType=1);
   padding: 120px 0px;
 }
 
@@ -25949,7 +25949,7 @@ h6 p {
   flex: 0 0 14px;
   width: 14px;
   height: 14px;
-  background-image: url(/themes/custom/petronas/images/icon-close.png);
+  background-image: url(/themes/custom/matrix/images/icon-close.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -26211,7 +26211,7 @@ h6 p {
     display: block;
     width: 25px;
     height: 25px;
-    background-image: url(/themes/custom/petronas/images/icon-sprite.png);
+    background-image: url(/themes/custom/matrix/images/icon-sprite.png);
     background-repeat: no-repeat;
     background-size: 500px auto;
     text-indent: -999em;
@@ -26755,7 +26755,7 @@ h6 p {
   .JindexRow5MLeftTitle a i {
     width: 32px;
     height: 32px;
-    background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+    background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
   }
 
   .JindexRow5MLeftTitle a p {
@@ -26783,15 +26783,15 @@ h6 p {
   }
 
   .JindexRow5MLeftList:nth-child(1) i {
-    background-image: url(/themes/custom/petronas/images/power-icon.png);
+    background-image: url(/themes/custom/matrix/images/power-icon.png);
   }
 
   .JindexRow5MLeftList:nth-child(2) i {
-    background-image: url(/themes/custom/petronas/images/energy-icon.png);
+    background-image: url(/themes/custom/matrix/images/energy-icon.png);
   }
 
   .JindexRow5MLeftList:nth-child(3) i {
-    background-image: url(/themes/custom/petronas/images/recycle-icon.png);
+    background-image: url(/themes/custom/matrix/images/recycle-icon.png);
   }
 
   .JindexRow5MLeftListContent {
@@ -26971,7 +26971,7 @@ h6 p {
   .JindexRow6MContentList i {
     width: 32px;
     height: 32px;
-    background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+    background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
   }
 
   .JindexRow6MContentList p {
@@ -27088,7 +27088,7 @@ h6 p {
   .JindexRow7MSlideRightInner a i {
     width: 32px;
     height: 32px;
-    background: url(/themes/custom/petronas/images/read-more-c.svg) center no-repeat;
+    background: url(/themes/custom/matrix/images/read-more-c.svg) center no-repeat;
   }
 
   .JindexRow7MSlideRightInner a p {
@@ -27281,7 +27281,7 @@ h6 p {
   .JindexRow8MContent i {
     width: 32px;
     height: 32px;
-    background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+    background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
   }
 
   .JindexRow8MContent a p {
@@ -27917,7 +27917,7 @@ h6 p {
   .JindexRow5M640btn a i {
     width: 32px;
     height: 32px;
-    background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+    background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
   }
 
   .JindexRow5M640btn a p {
@@ -27993,7 +27993,7 @@ h6 p {
   .JindexRow7MSlideRightInner a {}
 
   .JindexRow7MSlideRightInner a i {
-    background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+    background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
   }
 
   .JindexRow7MSlideRightInner a p {
@@ -28070,7 +28070,7 @@ h6 p {
     top: 0px;
     left: 0px;
     margin-bottom: 0px;
-    background-image: url(/themes/custom/petronas/images/footerLeftPatternM.png);
+    background-image: url(/themes/custom/matrix/images/footerLeftPatternM.png);
     background-position: center;
     background-repeat: no-repeat;
     -webkit-background-size: 490px;
@@ -28091,7 +28091,7 @@ h6 p {
   .JindexRow8MContent a {}
 
   .JindexRow8MContent i {
-    background: url(/themes/custom/petronas/images/read-more-c.svg) center no-repeat;
+    background: url(/themes/custom/matrix/images/read-more-c.svg) center no-repeat;
   }
 
   .JindexRow8MContent a p {
@@ -28556,7 +28556,7 @@ h6 p {
   }
 
   .JmasterRow5Container .JmasterRow5RightContentInner a i {
-    background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+    background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
   }
 
   .JmasterRow5Container .JmasterRow5RightContentInner a p {
@@ -29154,7 +29154,7 @@ h6 p {
   .JindexRow3LeftBtnM a i {
     width: 32px;
     height: 32px;
-    background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+    background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
   }
 
   .JindexRow3LeftBtnM a p {
@@ -29227,7 +29227,7 @@ h6 p {
   }
 
   .JbopRow2ContainerInner h2.resp-accordion .resp-arrow {
-    background: url(/themes/custom/petronas/images/BOP-accordion-arrow.svg) no-repeat;
+    background: url(/themes/custom/matrix/images/BOP-accordion-arrow.svg) no-repeat;
     border: none;
     width: 30px;
     height: 8px;
@@ -29256,7 +29256,7 @@ h6 p {
 
   .JbopRow2ContainerInner h2.resp-accordion.resp-tab-active {
     color: #fff;
-    background: #763F98 !important;
+    background: #FFA500 !important;
   }
 
   .JbopRow2ContainerInner h2.resp-accordion.resp-tab-active .resp-arrow {
@@ -29273,7 +29273,7 @@ h6 p {
   }
 
   .JbopRow2Content02 {
-    background: #763F98;
+    background: #FFA500;
   }
 
   .JbopRow2ContainerInner .ui-tabs-nav {
@@ -29698,7 +29698,7 @@ h6 p {
 .JindexHomeRotator .JindexImgContent a i {
   width: 32px;
   height: 32px;
-  background: url(https://www.petronas.com/themes/custom/petronas/images/read-more.svg) center no-repeat;
+  background: url(https://www.petronas.com/themes/custom/matrix/images/read-more.svg) center no-repeat;
 }
 
 .JindexHomeRotator .JindexImgContent a p {
@@ -29831,7 +29831,7 @@ h6 p {
 }
 
 .JportraitIcon svg path.st4 {
-  fill: #763F98 !important;
+  fill: #FFA500 !important;
   stroke: transparent !important;
 }
 
@@ -29910,7 +29910,7 @@ h6 p {
   .JindexHomeRotatorM .JindexImgContent a i {
     width: 32px;
     height: 32px;
-    background: url(https://www.petronas.com/themes/custom/petronas/images/read-more.svg) center no-repeat;
+    background: url(https://www.petronas.com/themes/custom/matrix/images/read-more.svg) center no-repeat;
   }
 
   .JindexHomeRotatorM .JindexImgContent a p {
@@ -30190,7 +30190,7 @@ body {
 .JsocialLinkInner a {
   min-width: 25px !important;
   min-height: 25px !important;
-  background-image: url(/themes/custom/petronas/images/icon-sprite.png) !important;
+  background-image: url(/themes/custom/matrix/images/icon-sprite.png) !important;
   background-repeat: no-repeat !important;
   background-size: 500px auto;
   display: block !important;
@@ -30289,7 +30289,7 @@ body {
 .JgeneralBtn a i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more-c.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more-c.svg) center no-repeat;
 }
 
 .JgeneralBtn a p {
@@ -30349,7 +30349,7 @@ body {
 
 .JgeneralPopupClose {
   position: absolute;
-  background: url(/themes/custom/petronas/images/close-popup-icon.png) center no-repeat;
+  background: url(/themes/custom/matrix/images/close-popup-icon.png) center no-repeat;
   width: 24px;
   height: 24px;
   right: 45px;
@@ -30589,7 +30589,7 @@ body {
 }
 
 .JinvestorQuestionBody a i {
-  background: url(/themes/custom/petronas/images/read-more-c.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more-c.svg) center no-repeat;
   font-size: 0px;
 }
 
@@ -30710,7 +30710,7 @@ body {
   border-radius: 0px;
   transform: none;
   background-color: transparent;
-  background-image: url(/themes/custom/petronas/images/next.png);
+  background-image: url(/themes/custom/matrix/images/next.png);
   width: 49px;
   height: 49px;
   -webkit-background-size: cover;
@@ -30745,7 +30745,7 @@ body {
   -moz-border-radius: 0px;
   border-radius: 0px;
   background-color: transparent;
-  background-image: url(/themes/custom/petronas/images/next.png);
+  background-image: url(/themes/custom/matrix/images/next.png);
   width: 49px;
   height: 49px;
   -webkit-background-size: cover;
@@ -30804,7 +30804,7 @@ body {
   background: -moz-linear-gradient(180deg, rgba(0, 161, 156, 1) 0%, rgba(118, 63, 152, 1) 100%);
   background: -webkit-linear-gradient(180deg, rgba(0, 161, 156, 1) 0%, rgba(118, 63, 152, 1) 100%);
   background: linear-gradient(180deg, rgba(0, 161, 156, 1) 0%, rgba(118, 63, 152, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a18c00", endColorstr="#763f98", GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a18c00", endColorstr="#FFA500", GradientType=1);
 }
 
 .JawardsSlideBodyList:nth-child(3n) {
@@ -30832,7 +30832,7 @@ body {
 .JawardsSlideBodyListInner a i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more.svg) center no-repeat;
 }
 
 .JawardsSlideBodyListInner a p {
@@ -30939,7 +30939,7 @@ body {
 }
 
 .JprivacySlideBodyInner a i {
-  background: url(/themes/custom/petronas/images/read-more-c.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more-c.svg) center no-repeat;
 }
 
 .JprivacySlideBodyInner .JawardsSlideBodyListInner a p {
@@ -31185,7 +31185,7 @@ body {
 }
 
 .JlicensingRow2TabList01:nth-child(2) .JlicensingRow2TabList01a p {
-  background: #763F98;
+  background: #FFA500;
 }
 
 .JlicensingRow2TabList01:nth-child(3) .JlicensingRow2TabList01a p {
@@ -31235,7 +31235,7 @@ body {
 .JlicensingRow2TabList01 .JlicensingRow2TabList01c a i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more-c.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more-c.svg) center no-repeat;
   font-size: 0px;
   margin-right: 10px;
 }
@@ -31323,7 +31323,7 @@ body {
 .JgeneralBtn i {
   width: 32px;
   height: 32px;
-  background: url(/themes/custom/petronas/images/read-more-c.svg) center no-repeat;
+  background: url(/themes/custom/matrix/images/read-more-c.svg) center no-repeat;
   margin-right: 10px;
   font-size: 0px;
 }
@@ -31404,7 +31404,7 @@ body {
   position: absolute;
   left: 0px;
   top: 0px;
-  background: url(/themes/custom/petronas/images/awards-white-bg.png);
+  background: url(/themes/custom/matrix/images/awards-white-bg.png);
   background-repeat: repeat-y;
   width: 118px;
   height: 100%;
@@ -31416,7 +31416,7 @@ body {
   position: absolute;
   right: 0px;
   top: 0px;
-  background: url(/themes/custom/petronas/images/awards-white-bg.png);
+  background: url(/themes/custom/matrix/images/awards-white-bg.png);
   background-repeat: repeat-y;
   width: 118px;
   height: 100%;
@@ -32336,7 +32336,7 @@ form .form-type-textarea {
   -webkit-appearance: none;
   appearance: none;
   font-family: 'Museo Sans', sans-serif;
-  background: #fff url('https://www.petronas.com/themes/custom/petronas/images/select-arrow.svg') no-repeat right 12px center;
+  background: #fff url('https://www.petronas.com/themes/custom/matrix/images/select-arrow.svg') no-repeat right 12px center;
   -webkit-background-size: 16px auto;
   background-size: 16px auto;
 }
@@ -32425,7 +32425,7 @@ form .form-type-textarea {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background: #fff url('https://www.petronas.com/themes/custom/petronas/images/select-arrow.svg') no-repeat right 12px center;
+  background: #fff url('https://www.petronas.com/themes/custom/matrix/images/select-arrow.svg') no-repeat right 12px center;
   -webkit-background-size: 16px auto;
   background-size: 16px auto;
   font-family: 'Museo Sans', sans-serif;

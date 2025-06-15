@@ -59,7 +59,7 @@ input {
   overflow: hidden;
 }
 #search-form .ais-SearchBox-submit {
-  background: #fff url(/themes/custom/petronas/images/icon-search-black.png)
+  background: #fff url(/themes/custom/matrix/images/icon-search-black.png)
     no-repeat center center;
   border: 0;
   height: 25px;
@@ -242,7 +242,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
   display: block;
   width: 30px;
   height: 30px;
-  background-color: #763f98;
+  background-color: #FFA500;
   border: 0;
   border-radius: 50%;
   text-indent: 9999px;
@@ -263,7 +263,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
   margin: auto;
   width: 14px;
   height: 14px;
-  background-image: url(/themes/custom/petronas/images/icon-close.png);
+  background-image: url(/themes/custom/matrix/images/icon-close.png);
   background-repeat: no-repeat;
   -webkit-background-size: contain;
   background-size: contain;
@@ -339,7 +339,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
   cursor: pointer;
 }
 #search-form-popular .popular-item a {
-  background: url(/themes/custom/petronas/images/icon-close3.png) no-repeat
+  background: url(/themes/custom/matrix/images/icon-close3.png) no-repeat
     center center;
   background-size: 12px auto;
   display: inline-block;
@@ -348,7 +348,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
   width: 12px;
 }
 #search-recent .popular-item a {
-  background: url(/themes/custom/petronas/images/icon-close2.png) no-repeat
+  background: url(/themes/custom/matrix/images/icon-close2.png) no-repeat
     center center;
   background-size: 9px auto;
   display: inline-block;
@@ -363,7 +363,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
   margin: 120px 0 60px;
 }
 #search-stats-wrapper .search-keyword {
-  color: #763f98;
+  color: #FFA500;
   font-weight: bold;
 }
 @media screen and (min-width: 768px) {
