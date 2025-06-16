@@ -11,13 +11,13 @@ input {
 .ais-SearchBox-input {
   width: 100%;
   background: #fff;
-  border: 1px solid #a18c00;
+  border: 1px solid #d35d1dff;
   min-height: 42px;
   padding: 0 20px;
   border-radius: 50rem;
 }
 .search-form-wrapper .form-select {
-  border: 1px solid #a18c00;
+  border: 1px solid #d35d1dff;
   min-height: 42px;
   border-radius: 50rem;
   min-width: 180px;
@@ -25,8 +25,8 @@ input {
 }
 #filter-widget {
   background: #fff;
-  border: 1px solid #a18c00;
-  color: #343a40;
+  border: 1px solid #d35d1dff;
+  color: #908886ff;
   display: inline-block;
   min-height: 42px;
   line-height: 42px;
@@ -38,11 +38,11 @@ input {
   text-decoration: none;
 }
 #filter-widget.is-active {
-  background: #a18c00;
+  background: #d35d1dff;
   color: #fff;
 }
 .ais-SearchBox-input:focus {
-  border-color: #a18c00;
+  border-color: #d35d1dff;
   outline: 0;
 }
 .ais-SearchBox-submit {
@@ -84,7 +84,7 @@ ol.ais-Hits-list {
   color: inherit;
 }
 h3.title {
-  color: #a18c00;
+  color: #d35d1dff;
   margin-bottom: 4px;
   text-decoration: none;
   font-weight: 600;
@@ -139,17 +139,17 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
 }
 .st-prev:hover,
 .st-next:hover {
-  color: #a18c00;
+  color: #d35d1dff;
   transition: all 0.4s ease;
 }
 .aa-Form {
   background: none;
   border: 0;
-  border-bottom: 1px solid #343a40;
+  border-bottom: 1px solid #908886ff;
   border-radius: 0;
 }
 .aa-Form:focus-within {
-  border-color: #343a40;
+  border-color: #908886ff;
   box-shadow: none;
 }
 .aa-SubmitButton {
@@ -196,7 +196,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
   padding-bottom: 1rem;
 }
 .petronas-algolia-filter-form .form-control {
-  border: 1px solid #a18c00;
+  border: 1px solid #d35d1dff;
   border-radius: 50rem;
   padding-left: 20px;
   padding-right: 20px;
@@ -242,7 +242,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
   display: block;
   width: 30px;
   height: 30px;
-  background-color: #FFA500;
+  background-color: #d35d1dff;
   border: 0;
   border-radius: 50%;
   text-indent: 9999px;
@@ -280,7 +280,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
 }
 #search-form-modal .aa-SubmitIcon,
 #search-form-modal .aa-LoadingIcon {
-  color: #a18c00;
+  color: #d35d1dff;
 }
 #search-form-panel {
   margin-top: -8px;
@@ -312,7 +312,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
   padding: 1px 6px 1px 18px;
 }
 #search-recent div {
-  color: #a18c00;
+  color: #d35d1dff;
 }
 #search-recent .items,
 #search-recent .items span {
@@ -326,7 +326,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
   margin-right: 0;
 }
 #search-form-popular .popular-item {
-  background: #a18c00;
+  background: #d35d1dff;
   border-radius: 4px;
 }
 #search-recent .popular-item {
@@ -363,7 +363,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
   margin: 120px 0 60px;
 }
 #search-stats-wrapper .search-keyword {
-  color: #FFA500;
+  color: #d35d1dff;
   font-weight: bold;
 }
 @media screen and (min-width: 768px) {
