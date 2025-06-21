@@ -11,13 +11,13 @@ input {
 .ais-SearchBox-input {
   width: 100%;
   background: #fff;
-  border: 1px solid #d35d1dff;
+  border: 1px solid #D2C9BA;
   min-height: 42px;
   padding: 0 20px;
   border-radius: 50rem;
 }
 .search-form-wrapper .form-select {
-  border: 1px solid #d35d1dff;
+  border: 1px solid #D2C9BA;
   min-height: 42px;
   border-radius: 50rem;
   min-width: 180px;
@@ -25,7 +25,7 @@ input {
 }
 #filter-widget {
   background: #fff;
-  border: 1px solid #d35d1dff;
+  border: 1px solid #D2C9BA;
   color: #908886ff;
   display: inline-block;
   min-height: 42px;
@@ -38,11 +38,11 @@ input {
   text-decoration: none;
 }
 #filter-widget.is-active {
-  background: #d35d1dff;
+  background: #D2C9BA;
   color: #fff;
 }
 .ais-SearchBox-input:focus {
-  border-color: #d35d1dff;
+  border-color: #D2C9BA;
   outline: 0;
 }
 .ais-SearchBox-submit {
@@ -84,7 +84,7 @@ ol.ais-Hits-list {
   color: inherit;
 }
 h3.title {
-  color: #d35d1dff;
+  color: #D2C9BA;
   margin-bottom: 4px;
   text-decoration: none;
   font-weight: 600;
@@ -139,7 +139,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
 }
 .st-prev:hover,
 .st-next:hover {
-  color: #d35d1dff;
+  color: #D2C9BA;
   transition: all 0.4s ease;
 }
 .aa-Form {
@@ -196,7 +196,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
   padding-bottom: 1rem;
 }
 .petronas-algolia-filter-form .form-control {
-  border: 1px solid #d35d1dff;
+  border: 1px solid #D2C9BA;
   border-radius: 50rem;
   padding-left: 20px;
   padding-right: 20px;
@@ -242,7 +242,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
   display: block;
   width: 30px;
   height: 30px;
-  background-color: #d35d1dff;
+  background-color: #D2C9BA;
   border: 0;
   border-radius: 50%;
   text-indent: 9999px;
@@ -280,7 +280,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
 }
 #search-form-modal .aa-SubmitIcon,
 #search-form-modal .aa-LoadingIcon {
-  color: #d35d1dff;
+  color: #D2C9BA;
 }
 #search-form-panel {
   margin-top: -8px;
@@ -312,7 +312,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
   padding: 1px 6px 1px 18px;
 }
 #search-recent div {
-  color: #d35d1dff;
+  color: #D2C9BA;
 }
 #search-recent .items,
 #search-recent .items span {
@@ -326,7 +326,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
   margin-right: 0;
 }
 #search-form-popular .popular-item {
-  background: #d35d1dff;
+  background: #D2C9BA;
   border-radius: 4px;
 }
 #search-recent .popular-item {
@@ -363,7 +363,7 @@ ul.ais-Pagination-list li.ais-Pagination-item--selected a {
   margin: 120px 0 60px;
 }
 #search-stats-wrapper .search-keyword {
-  color: #d35d1dff;
+  color: #D2C9BA;
   font-weight: bold;
 }
 @media screen and (min-width: 768px) {
