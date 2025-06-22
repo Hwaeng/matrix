@@ -1,0 +1,103 @@
+@keyframes LayoutMediumCenteredPercent_fade-in {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes LayoutMediumCenteredPercent_fade-in-delay {
+    0% {
+        opacity: 0
+    }
+
+    70% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.LayoutMediumCenteredPercent {
+    width: calc(100% - 60px);
+    margin: auto
+}
+
+.LayoutMediumCenteredPercent:not(:first-child) {
+    margin-top: 1.875rem
+}
+
+@media(min-width:768px) {
+    .LayoutMediumCenteredPercent:not(:first-child) {
+        margin-top: 1.406rem
+    }
+}
+
+@media(min-width:1024px) {
+    .LayoutMediumCenteredPercent {
+        max-width: var(--width-large)
+    }
+}
+
+@keyframes Section_fade-in {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes Section_fade-in-delay {
+    0% {
+        opacity: 0
+    }
+
+    70% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.Section~.Section {
+    margin-top: 1.25rem
+}
+
+@media(min-width:768px) {
+    .Section~.Section {
+        margin-top: 2.5rem
+    }
+}
+
+.Section_separator {
+    border-top: 1px solid;
+    border-top-color: var(--cod-gray5);
+    padding-bottom: 30px
+}
+
+[class*=allow-transition] .Section_separator {
+    transition: border-color .3s cubic-bezier(.77, 0, .175, 1)
+}
+
+.Section_title {
+    font-size: 1rem;
+    line-height: 1.2
+}
+
+@media(min-width:768px) {
+    .Section_separator {
+        padding-bottom: 35px
+    }
+
+    .Section_title {
+        font-size: 1.25rem
+    }
+}
