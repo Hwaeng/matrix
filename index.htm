@@ -2619,6 +2619,8 @@
 
         /* Icon placeholders for demo */
         .searchIcon, .languageIcon2, .burgerMenuIconM {
+           
+            margin-right: 20px;
             width: 24px;
             height: 24px;
             display: flex;
@@ -2647,6 +2649,94 @@
         /* Animation Control */
         .with-animation.paused .block-bean {
             animation-play-state: paused;
+        }
+         @media screen and (max-width: 768px) {
+            #block-stockpricesheader {
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1000;
+                width: 90%;
+                max-width: 350px;
+                animation: slideDown 0.3s ease-out;
+            }
+
+            .total-stock-prices-block {
+                position: relative;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                border-radius: 12px;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .stock-prices-wrapper {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 8px;
+            }
+
+            .bourse_top p {
+                font-size: 9px !important;
+                margin: 1px 0;
+            }
+        }
+
+        /* Alternative positioning options - uncomment one of these if you prefer */
+        
+        /* Bottom floating */
+        /*
+        @media screen and (max-width: 768px) {
+            #block-stockpricesheader {
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1000;
+                width: 90%;
+                max-width: 350px;
+            }
+        }
+        */
+
+        /* Top-right corner */
+        /*
+        @media screen and (max-width: 768px) {
+            #block-stockpricesheader {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+                width: 200px;
+            }
+        }
+        */
+
+        /* Slide down animation */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        /* Desktop styles remain normal */
+        @media screen and (min-width: 769px) {
+            #block-stockpricesheader {
+                position: static;
+                /* Your existing desktop styles here */
+            }
+        }
+
+        /* Optional: Hide on very small screens if needed */
+        @media screen and (max-width: 320px) {
+            #block-stockpricesheader {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -2680,41 +2770,40 @@
                         </ul>
                        <div class="JindexNaviRightTopSub">
         <!-- Stock Prices Block -->
-        <div id="block-stockpricesheader" data-block-plugin-id="total_stock_prices_header">
-            <div class="total-stock-prices-block total-stock-prices-header">
-                <div class="with-animation">
-                    <button class="btn-control btn-control-animation" id="Buttonpause" data-action="pause" aria-pressed="false" aria-label="Pause/Resume stock prices animation"></button>
-                    <div class="stock-prices-wrapper">
-                        <div class="block block-bean active">
-                            <section class="box basic clearfix action-total">
-                                <a class="stock-name desktop-bourse processed-xiti" href="https://totalenergies.com/investors/share-information/totalenergies-share-price-paris" target="_blank">
-                                    <div class="bourse_top">
-                                        <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: 100;font-size: 10px;">Matrix</p>
-                                        <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: 100;font-size: 10px;">€54.66</p>
-                                        <p class="negative" style="font-size: 10px">
-                                            <span>↓</span> -0.44%
-                                        </p>
-                                    </div>
-                                </a>
-                            </section>
-                        </div>
-                        <div class="block block-bean">
-                            <section class="box basic clearfix action-total">
-                                <a class="stock-name desktop-bourse processed-xiti" href="https://totalenergies.com/investors/share-information/adr-nyse-tot-Information" target="_blank">
-                                    <div class="bourse_top">
-                                        <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: 100;font-size: 10px;">Matrix ADR</p>
-                                        <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: 100;font-size: 10px;">$62.59</p>
-                                        <p class="positive" style="font-size: 10px">
-                                            <span>↑</span> +0.90%
-                                        </p>
-                                    </div>
-                                </a>
-                            </section>
-                        </div>
+       <div id="block-stockpricesheader" data-block-plugin-id="total_stock_prices_header">
+        <div class="total-stock-prices-block total-stock-prices-header">
+            <div class="with-animation">
+                <div class="stock-prices-wrapper">
+                    <div class="block block-bean active">
+                        <section class="box basic clearfix action-total">
+                            <a class="stock-name desktop-bourse processed-xiti" href="https://totalenergies.com/investors/share-information/totalenergies-share-price-paris" target="_blank">
+                                <div class="bourse_top">
+                                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: 100;font-size: 10px;">Matrix</p>
+                                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: 100;font-size: 10px;">€54.66</p>
+                                    <p class="negative" style="font-size: 10px">
+                                        <span>↓</span> -0.44%
+                                    </p>
+                                </div>
+                            </a>
+                        </section>
+                    </div>
+                    <div class="block block-bean">
+                        <section class="box basic clearfix action-total">
+                            <a class="stock-name desktop-bourse processed-xiti" href="https://totalenergies.com/investors/share-information/adr-nyse-tot-Information" target="_blank">
+                                <div class="bourse_top">
+                                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: 100;font-size: 10px;">Matrix ADR</p>
+                                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: 100;font-size: 10px;">$62.59</p>
+                                    <p class="positive" style="font-size: 10px">
+                                        <span>↑</span> +0.90%
+                                    </p>
+                                </div>
+                            </a>
+                        </section>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
         <a href="/global-directory-contact-us" class="languageIcon2"></a>
         <a href="javascript:void(0)" class="burgerMenuIconM">
             <span></span>
@@ -4180,7 +4269,7 @@
         }
 
         function startAnimation() {
-            animationInterval = setInterval(showNextStock, 3000);
+            animationInterval = setInterval(showNextStock, 6000);
         }
 
         function pauseAnimation() {
