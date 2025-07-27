@@ -3316,7 +3316,7 @@
                 </div>
             </div>
         </div>
-        <div class="placeholder placeholder--bg-overflow-hidden placeholder--bg-white">
+        <div class="placeholder placeholder--bg-overflow-hidden">
     <div class="widget sustainability-cards">
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -3424,18 +3424,19 @@
                 </div>
             </div>
            
-                <div class="swiper-button-container" data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-delay="400" data-aos-once="false">
-                    <div class="swiper-button-prev btn-swiper"><em class="material-icons">arrow_back</em></div>
-                    <div class="swiper-button-next btn-swiper"><em class="material-icons">arrow_forward</em></div>
+               <div class="swiper-button-container aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-delay="400" data-aos-once="false">
+                    <div class="swiper-button-prev btn-swiper" tabindex="0" role="button" aria-label="Previous slide"><em class="material-icons">arrow_back</em></div>
+                    <div class="swiper-button-next btn-swiper" tabindex="0" role="button" aria-label="Next slide"><em class="material-icons">arrow_forward</em></div>
                 </div>
-
 
 
         </div>
     </div>
 </div>
 <div class="widget infographic">
-    <div class="infographic-bg-image-container" parallax-bg landscape-bg="/images/infographic-landscape-bg.png?h=900&amp;w=1600&amp;hash=DD2DC48A991E0864DA5185F2F4575334" portrait-bg="/images/infographic-portrait-bg.png?h=1990&amp;w=920&amp;hash=DAC3A490DE73734C8208071E4722B317"></div>
+    <div class="infographic-bg-image-container" parallax-bg landscape-bg="/images/infographic-landscape-bg.png?h=900&amp;w=1600&amp;" 
+    portrait-bg="/images/infographic-portrait-bg.png?h=1990&amp;w=920&amp;hash=DAC3A490DE73734C8208071E4722B317">
+</div>
     <div class="infographic-contents-container">
         <div class="container">
             <div class="content-card-container">
@@ -3449,7 +3450,7 @@
                                     <div class="value"> $23</div>
 
                                     
-                                <div class="unit">BN</div>
+                                <div class="unit">BN</div>  
                                 </div>
                             </div>
                             <div class="value-description">Our allocation for new energies, decarbonization technologies and low-carbon solutions</div>
@@ -3488,6 +3489,266 @@
         </div>
     </div>
 </div>  
+<div class="r text-marquee background-color-dark-blue">
+<div class="inner-container centered">
+<div class="background-initial">&nbsp;</div>
+<div class="heading-container centered">
+<p class="type-eyebrow text-base width-600 centered text-center">who we are</p>
+<h2 class="heading type-display text-elevated centered">
+<span class="text-animation first-item color-light-blue color-important">critical thinkers</span>
+<span class="text-animation second-item color-medium-blue color-important">collaborators</span>
+<span class="text-animation third-item color-dark-blue color-important">innovators</span>
+</h2>
+<p class="type-eyebrow text-base width-600 centered text-center">
+</p>
+</div>
+<div class="content-container">
+<div class="images-container">
+<div class="first-image image">
+<img alt="" src="/-/media/chevron/homepage/images/text-marquee-1.png" class="img-fluid" /></div>
+<div class="second-image image">
+<img alt="" src="/-/media/chevron/homepage/images/text-marquee-2.png" class="img-fluid" /></div>
+<div class="third-image image">
+<img alt="" src="/-/media/chevron/homepage/images/text-marquee-3.png" class="img-fluid" />&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+<style>
+	.text-marquee {
+		position: relative;
+		overflow: hidden;
+		background-color: transparent !important;
+	}
+
+	.text-marquee .background-initial {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(180deg, #000000 0%, #000000 179.9%);
+		z-index: 1;
+	}
+
+	.text-marquee .heading-container {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		z-index: 3;
+		position: relative;
+	}
+
+	.text-marquee .heading {
+		margin-bottom: 0;
+	}
+
+	.text-marquee .type-eyebrow {
+		margin-top: 56px;
+	}
+
+	.text-marquee .content-container {
+		z-index: 2;
+		position: relative;
+	}
+
+	.text-marquee .text-animation {
+		transform: translateX(75%);
+		display: block;
+		margin-bottom: 8px;
+	}
+
+	.text-marquee .text-animation.second-item {
+		transform: translateX(-75%);
+	}
+
+	.text-marquee .images-container {
+		display: flex;
+		flex-direction: column;
+		padding: 0 24px;
+		align-items: flex-end
+	}
+
+	.text-marquee .image {
+		border-radius: 12px;
+		overflow: hidden;
+		transform: translateY(30%);
+	}
+
+	.text-marquee .first-image .img-fluid {
+		height: 101px;
+	}
+
+	.text-marquee .second-image {
+		align-self: flex-start;
+		margin-top: 50%;
+	}
+
+	.text-marquee .second-image .img-fluid {
+		height: 86px;
+	}
+
+	.text-marquee .third-image {
+		margin-top: 40%;
+	}
+
+	.text-marquee .third-image .img-fluid {
+		height: 143px;
+	}
+
+	.text-marquee .text-container {
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 28px;
+	}
+
+	.text-marquee .description {
+		font-family: var(--font-gotham-book);
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	.text-marquee .text-opacity {
+		opacity: 0.25;
+	}
+
+	@media screen and (min-width: 768px) {
+		.text-marquee .type-eyebrow {
+			margin-top: 120px;
+		}
+
+		.text-marquee .description {
+			margin-bottom: 80px;
+			max-width: 600px;
+		}
+
+		.text-marquee .first-image {
+			margin-right: 15%;
+		}
+
+		.text-marquee .first-image .img-fluid {
+			height: 246px;
+		}
+
+		.text-marquee .second-image {
+			transform: translateY(100%);
+			margin-top: 15%;
+		}
+
+		.text-marquee .second-image .img-fluid {
+			height: 144px;
+		}
+
+		.text-marquee .third-image {
+			margin-right: 12%;
+		}
+
+		.text-marquee .third-image .img-fluid {
+			height: 194px;
+		}
+	}
+
+	@media screen and (min-width: 992px) {
+		.text-marquee .description {
+			max-width: 1200px;
+		}
+
+		.text-marquee .type-eyebrow {
+			margin-top: 200px;
+		}
+
+		.text-marquee .first-image .img-fluid {
+			height: 296px;
+		}
+
+		.text-marquee .second-image .img-fluid {
+			height: 210px;
+		}
+
+		.text-marquee .third-image {
+			margin-top: 120px;
+		}
+
+		.text-marquee .third-image .img-fluid {
+			height: 236px;
+		}
+	}
+
+	@media screen and (min-width: 1200px) {
+		.text-marquee .images-container {
+			padding: 0 120px;
+		}
+	}
+</style>
+<script type="text/javascript">
+	(function (d) {
+		function init(textMarquee) {
+			gsap.registerPlugin(ScrollTrigger);
+			const headingContainer = textMarquee.querySelector(".heading-container");
+			const contentContainer = textMarquee.querySelector(".content-container");
+			const backgroundInitial = textMarquee.querySelector(".background-initial");
+			const openingTextTl = gsap.timeline();
+			openingTextTl.to(headingContainer.querySelectorAll(".text-animation:not(.second-item)"),
+				{ x: "-200%", duration: 1 }, "start"
+			);
+			openingTextTl.to(headingContainer.querySelector(".second-item"),
+				{ x: "200%", duration: 1 }, "start"
+			);
+			let c85 = textMarquee.parentElement.querySelector(".text-marquee ~ .c85");
+			if (c85) {
+				c85.style.background = 'rgb(17, 75, 149)';
+			}
+			//header stays at the top
+			ScrollTrigger.create({
+				trigger: headingContainer,
+				start: "top 50%",
+				end: "400% 50%",
+				scrub: 1,
+				animation: openingTextTl,
+				invalidateOnRefresh: true,
+			});
+			ScrollTrigger.create({
+				trigger: headingContainer,
+				start: "top",
+				end: "150% 50%",
+				scrub: 1,
+				pin: true,
+				pinSpacing: false,
+				invalidateOnRefresh: true,
+			});
+			const imagesTl = gsap.timeline();
+			imagesTl.to(contentContainer.querySelector(".first-image"),
+				{ y: "-30%", duration: 2 }, "startImages"
+			);
+			imagesTl.to(contentContainer.querySelector(".second-image"),
+				{ y: "30%", duration: 2 }, "startImages"
+			);
+			imagesTl.to(contentContainer.querySelector(".third-image"),
+				{ y: "-60%", duration: 2 }, "startImages"
+			);
+			imagesTl.to(contentContainer.querySelector(".images-container"),
+				{ opacity: "0", duration: 0.75 }, "startImages+=1.75"
+			);
+			ScrollTrigger.create({
+				trigger: headingContainer,
+				start: "top",
+				end: "250% 50%",
+				scrub: 1,
+				animation: imagesTl,
+				invalidateOnRefresh: true,
+			});
+		}
+
+		d.addEventListener("DOMContentLoaded", function (_event) {
+			d.querySelectorAll(".text-marquee").forEach((textMarquee) => {
+				init(textMarquee);
+			});
+		});
+	})(document);
+</script>
        <section
         class="textblock snap"
         data-theme-config='{"bgColor":"#000000","bgOpacity":0.6,"textColor":"light"}'
