@@ -9,13 +9,15 @@
   Drupal.behaviors.betterExposedFilters = {
     attach: function (context, settings) {
       // Add highlight class to checked checkboxes for better theming.
-      $('.bef-tree input[type=checkbox], .bef-checkboxes input[type=checkbox]')
+      $(".bef-tree input[type=checkbox], .bef-checkboxes input[type=checkbox]")
         // Highlight newly selected checkboxes.
         .change(function () {
           _bef_highlight(this, context);
         })
-        .filter(':checked').closest('.form-item', context).addClass('highlight');
-    }
+        .filter(":checked")
+        .closest(".form-item", context)
+        .addClass("highlight");
+    },
   };
 
   /*
@@ -27,13 +29,11 @@
    */
   function _bef_highlight(elem, context) {
     $elem = $(elem, context);
-    $elem.attr('checked')
-      ? $elem.closest('.form-item', context).addClass('highlight')
-      : $elem.closest('.form-item', context).removeClass('highlight');
+    $elem.attr("checked")
+      ? $elem.closest(".form-item", context).addClass("highlight")
+      : $elem.closest(".form-item", context).removeClass("highlight");
   }
-
 })(jQuery, Drupal, drupalSettings);
-;
 /**
  * @file
  * auto_submit.js
@@ -42,7 +42,6 @@
  */
 
 (function ($, Drupal, once) {
-
   /**
    * To make a form auto submit, all you have to do is 3 things:.
    *
@@ -81,25 +80,28 @@
       // When exposed as a block, the form #attributes are moved from the form
       // to the block element, thus the second selector.
       // @see \Drupal\block\BlockViewBuilder::preRender
-      var selectors = 'form[data-bef-auto-submit-full-form], [data-bef-auto-submit-full-form] form, [data-bef-auto-submit]';
+      var selectors =
+        "form[data-bef-auto-submit-full-form], [data-bef-auto-submit-full-form] form, [data-bef-auto-submit]";
 
       // The change event bubbles so we only need to bind it to the outer form
       // in case of a full form, or a single element when specified explicitly.
-      $(selectors, context).addBack(selectors).each(function (i, e) {
-        // Store the current form.
-        var $form = $(e);
+      $(selectors, context)
+        .addBack(selectors)
+        .each(function (i, e) {
+          // Store the current form.
+          var $form = $(e);
 
-        // Retrieve the autosubmit delay for this particular form.
-        var autoSubmitDelay = $form.data('bef-auto-submit-delay') || 500;
+          // Retrieve the autosubmit delay for this particular form.
+          var autoSubmitDelay = $form.data("bef-auto-submit-delay") || 500;
 
-        // Attach event listeners.
-          $(once('bef-auto-submit', $form))
-          // On change, trigger the submit immediately.
-          .on('change', triggerSubmit)
-          // On keyup, wait for a specified number of milliseconds before
-          // triggering autosubmit. Each new keyup event resets the timer.
-          .on('keyup', Drupal.debounce(triggerSubmit, autoSubmitDelay));
-      });
+          // Attach event listeners.
+          $(once("bef-auto-submit", $form))
+            // On change, trigger the submit immediately.
+            .on("change", triggerSubmit)
+            // On keyup, wait for a specified number of milliseconds before
+            // triggering autosubmit. Each new keyup event resets the timer.
+            .on("keyup", Drupal.debounce(triggerSubmit, autoSubmitDelay));
+        });
 
       /**
        * Triggers form autosubmit when conditions are right.
@@ -128,33 +130,37 @@
           40, // Down arrow.
           9, // Tab.
           13, // Enter.
-          27  // Esc.
+          27, // Esc.
         ];
 
         // Triggering element.
         var $target = $(e.target);
-        var $submit = $target.closest('form').find('[data-bef-auto-submit-click]');
+        var $submit = $target
+          .closest("form")
+          .find("[data-bef-auto-submit-click]");
 
         // Don't submit on changes to excluded elements or a submit element.
-        if ($target.is('[data-bef-auto-submit-exclude], :submit') || ($target.attr('autocomplete') == 'off' && !$target.hasClass('bef-datepicker'))) {
+        if (
+          $target.is("[data-bef-auto-submit-exclude], :submit") ||
+          ($target.attr("autocomplete") == "off" &&
+            !$target.hasClass("bef-datepicker"))
+        ) {
           return true;
         }
 
         // Submit only if this is a non-datepicker textfield and if the
         // incoming keycode is not one of the excluded values.
         if (
-          $target.is(':text:not(.hasDatepicker), textarea')
-          && $.inArray(e.keyCode, ignoredKeyCodes) === -1
+          $target.is(":text:not(.hasDatepicker), textarea") &&
+          $.inArray(e.keyCode, ignoredKeyCodes) === -1
         ) {
           $submit.click();
         }
         // Only trigger submit if a change was the trigger (no keyup).
-        else if (e.type === 'change') {
+        else if (e.type === "change") {
           $submit.click();
         }
       }
-    }
-  }
-
-}(jQuery, Drupal, once));
-;
+    },
+  };
+})(jQuery, Drupal, once);

@@ -9,13 +9,15 @@
   Drupal.behaviors.betterExposedFilters = {
     attach: function (context, settings) {
       // Add highlight class to checked checkboxes for better theming.
-      $('.bef-tree input[type=checkbox], .bef-checkboxes input[type=checkbox]')
+      $(".bef-tree input[type=checkbox], .bef-checkboxes input[type=checkbox]")
         // Highlight newly selected checkboxes.
         .change(function () {
           _bef_highlight(this, context);
         })
-        .filter(':checked').closest('.form-item', context).addClass('highlight');
-    }
+        .filter(":checked")
+        .closest(".form-item", context)
+        .addClass("highlight");
+    },
   };
 
   /*
@@ -27,13 +29,11 @@
    */
   function _bef_highlight(elem, context) {
     $elem = $(elem, context);
-    $elem.attr('checked')
-      ? $elem.closest('.form-item', context).addClass('highlight')
-      : $elem.closest('.form-item', context).removeClass('highlight');
+    $elem.attr("checked")
+      ? $elem.closest(".form-item", context).addClass("highlight")
+      : $elem.closest(".form-item", context).removeClass("highlight");
   }
-
 })(jQuery, Drupal, drupalSettings);
-;
 /**
  * @file
  * auto_submit.js
@@ -42,7 +42,6 @@
  */
 
 (function ($, Drupal, once) {
-
   /**
    * To make a form auto submit, all you have to do is 3 things:.
    *
@@ -81,25 +80,28 @@
       // When exposed as a block, the form #attributes are moved from the form
       // to the block element, thus the second selector.
       // @see \Drupal\block\BlockViewBuilder::preRender
-      var selectors = 'form[data-bef-auto-submit-full-form], [data-bef-auto-submit-full-form] form, [data-bef-auto-submit]';
+      var selectors =
+        "form[data-bef-auto-submit-full-form], [data-bef-auto-submit-full-form] form, [data-bef-auto-submit]";
 
       // The change event bubbles so we only need to bind it to the outer form
       // in case of a full form, or a single element when specified explicitly.
-      $(selectors, context).addBack(selectors).each(function (i, e) {
-        // Store the current form.
-        var $form = $(e);
+      $(selectors, context)
+        .addBack(selectors)
+        .each(function (i, e) {
+          // Store the current form.
+          var $form = $(e);
 
-        // Retrieve the autosubmit delay for this particular form.
-        var autoSubmitDelay = $form.data('bef-auto-submit-delay') || 500;
+          // Retrieve the autosubmit delay for this particular form.
+          var autoSubmitDelay = $form.data("bef-auto-submit-delay") || 500;
 
-        // Attach event listeners.
-          $(once('bef-auto-submit', $form))
-          // On change, trigger the submit immediately.
-          .on('change', triggerSubmit)
-          // On keyup, wait for a specified number of milliseconds before
-          // triggering autosubmit. Each new keyup event resets the timer.
-          .on('keyup', Drupal.debounce(triggerSubmit, autoSubmitDelay));
-      });
+          // Attach event listeners.
+          $(once("bef-auto-submit", $form))
+            // On change, trigger the submit immediately.
+            .on("change", triggerSubmit)
+            // On keyup, wait for a specified number of milliseconds before
+            // triggering autosubmit. Each new keyup event resets the timer.
+            .on("keyup", Drupal.debounce(triggerSubmit, autoSubmitDelay));
+        });
 
       /**
        * Triggers form autosubmit when conditions are right.
@@ -128,67 +130,71 @@
           40, // Down arrow.
           9, // Tab.
           13, // Enter.
-          27  // Esc.
+          27, // Esc.
         ];
 
         // Triggering element.
         var $target = $(e.target);
-        var $submit = $target.closest('form').find('[data-bef-auto-submit-click]');
+        var $submit = $target
+          .closest("form")
+          .find("[data-bef-auto-submit-click]");
 
         // Don't submit on changes to excluded elements or a submit element.
-        if ($target.is('[data-bef-auto-submit-exclude], :submit') || ($target.attr('autocomplete') == 'off' && !$target.hasClass('bef-datepicker'))) {
+        if (
+          $target.is("[data-bef-auto-submit-exclude], :submit") ||
+          ($target.attr("autocomplete") == "off" &&
+            !$target.hasClass("bef-datepicker"))
+        ) {
           return true;
         }
 
         // Submit only if this is a non-datepicker textfield and if the
         // incoming keycode is not one of the excluded values.
         if (
-          $target.is(':text:not(.hasDatepicker), textarea')
-          && $.inArray(e.keyCode, ignoredKeyCodes) === -1
+          $target.is(":text:not(.hasDatepicker), textarea") &&
+          $.inArray(e.keyCode, ignoredKeyCodes) === -1
         ) {
           $submit.click();
         }
         // Only trigger submit if a change was the trigger (no keyup).
-        else if (e.type === 'change') {
+        else if (e.type === "change") {
           $submit.click();
         }
       }
-    }
-  }
-
-}(jQuery, Drupal, once));
-;
+    },
+  };
+})(jQuery, Drupal, once);
 /**
-* DO NOT EDIT THIS FILE.
-* See the following change record for more information,
-* https://www.drupal.org/node/2815083
-* @preserve
-**/
+ * DO NOT EDIT THIS FILE.
+ * See the following change record for more information,
+ * https://www.drupal.org/node/2815083
+ * @preserve
+ **/
 
 (function ($, Drupal) {
   var states = {
-    postponed: []
+    postponed: [],
   };
   Drupal.states = states;
 
   function invert(a, invertState) {
-    return invertState && typeof a !== 'undefined' ? !a : a;
+    return invertState && typeof a !== "undefined" ? !a : a;
   }
 
   function _compare2(a, b) {
     if (a === b) {
-      return typeof a === 'undefined' ? a : true;
+      return typeof a === "undefined" ? a : true;
     }
 
-    return typeof a === 'undefined' || typeof b === 'undefined';
+    return typeof a === "undefined" || typeof b === "undefined";
   }
 
   function ternary(a, b) {
-    if (typeof a === 'undefined') {
+    if (typeof a === "undefined") {
       return b;
     }
 
-    if (typeof b === 'undefined') {
+    if (typeof b === "undefined") {
       return a;
     }
 
@@ -197,16 +203,16 @@
 
   Drupal.behaviors.states = {
     attach: function attach(context, settings) {
-      var $states = $(context).find('[data-drupal-states]');
+      var $states = $(context).find("[data-drupal-states]");
       var il = $states.length;
 
       var _loop = function _loop(i) {
-        var config = JSON.parse($states[i].getAttribute('data-drupal-states'));
+        var config = JSON.parse($states[i].getAttribute("data-drupal-states"));
         Object.keys(config || {}).forEach(function (state) {
           new states.Dependent({
             element: $($states[i]),
             state: states.State.sanitize(state),
-            constraints: config[state]
+            constraints: config[state],
           });
         });
       };
@@ -218,16 +224,20 @@
       while (states.postponed.length) {
         states.postponed.shift()();
       }
-    }
+    },
   };
 
   states.Dependent = function (args) {
     var _this = this;
 
-    $.extend(this, {
-      values: {},
-      oldValue: null
-    }, args);
+    $.extend(
+      this,
+      {
+        values: {},
+        oldValue: null,
+      },
+      args,
+    );
     this.dependees = this.getDependees();
     Object.keys(this.dependees || {}).forEach(function (selector) {
       _this.initializeDependee(selector, _this.dependees[selector]);
@@ -242,8 +252,10 @@
       return reference(value);
     },
     Number: function Number(reference, value) {
-      return typeof value === 'string' ? _compare2(reference.toString(), value) : _compare2(reference, value);
-    }
+      return typeof value === "string"
+        ? _compare2(reference.toString(), value)
+        : _compare2(reference, value);
+    },
   };
   states.Dependent.prototype = {
     initializeDependee: function initializeDependee(selector, dependeeStates) {
@@ -259,15 +271,19 @@
 
         state = states.State.sanitize(state);
         _this2.values[selector][state.name] = null;
-        $(selector).on("state:".concat(state), {
-          selector: selector,
-          state: state
-        }, function (e) {
-          _this2.update(e.data.selector, e.data.state, e.value);
-        });
+        $(selector).on(
+          "state:".concat(state),
+          {
+            selector: selector,
+            state: state,
+          },
+          function (e) {
+            _this2.update(e.data.selector, e.data.state, e.value);
+          },
+        );
         new states.Trigger({
           selector: selector,
-          state: state
+          state: state,
         });
       });
     },
@@ -275,7 +291,10 @@
       var value = this.values[selector][state.name];
 
       if (reference.constructor.name in states.Dependent.comparisons) {
-        return states.Dependent.comparisons[reference.constructor.name](reference, value);
+        return states.Dependent.comparisons[reference.constructor.name](
+          reference,
+          value,
+        );
       }
 
       return _compare2(reference, value);
@@ -295,7 +314,7 @@
         this.element.trigger({
           type: "state:".concat(this.state),
           value: value,
-          trigger: true
+          trigger: true,
         });
       }
     },
@@ -303,11 +322,11 @@
       var result;
 
       if ($.isArray(constraints)) {
-        var hasXor = $.inArray('xor', constraints) === -1;
+        var hasXor = $.inArray("xor", constraints) === -1;
         var len = constraints.length;
 
         for (var i = 0; i < len; i++) {
-          if (constraints[i] !== 'xor') {
+          if (constraints[i] !== "xor") {
             var constraint = this.checkConstraints(constraints[i], selector, i);
 
             if (constraint && (hasXor || result)) {
@@ -320,7 +339,10 @@
       } else if ($.isPlainObject(constraints)) {
         for (var n in constraints) {
           if (constraints.hasOwnProperty(n)) {
-            result = ternary(result, this.checkConstraints(constraints[n], selector, n));
+            result = ternary(
+              result,
+              this.checkConstraints(constraints[n], selector, n),
+            );
 
             if (result === false) {
               return false;
@@ -332,9 +354,9 @@
       return result;
     },
     checkConstraints: function checkConstraints(value, selector, state) {
-      if (typeof state !== 'string' || /[0-9]/.test(state[0])) {
+      if (typeof state !== "string" || /[0-9]/.test(state[0])) {
         state = null;
-      } else if (typeof selector === 'undefined') {
+      } else if (typeof selector === "undefined") {
         selector = state;
         state = null;
       }
@@ -357,7 +379,7 @@
       this.verifyConstraints(this.constraints);
       this.compare = _compare;
       return cache;
-    }
+    },
   };
 
   states.Trigger = function (args) {
@@ -378,7 +400,7 @@
 
       var trigger = states.Trigger.states[this.state];
 
-      if (typeof trigger === 'function') {
+      if (typeof trigger === "function") {
         trigger.call(window, this.element);
       } else {
         Object.keys(trigger || {}).forEach(function (event) {
@@ -390,64 +412,71 @@
     },
     defaultTrigger: function defaultTrigger(event, valueFn) {
       var oldValue = valueFn.call(this.element);
-      this.element.on(event, $.proxy(function (e) {
-        var value = valueFn.call(this.element, e);
+      this.element.on(
+        event,
+        $.proxy(function (e) {
+          var value = valueFn.call(this.element, e);
 
-        if (oldValue !== value) {
+          if (oldValue !== value) {
+            this.element.trigger({
+              type: "state:".concat(this.state),
+              value: value,
+              oldValue: oldValue,
+            });
+            oldValue = value;
+          }
+        }, this),
+      );
+      states.postponed.push(
+        $.proxy(function () {
           this.element.trigger({
             type: "state:".concat(this.state),
-            value: value,
-            oldValue: oldValue
+            value: oldValue,
+            oldValue: null,
           });
-          oldValue = value;
-        }
-      }, this));
-      states.postponed.push($.proxy(function () {
-        this.element.trigger({
-          type: "state:".concat(this.state),
-          value: oldValue,
-          oldValue: null
-        });
-      }, this));
-    }
+        }, this),
+      );
+    },
   };
   states.Trigger.states = {
     empty: {
       keyup: function keyup() {
-        return this.val() === '';
-      }
+        return this.val() === "";
+      },
     },
     checked: {
       change: function change() {
         var checked = false;
         this.each(function () {
-          checked = $(this).prop('checked');
+          checked = $(this).prop("checked");
           return !checked;
         });
         return checked;
-      }
+      },
     },
     value: {
       keyup: function keyup() {
         if (this.length > 1) {
-          return this.filter(':checked').val() || false;
+          return this.filter(":checked").val() || false;
         }
 
         return this.val();
       },
       change: function change() {
         if (this.length > 1) {
-          return this.filter(':checked').val() || false;
+          return this.filter(":checked").val() || false;
         }
 
         return this.val();
-      }
+      },
     },
     collapsed: {
       collapsed: function collapsed(e) {
-        return typeof e !== 'undefined' && 'value' in e ? e.value : !this.is('[open]');
-      }
-    }
+        return typeof e !== "undefined" && "value" in e
+          ? e.value
+          : !this.is("[open]");
+      },
+    },
   };
 
   states.State = function (state) {
@@ -456,7 +485,7 @@
     var process = true;
 
     do {
-      while (this.name.charAt(0) === '!') {
+      while (this.name.charAt(0) === "!") {
         this.name = this.name.substring(1);
         this.invert = !this.invert;
       }
@@ -478,63 +507,79 @@
   };
 
   states.State.aliases = {
-    enabled: '!disabled',
-    invisible: '!visible',
-    invalid: '!valid',
-    untouched: '!touched',
-    optional: '!required',
-    filled: '!empty',
-    unchecked: '!checked',
-    irrelevant: '!relevant',
-    expanded: '!collapsed',
-    open: '!collapsed',
-    closed: 'collapsed',
-    readwrite: '!readonly'
+    enabled: "!disabled",
+    invisible: "!visible",
+    invalid: "!valid",
+    untouched: "!touched",
+    optional: "!required",
+    filled: "!empty",
+    unchecked: "!checked",
+    irrelevant: "!relevant",
+    expanded: "!collapsed",
+    open: "!collapsed",
+    closed: "collapsed",
+    readwrite: "!readonly",
   };
   states.State.prototype = {
     invert: false,
     toString: function toString() {
       return this.name;
-    }
+    },
   };
   var $document = $(document);
-  $document.on('state:disabled', function (e) {
+  $document.on("state:disabled", function (e) {
     if (e.trigger) {
-      $(e.target).prop('disabled', e.value).closest('.js-form-item, .js-form-submit, .js-form-wrapper').toggleClass('form-disabled', e.value).find('select, input, textarea').prop('disabled', e.value);
+      $(e.target)
+        .prop("disabled", e.value)
+        .closest(".js-form-item, .js-form-submit, .js-form-wrapper")
+        .toggleClass("form-disabled", e.value)
+        .find("select, input, textarea")
+        .prop("disabled", e.value);
     }
   });
-  $document.on('state:required', function (e) {
+  $document.on("state:required", function (e) {
     if (e.trigger) {
       if (e.value) {
-        var label = "label".concat(e.target.id ? "[for=".concat(e.target.id, "]") : '');
-        var $label = $(e.target).attr({
-          required: 'required',
-          'aria-required': 'true'
-        }).closest('.js-form-item, .js-form-wrapper').find(label);
+        var label = "label".concat(
+          e.target.id ? "[for=".concat(e.target.id, "]") : "",
+        );
+        var $label = $(e.target)
+          .attr({
+            required: "required",
+            "aria-required": "true",
+          })
+          .closest(".js-form-item, .js-form-wrapper")
+          .find(label);
 
-        if (!$label.hasClass('js-form-required').length) {
-          $label.addClass('js-form-required form-required');
+        if (!$label.hasClass("js-form-required").length) {
+          $label.addClass("js-form-required form-required");
         }
       } else {
-        $(e.target).removeAttr('required aria-required').closest('.js-form-item, .js-form-wrapper').find('label.js-form-required').removeClass('js-form-required form-required');
+        $(e.target)
+          .removeAttr("required aria-required")
+          .closest(".js-form-item, .js-form-wrapper")
+          .find("label.js-form-required")
+          .removeClass("js-form-required form-required");
       }
     }
   });
-  $document.on('state:visible', function (e) {
+  $document.on("state:visible", function (e) {
     if (e.trigger) {
-      $(e.target).closest('.js-form-item, .js-form-submit, .js-form-wrapper').toggle(e.value);
+      $(e.target)
+        .closest(".js-form-item, .js-form-submit, .js-form-wrapper")
+        .toggle(e.value);
     }
   });
-  $document.on('state:checked', function (e) {
+  $document.on("state:checked", function (e) {
     if (e.trigger) {
-      $(e.target).prop('checked', e.value);
+      $(e.target).prop("checked", e.value);
     }
   });
-  $document.on('state:collapsed', function (e) {
+  $document.on("state:collapsed", function (e) {
     if (e.trigger) {
-      if ($(e.target).is('[open]') === e.value) {
-        $(e.target).find('> summary').trigger('click');
+      if ($(e.target).is("[open]") === e.value) {
+        $(e.target).find("> summary").trigger("click");
       }
     }
   });
-})(jQuery, Drupal);;
+})(jQuery, Drupal);
