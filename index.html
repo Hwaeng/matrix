@@ -33,10 +33,12 @@
     <title>Passionate about Progress | MATRIX Global</title>
     <link rel="stylesheet" media="all"
         href="/sites/default/files/css/css_UCmAT8Zz6mnajvddV_Hsdhqy0F2JfVXABGv0d8ceVAs.css" />
+    <link href="/sites/default/files/css/base.css" rel="stylesheet"/>
     <link rel="stylesheet" media="all"
         href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@1.13.0/dist/theme.min.css" />
     <link rel="stylesheet" media="all"
         href="/sites/default/files/css/css_DzP3i8iCcUck4j4EhjCMSxyXZL7QveEl_YRi-Ksdd2A.css" />
+        <link href="/sites/default/files/css/dist.css" rel="stylesheet">
     <link rel="stylesheet" media="all" href="https://use.typekit.net/ycj1lau.css" />
     <link rel="stylesheet" media="all"
         href="/sites/default/files/css/css_2Y-5LsRlColt_UBKb57K6WUipetXzRdxpbOJclDVlQs.css" />
@@ -48,13 +50,13 @@
     <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.62.0/dist/instantsearch.production.min.js"
         integrity="sha256-nXIfriS+Lsxm+4lKjyIuaeo1kkt4qmWB+QvNY7Nx6X4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
-    <script defer src="/test.js"></script>
     <script
         src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-plugin-query-suggestions@1.13.0/dist/umd/index.production.min.js"></script>
     <script src="/sites/default/files/js/js_dxPeKapOjuBt55phEnFhWN8SeFAQmgw7wmQjCHRh45I.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="/sites/default/files/js/js_8qwGVLnwDOimUrzPrUM2WbZ6PBj8_wAmkIHs5lBQoM4.js"></script>
     <script type="module" crossorigin src="/dist/client/assets/index-at6S1DMy.js"></script>
+    <script type="text/javascript" src="/sites/default/files/css/VisitorIdentification.js"></script>
      <script
       defer
       src="/sites/default/files/js/clientlib-site.lc-3a9a89b4c5fc9dbd8781f3dc938bfb61-lc.min.js"
@@ -649,6 +651,175 @@
       transform: scale(.95)
     }
   }
+</style>
+<style>
+	.text-marquee {
+		position: relative;
+		overflow: hidden;
+		background-color: transparent !important;
+	}
+
+	.text-marquee .background-initial {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(180deg, #0B2D71 0%, #0066B2 179.9%);
+		z-index: 1;
+	}
+
+	.text-marquee .heading-container {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		z-index: 3;
+		position: relative;
+	}
+
+	.text-marquee .heading {
+		margin-bottom: 0;
+	}
+
+	.text-marquee .type-eyebrow {
+		margin-top: 56px;
+	}
+
+	.text-marquee .content-container {
+		z-index: 2;
+		position: relative;
+	}
+
+	.text-marquee .text-animation {
+		transform: translateX(75%);
+		display: block;
+		margin-bottom: 8px;
+	}
+
+	.text-marquee .text-animation.second-item {
+		transform: translateX(-75%);
+	}
+
+	.text-marquee .images-container {
+		display: flex;
+		flex-direction: column;
+		padding: 0 24px;
+		align-items: flex-end
+	}
+
+	.text-marquee .image {
+		border-radius: 12px;
+		overflow: hidden;
+		transform: translateY(30%);
+	}
+
+	.text-marquee .first-image .img-fluid {
+		height: 101px;
+	}
+
+	.text-marquee .second-image {
+		align-self: flex-start;
+		margin-top: 50%;
+	}
+
+	.text-marquee .second-image .img-fluid {
+		height: 86px;
+	}
+
+	.text-marquee .third-image {
+		margin-top: 40%;
+	}
+
+	.text-marquee .third-image .img-fluid {
+		height: 143px;
+	}
+
+	.text-marquee .text-container {
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 28px;
+	}
+
+	.text-marquee .description {
+		font-family: var(--font-gotham-book);
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	.text-marquee .text-opacity {
+		opacity: 0.25;
+	}
+
+	@media screen and (min-width: 768px) {
+		.text-marquee .type-eyebrow {
+			margin-top: 120px;
+		}
+
+		.text-marquee .description {
+			margin-bottom: 80px;
+			max-width: 600px;
+		}
+
+		.text-marquee .first-image {
+			margin-right: 15%;
+		}
+
+		.text-marquee .first-image .img-fluid {
+			height: 246px;
+		}
+
+		.text-marquee .second-image {
+			transform: translateY(100%);
+			margin-top: 15%;
+		}
+
+		.text-marquee .second-image .img-fluid {
+			height: 144px;
+		}
+
+		.text-marquee .third-image {
+			margin-right: 12%;
+		}
+
+		.text-marquee .third-image .img-fluid {
+			height: 194px;
+		}
+	}
+
+	@media screen and (min-width: 992px) {
+		.text-marquee .description {
+			max-width: 1200px;
+		}
+
+		.text-marquee .type-eyebrow {
+			margin-top: 200px;
+		}
+
+		.text-marquee .first-image .img-fluid {
+			height: 296px;
+		}
+
+		.text-marquee .second-image .img-fluid {
+			height: 210px;
+		}
+
+		.text-marquee .third-image {
+			margin-top: 120px;
+		}
+
+		.text-marquee .third-image .img-fluid {
+			height: 236px;
+		}
+	}
+
+	@media screen and (min-width: 1200px) {
+		.text-marquee .images-container {
+			padding: 0 120px;
+		}
+	}
 </style>
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <style>
@@ -2290,7 +2461,7 @@
                 </div>
             </div>
         </div>
-        <div  class="pelement-id--dae35718 paragraph--view-mode--default JindexContainer JmasterInnerRow1Container">
+        <div  class="pelement-id--dae35718 cmp cmp-c95-transition-slider JindexContainer JmasterInnerRow1Container">
                     <section  class="b-transitionSlider"
                       data-component="c95-transition-slider"
                       style="
@@ -2655,8 +2826,7 @@
                               class="m-componentBackground__background"
                               data-background
                             >
-                              <div
-                                data-component="a01-image"
+                              <div data-component="a01-image"
                                 class="a-image"
                                 data-enable-transition="false"
                                 aria-hidden="false"
@@ -2770,8 +2940,7 @@
                               class="m-componentBackground__background"
                               data-background
                             >
-                              <div
-                                data-component="a01-image"
+                              <div data-component="a01-image"
                                 class="a-image"
                                 data-enable-transition="false"
                                 aria-hidden="false"
@@ -2996,17 +3165,10 @@
                                   data-component="o71-region-slider-navigation"
                                   data-reset-on-leave="true"
                                 >
-                                  <div
-                                    class="o-regionSliderNavigation__container"
-                                    data-region-slider-container
-                                  >
-                                    <div
-                                      class="o-regionSliderNavigation__map"
-                                      aria-hidden="true"
-                                      data-region-slider-map
+                                  <div class="o-regionSliderNavigation__container" data-region-slider-container>
+                                    <div  class="o-regionSliderNavigation__map" aria-hidden="true" data-region-slider-map
                                     >
-                                      <div
-                                        data-component="a01-image"
+                                      <div data-component="a01-image"
                                         class="a-image"
                                         data-enable-transition="false"
                                         aria-hidden="false"
@@ -3105,10 +3267,7 @@
                                           />
                                         </picture>
                                       </div>
-                                      <div
-                                        class="o-regionSliderNavigation__region"
-                                        data-region-slider-region
-                                      >
+                                      <div class="o-regionSliderNavigation__region"  data-region-slider-region>
                                         <div
                                           data-component="a01-image"
                                           class="a-image"
@@ -3210,10 +3369,7 @@
                                           </picture>
                                         </div>
                                       </div>
-                                      <div
-                                        class="o-regionSliderNavigation__region"
-                                        data-region-slider-region
-                                      >
+                                      <div class="o-regionSliderNavigation__region" data-region-slider-region>
                                         <div
                                           data-component="a01-image"
                                           class="a-image"
@@ -3315,10 +3471,7 @@
                                           </picture>
                                         </div>
                                       </div>
-                                      <div
-                                        class="o-regionSliderNavigation__region"
-                                        data-region-slider-region
-                                      >
+                                      <div class="o-regionSliderNavigation__region" data-region-slider-region>
                                         <div
                                           data-component="a01-image"
                                           class="a-image"
@@ -3523,11 +3676,8 @@
                                         </div>
                                       </div>
                                     </div>
-                                    <div
-                                      class="o-regionSliderNavigation__pagination"
-                                    >
-                                      <ul
-                                        class="o-regionSliderNavigation__paginationItems"
+                                    <div class="o-regionSliderNavigation__pagination">
+                                      <ul  class="o-regionSliderNavigation__paginationItems"
                                         data-pagination-items
                                       >
                                         <li
@@ -3787,8 +3937,7 @@
                                       aria-hidden="true"
                                       data-region-slider-map
                                     >
-                                      <div
-                                        data-component="a01-image"
+                                      <div data-component="a01-image"
                                         class="a-image"
                                         data-enable-transition="false"
                                         aria-hidden="false"
@@ -3862,10 +4011,7 @@
                                           />
                                         </picture>
                                       </div>
-                                      <div
-                                        class="o-regionSliderNavigation__region"
-                                        data-region-slider-region
-                                      >
+                                      <div class="o-regionSliderNavigation__region" data-region-slider-region>
                                         <div
                                           data-component="a01-image"
                                           class="a-image"
@@ -3967,8 +4113,7 @@
                                           </picture>
                                         </div>
                                       </div>
-                                      <div
-                                        class="o-regionSliderNavigation__region"
+                                      <div  class="o-regionSliderNavigation__region"
                                         data-region-slider-region
                                       >
                                         <div
@@ -4072,10 +4217,7 @@
                                           </picture>
                                         </div>
                                       </div>
-                                      <div
-                                        class="o-regionSliderNavigation__region"
-                                        data-region-slider-region
-                                      >
+                                      <div class="o-regionSliderNavigation__region" data-region-slider-region>
                                         <div
                                           data-component="a01-image"
                                           class="a-image"
@@ -4177,9 +4319,7 @@
                                           </picture>
                                         </div>
                                       </div>
-                                      <div
-                                        class="o-regionSliderNavigation__region"
-                                        data-region-slider-region
+                                      <div class="o-regionSliderNavigation__region" data-region-slider-region
                                       >
                                         <div
                                           data-component="a01-image"
@@ -4282,8 +4422,7 @@
                                           </picture>
                                         </div>
                                       </div>
-                                      <div
-                                        class="o-regionSliderNavigation__region"
+                                      <div  class="o-regionSliderNavigation__region"
                                         data-region-slider-region
                                       >
                                         <div
@@ -4388,8 +4527,7 @@
                                         </div>
                                       </div>
                                     </div>
-                                    <div
-                                      class="o-regionSliderNavigation__pagination"
+                                    <div class="o-regionSliderNavigation__pagination"
                                     >
                                       <ul
                                         class="o-regionSliderNavigation__paginationItems"
@@ -5871,75 +6009,7 @@
       width: 54px
     }
   }
-  .b-heroSliderV2.t-dark {
-    --component-background-color: var(--color-black);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--color-accent-hover);
-    --component-highlight-color: var(--color-accent);
-    --component-text-color: var(--color-white)
-  }
-  .b-heroSliderV2.t-darkMono {
-    --component-background-color: var(--color-black);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--component-text-color);
-    --component-highlight-color: var(--component-text-color);
-    --component-text-color: var(--color-white)
-  }
-  .b-heroSliderV2.t-light {
-    --component-background-color: var(--color-page-background);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--color-dark-accent);
-    --component-highlight-color: var(--color-accent);
-    --component-text-color: var(--color-black)
-  }
-  .b-heroSliderV2.t-lightMono {
-    --component-background-color: var(--color-page-background);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--component-text-color);
-    --component-highlight-color: var(--component-text-color);
-    --component-text-color: var(--color-black)
-  }
-  .b-heroSliderV2.t-darkGreen {
-    --component-background-color: var(--color-dark-green);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--component-text-color);
-    --component-highlight-color: var(--component-text-color);
-    --component-text-color: var(--color-white)
-  }
-  .b-heroSliderV2.t-orange {
-    --color-accent: var(--color-orange);
-    --component-background-color: var(--color-black);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--color-orange);
-    --component-highlight-color: var(--color-orange);
-    --component-text-color: var(--color-white)
-  }
-  html[data-theme=oxagon] .b-heroSliderV2.t-dark,
-  html[data-theme=oxagon] .b-heroSliderV2.t-darkMono {
-    --component-background-color: var(--color-dark-blue);
-    --component-background-gradient: var(--color-gradient-dark-blue)
-  }
-  html[data-theme=oxagon] .b-heroSliderV2.t-darkOxagonBlue {
-    --component-background-color: var(--color-dark-accent);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--component-text-color);
-    --component-highlight-color: var(--component-text-color);
-    --component-text-color: var(--color-white)
-  }
-  html[data-theme=oxagon] .b-heroSliderV2.t-lightOxagonBlue {
-    --component-background-color: var(--color-accent);
-    --component-text-color: var(--color-white);
-    --component-highlight-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--component-text-color);
-    --component-heading-color: var(--component-text-color)
-  }
-  .b-heroSliderV2.t-dark .m-sliderPagination,
-  .b-heroSliderV2.t-darkMono .m-sliderPagination {
-    --pagination-bar-color-active: var(--color-white);
-    --pagination-bar-color-hover: var(--color-white-50a);
-    --pagination-bar-color: var(--color-white-50a);
-    --pagination-bar-color-passed: var(--color-white)
-  }
+  
   .swiper-pagination {
     position: absolute;
     text-align: center;
@@ -6272,68 +6342,7 @@
       opacity: 0 !important
     }
   }
-  .b-heroSlider.t-dark {
-    --component-background-color: var(--color-black);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--color-accent-hover);
-    --component-highlight-color: var(--color-accent);
-    --component-text-color: var(--color-white)
-  }
-  .b-heroSlider.t-darkMono {
-    --component-background-color: var(--color-black);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--component-text-color);
-    --component-highlight-color: var(--component-text-color);
-    --component-text-color: var(--color-white)
-  }
-  .b-heroSlider.t-light {
-    --component-background-color: var(--color-page-background);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--color-dark-accent);
-    --component-highlight-color: var(--color-accent);
-    --component-text-color: var(--color-black)
-  }
-  .b-heroSlider.t-lightMono {
-    --component-background-color: var(--color-page-background);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--component-text-color);
-    --component-highlight-color: var(--component-text-color);
-    --component-text-color: var(--color-black)
-  }
-  .b-heroSlider.t-darkGreen {
-    --component-background-color: var(--color-dark-green);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--component-text-color);
-    --component-highlight-color: var(--component-text-color);
-    --component-text-color: var(--color-white)
-  }
-  .b-heroSlider.t-orange {
-    --color-accent: var(--color-orange);
-    --component-background-color: var(--color-black);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--color-orange);
-    --component-highlight-color: var(--color-orange);
-    --component-text-color: var(--color-white)
-  }
-  html[data-theme=oxagon] .b-heroSlider.t-dark,
-  html[data-theme=oxagon] .b-heroSlider.t-darkMono {
-    --component-background-color: var(--color-dark-blue);
-    --component-background-gradient: var(--color-gradient-dark-blue)
-  }
-  html[data-theme=oxagon] .b-heroSlider.t-darkOxagonBlue {
-    --component-background-color: var(--color-dark-accent);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--component-text-color);
-    --component-highlight-color: var(--component-text-color);
-    --component-text-color: var(--color-white)
-  }
-  html[data-theme=oxagon] .b-heroSlider.t-lightOxagonBlue {
-    --component-background-color: var(--color-accent);
-    --component-text-color: var(--color-white);
-    --component-highlight-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--component-text-color);
-    --component-heading-color: var(--component-text-color)
-  }
+
   .o-heroContent {
     -webkit-box-flex: 1;
     background-color: var(--component-background-color);
@@ -6348,76 +6357,7 @@
     overflow: hidden;
     position: relative
   }
-  .o-heroContent.t-dark {
-    --component-background-color: var(--color-black);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--color-accent-hover);
-    --component-highlight-color: var(--color-accent);
-    --component-text-color: var(--color-white)
-  }
-  .o-heroContent.t-darkMono {
-    --component-background-color: var(--color-black);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--component-text-color);
-    --component-highlight-color: var(--component-text-color);
-    --component-text-color: var(--color-white)
-  }
-  .o-heroContent.t-light {
-    --component-background-color: var(--color-page-background);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--color-dark-accent);
-    --component-highlight-color: var(--color-accent);
-    --component-text-color: var(--color-black)
-  }
-  .o-heroContent.t-lightMono {
-    --component-background-color: var(--color-page-background);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--component-text-color);
-    --component-highlight-color: var(--component-text-color);
-    --component-text-color: var(--color-black)
-  }
-  .o-heroContent.t-darkGreen {
-    --component-background-color: var(--color-dark-green);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--component-text-color);
-    --component-highlight-color: var(--component-text-color);
-    --component-text-color: var(--color-white)
-  }
-  .o-heroContent.t-orange {
-    --color-accent: var(--color-orange);
-    --component-background-color: var(--color-black);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--color-orange);
-    --component-highlight-color: var(--color-orange);
-    --component-text-color: var(--color-white)
-  }
-  html[data-theme=oxagon] .o-heroContent.t-dark,
-  html[data-theme=oxagon] .o-heroContent.t-darkMono {
-    --component-background-color: var(--color-dark-blue);
-    --component-background-gradient: var(--color-gradient-dark-blue)
-  }
-  html[data-theme=oxagon] .o-heroContent.t-darkOxagonBlue {
-    --component-background-color: var(--color-dark-accent);
-    --component-heading-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--component-text-color);
-    --component-highlight-color: var(--component-text-color);
-    --component-text-color: var(--color-white)
-  }
-  html[data-theme=oxagon] .o-heroContent.t-lightOxagonBlue {
-    --component-background-color: var(--color-accent);
-    --component-text-color: var(--color-white);
-    --component-highlight-color: var(--component-text-color);
-    --component-highlight-color-hover: var(--component-text-color);
-    --component-heading-color: var(--component-text-color)
-  }
-  .o-heroContent>.m-componentBackground {
-    -webkit-transition: opacity .75s ease;
-    -o-transition: opacity .75s ease;
-    transition: opacity .75s ease
-  }
-  .o-heroContent>.m-componentBackground.-isHidden {
-    opacity: 0
-  }
+
   .o-heroContent__backgroundImage {
     opacity: 0;
     -webkit-transition: opacity .75s ease;
@@ -7613,11 +7553,11 @@
 <div class="content-container">
 <div class="images-container">
 <div class="first-image image">
-<img alt="" src="/-/media/chevron/homepage/images/text-marquee-1.png" class="img-fluid" /></div>
+<img alt="" src="/images/text-marquee-1.png" class="img-fluid" /></div>
 <div class="second-image image">
-<img alt="" src="/-/media/chevron/homepage/images/text-marquee-2.png" class="img-fluid" /></div>
+<img alt="" src="/images/text-marquee-2.png" class="img-fluid" /></div>
 <div class="third-image image">
-<img alt="" src="/-/media/chevron/homepage/images/text-marquee-3.png" class="img-fluid" />&nbsp;</div>
+<img alt="" src="/images/text-marquee-3.png" class="img-fluid" />&nbsp;</div>
 </div>
 </div>
 </div>
@@ -8599,6 +8539,7 @@
         </svg>
         <!--<svg data-v-422f02ef="" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="568" height="320" viewBox="0, 0, 568, 320" class=""><g data-v-422f02ef="" id="Layer_1"><path data-v-422f02ef="" d="M316.355,140 C316.504,140 316.625,140.122 316.625,140.273 L316.625,179.887 C316.625,180.037 316.504,180.159 316.355,180.159 L251.568,180.159 C251.419,180.159 251.298,180.038 251.298,179.887 L251.298,140.273 C251.298,140.122 251.419,140 251.568,140 L316.355,140 z M313.833,142.792 L254.099,142.792 L254.099,177.369 L313.833,177.369 L313.833,142.792 z M263.625,158 C264.73,158 265.625,158.895 265.625,160 C265.625,161.104 264.73,162 263.625,162 C262.52,162 261.625,161.104 261.625,160 C261.625,158.895 262.52,158 263.625,158 z" fill="#000000" id="phone"></path><g data-v-422f02ef="" class="rotate-arrow"><path data-v-422f02ef="" d="M251.947,73.433 C261.931,69.737 272.73,67.718 284,67.718 C334.994,67.718 376.333,109.057 376.333,160.051 C376.333,206.303 342.326,244.611 297.953,251.337 C293.402,252.027 288.743,252.385 284,252.385" fill-opacity="0" stroke="#000000" stroke-width="4" stroke-linecap="round"></path><path data-v-422f02ef="" d="M258.525,55 C258.525,55 250.853,73.699 250.853,73.539 C250.853,73.379 269.552,82.649 269.552,82.649" fill-opacity="0" stroke="#000000" stroke-width="4" stroke-linecap="round"></path><path data-v-422f02ef="" d="M284,252.385 C233.006,252.385 191.667,211.046 191.667,160.051 C191.667,109.057 233.006,67.718 284,67.718 C334.994,67.718 376.333,109.057 376.333,160.051 C376.333,211.046 334.994,252.385 284,252.385 z" fill-opacity="0" stroke="#000000" stroke-width="4" opacity="0"></path></g></g></svg>-->
     </div>
+     <script type="text/javascript" src="/sites/default/files/js/dist.js"></script>
     <script src="/sites/default/files/js/js_bDKwZ6APTkvNZpTNs6w0BIXH5vZFY5UEPIcSJl53K5k.js"></script>
      <script
       nomodule
@@ -8650,7 +8591,6 @@
         // Start animation
         startAnimation();
     </script>
-     <script src="/sites/default/files/js/src_app_component_block_c95-transition-slider_C95TransitionSlider_lazy_ts.a62531b.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init();
