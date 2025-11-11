@@ -1,0 +1,294 @@
+.o-videoControls {
+  --playback-ui-gutter: em-size(16, 16);
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#000),
+    color-stop(10%, transparent)
+  );
+  background: -o-linear-gradient(bottom, #000 0, transparent 10%);
+  background: linear-gradient(0deg, #000, transparent 10%);
+  color: var(--color-white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  left: 0;
+  padding: 0 var(--playback-ui-gutter) 1.5em;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.o-videoControls__timings {
+  -webkit-margin-start: 10px;
+  margin-inline-start: 10px;
+  overflow-x: auto;
+  width: 100%;
+}
+.o-videoControls__timingsWrapper {
+  -webkit-padding-end: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  padding-inline-end: 20px;
+  width: 1000px;
+}
+.o-videoControls__timingsWrapper .m-progressBar {
+  width: 100%;
+}
+.o-videoControls__bar {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  direction: ltr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: auto;
+  padding: var(--playback-ui-gutter);
+  pointer-events: all;
+  width: 100%;
+}
+.o-videoControls__bar > :not(:last-child) {
+  margin: 0 var(--playback-ui-gutter) 0 0;
+}
+@media (max-width: 479px) {
+  .o-videoControls .mute-cta,
+  .o-videoControls .unmute-cta {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) {
+  .o-videoControls {
+    padding: 0 var(--playback-ui-gutter) var(--playback-ui-gutter);
+  }
+  .o-videoControls__timingsWrapper {
+    width: 100%;
+  }
+}
+[data-component="youtube-video"] + .o-videoControls {
+  bottom: 0;
+  height: 10%;
+  top: unset;
+}
+.o-video {
+  background: var(--color-real-black);
+  font-size: 16px;
+  position: relative;
+}
+.o-video:before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+  padding-top: calc(var(--originalHeight, 9) / var(--originalWidth, 16) * 100%);
+  width: 100%;
+}
+.o-video [data-component="native-video"],
+.o-video [data-component="vimeo-video"],
+.o-video [data-component="youtube-video"] {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.o-video.-cover [data-component="native-video"],
+.o-video.-cover [data-component="vimeo-video"],
+.o-video.-cover [data-component="youtube-video"] {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.o-videoPlayer {
+  min-height: calc(var(--vh) * 88);
+}
+@supports (height: 1svh) {
+  .o-videoPlayer {
+    min-height: calc(1svh * 88);
+  }
+}
+[data-editor="true"] .o-videoPlayer {
+  min-height: 800px;
+}
+.o-videoPlayer__assetContainer {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+.o-videoPlayer .o-video {
+  background: var(--color-real-black);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.b-fullWidthAsset {
+  --component-heading-color: var(--color-white);
+  --component-text-color: var(--color-white);
+  --component-background-color: var(--color-black);
+  background-color: var(--color-black);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: var(--color-white);
+  min-height: calc(var(--vh) * 100);
+  overflow: hidden;
+  padding: var(--block-padding) 0;
+  position: relative;
+  width: 100%;
+}
+@supports (height: 1svh) {
+  .b-fullWidthAsset {
+    min-height: calc(1svh * 100);
+  }
+}
+[data-editor="true"] .b-fullWidthAsset {
+  min-height: 800px;
+}
+.b-fullWidthAsset.-cropped {
+  min-height: calc(var(--vh) * 100 - var(--block-padding-large) * 2);
+}
+.b-fullWidthAsset .a-image__picture,
+.b-fullWidthAsset .o-video video {
+  --media-component-block-padding: var(--component-block-padding, 0);
+  padding-block: var(--media-component-block-padding, 0);
+}
+.b-fullWidthAsset__buttons {
+  margin-top: 55px;
+  text-align: center;
+}
+.b-fullWidthAsset__buttons .m-button:not(:first-child) {
+  margin-top: 20px;
+}
+.b-fullWidthAsset__container {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  left: 50%;
+  max-width: 1020px;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 2;
+}
+.b-fullWidthAsset .m-componentHeader {
+  -webkit-margin-start: auto;
+  -webkit-margin-end: auto;
+  -webkit-padding-start: var(--container-margin);
+  -webkit-padding-end: var(--container-margin);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-inline-end: auto;
+  margin-inline-start: auto;
+  max-width: var(--containerMaxWidth);
+  padding-inline-end: var(--container-margin);
+  padding-inline-start: var(--container-margin);
+}
+.b-fullWidthAsset .m-componentHeader .a-moustache {
+  margin: 1em 0 0;
+}
+.b-fullWidthAsset .o-video {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.b-fullWidthAsset .m-button.-close {
+  opacity: 0;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  visibility: hidden;
+}
+@media (min-width: 768px) {
+  .b-fullWidthAsset__buttons .m-button:not(:first-child) {
+    -webkit-margin-start: 40px;
+    margin-inline-start: 40px;
+    margin-top: 0;
+  }
+  .b-fullWidthAsset .m-button.-close {
+    right: 40px;
+    top: 40px;
+  }
+}
+.b-fullWidthAsset.t-dark {
+  --component-background-color: var(--color-black);
+  --component-heading-color: var(--component-text-color);
+  --component-highlight-color-hover: var(--color-accent-hover);
+  --component-highlight-color: var(--color-accent);
+  --component-text-color: var(--color-white);
+}
+.b-fullWidthAsset.t-darkMono {
+  --component-background-color: var(--color-black);
+  --component-heading-color: var(--component-text-color);
+  --component-highlight-color-hover: var(--component-text-color);
+  --component-highlight-color: var(--component-text-color);
+  --component-text-color: var(--color-white);
+}
+.b-fullWidthAsset.t-light {
+  --component-background-color: var(--color-page-background);
+  --component-heading-color: var(--component-text-color);
+  --component-highlight-color-hover: var(--color-dark-accent);
+  --component-highlight-color: var(--color-accent);
+  --component-text-color: var(--color-black);
+}
+.b-fullWidthAsset.t-lightMono {
+  --component-background-color: var(--color-page-background);
+  --component-heading-color: var(--component-text-color);
+  --component-highlight-color-hover: var(--component-text-color);
+  --component-highlight-color: var(--component-text-color);
+  --component-text-color: var(--color-black);
+}
+.b-fullWidthAsset.t-darkGreen {
+  --component-background-color: var(--color-dark-green);
+  --component-heading-color: var(--component-text-color);
+  --component-highlight-color-hover: var(--component-text-color);
+  --component-highlight-color: var(--component-text-color);
+  --component-text-color: var(--color-white);
+}
+.b-fullWidthAsset.t-orange {
+  --color-accent: var(--color-orange);
+  --component-background-color: var(--color-black);
+  --component-heading-color: var(--component-text-color);
+  --component-highlight-color-hover: var(--color-orange);
+  --component-highlight-color: var(--color-orange);
+  --component-text-color: var(--color-white);
+}
+html[data-theme="oxagon"] .b-fullWidthAsset.t-dark,
+html[data-theme="oxagon"] .b-fullWidthAsset.t-darkMono {
+  --component-background-color: var(--color-dark-blue);
+  --component-background-gradient: var(--color-gradient-dark-blue);
+}
+html[data-theme="oxagon"] .b-fullWidthAsset.t-darkOxagonBlue {
+  --component-background-color: var(--color-dark-accent);
+  --component-heading-color: var(--component-text-color);
+  --component-highlight-color-hover: var(--component-text-color);
+  --component-highlight-color: var(--component-text-color);
+  --component-text-color: var(--color-white);
+}
+html[data-theme="oxagon"] .b-fullWidthAsset.t-lightOxagonBlue {
+  --component-background-color: var(--color-accent);
+  --component-text-color: var(--color-white);
+  --component-highlight-color: var(--component-text-color);
+  --component-highlight-color-hover: var(--component-text-color);
+  --component-heading-color: var(--component-text-color);
+}

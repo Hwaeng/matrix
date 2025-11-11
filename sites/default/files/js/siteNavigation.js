@@ -1,7 +1,7 @@
 (function (n, t) {
   function g() {
     const i = t.querySelectorAll(
-      "#main-content .module-looper > :is(div, section, dialog)"
+      "#main-content .module-looper > :is(div, section, dialog)",
     );
     let n = !1;
     i.forEach((t) => {
@@ -54,7 +54,7 @@
   function nt(n) {
     n.child.ChildLinks.length > 0 &&
       (n.childListItemAnchorAndButtons.forEach((n) =>
-        n.classList.add("nav-2023-toggler")
+        n.classList.add("nav-2023-toggler"),
       ),
       n.childListItem.appendChild(s(n.child, n.level + 1)));
   }
@@ -93,7 +93,7 @@
           const e = t.createElement("li");
           e.classList.add(
             "nav-2023-offcanvas-item",
-            "nav-2023-offcanvas-promo-item"
+            "nav-2023-offcanvas-promo-item",
           );
           const u = t.createElement("a");
           if (
@@ -101,7 +101,7 @@
               "nav-2023-promo-link",
               "cta-link",
               "type-body",
-              "text-base"
+              "text-base",
             ),
             (u.href = f(n.Link)),
             n.Link.Target && (childListItemAnchor.target = n.Link.Target),
@@ -172,7 +172,7 @@
         (r.classList.add(
           "offcanvas",
           "offcanvas-start",
-          "background-color-dark-blue"
+          "background-color-dark-blue",
         ),
         (r.dataset.bsDelay = '{"show":0,"hide":0}'),
         (r.dataset.bsBackdrop = "false"),
@@ -191,7 +191,7 @@
   }
   function e(n, t) {
     const i = t.querySelectorAll(
-      ".nav-2023-offcanvas-list.nav-2023-list-level-3"
+      ".nav-2023-offcanvas-list.nav-2023-list-level-3",
     );
     i.forEach((n) => {
       n.classList.remove("show");
@@ -250,7 +250,7 @@
     const t = n.currentTarget.closest(".nav-2023-nav");
     t.closest("header").classList.remove("menu-open");
     t.querySelectorAll(".nav-2023-item").forEach((n) =>
-      n.classList.remove("offcanvas-open")
+      n.classList.remove("offcanvas-open"),
     );
   }
   function a(n) {
@@ -284,7 +284,7 @@
           n.preventDefault();
           f[u]
             .querySelector(
-              ".nav-2023-offcanvas-item:not(.overview-item) .nav-2023-link"
+              ".nav-2023-offcanvas-item:not(.overview-item) .nav-2023-link",
             )
             .focus();
           return;
@@ -330,7 +330,7 @@
             (n.preventDefault(),
             t
               .querySelector(
-                `#nav-2023-level-2 .nav-2023-toggler[data-cvx-index="${u}"]`
+                `#nav-2023-level-2 .nav-2023-toggler[data-cvx-index="${u}"]`,
               )
               .focus());
           return;
@@ -342,7 +342,7 @@
                 .querySelector(
                   `#nav-2023-level-2 .nav-2023-toggler[data-cvx-index="${
                     u + 1
-                  }"]`
+                  }"]`,
                 )
                 .focus()
             : r(t));
@@ -381,7 +381,7 @@
         const i = t.closest(".nav-2023-offcanvas-list");
         if (i.classList.contains("nav-2023-list-level-3")) {
           const n = bootstrap.Offcanvas.getOrCreateInstance(
-            i.closest("#nav-2023-offcanvas")
+            i.closest("#nav-2023-offcanvas"),
           );
           i.classList.remove("show");
           n.hide();
@@ -587,16 +587,16 @@
       const u = i.querySelector("#nav-2023-offcanvas"),
         r = i.querySelectorAll(".nav-2023-list-level-2 .nav-2023-toggler"),
         e = i.querySelectorAll(
-          ".nav-2023-list-level-2 :is(.nav-2023-button, .nav-2023-link)"
+          ".nav-2023-list-level-2 :is(.nav-2023-button, .nav-2023-link)",
         ),
         f = i.querySelectorAll(
-          ".nav-2023-list-level-3 .nav-2023-link, .nav-2023-list-level-3 .nav-2023-promo-link"
+          ".nav-2023-list-level-3 .nav-2023-link, .nav-2023-list-level-3 .nav-2023-promo-link",
         ),
         tt = i.querySelectorAll(".nav-2023-link, .nav-2023-back-button"),
         o = i.querySelector("#nav-2023-mobile-hamburger"),
         s = i.querySelectorAll(".nav-2023-button.close-button"),
         g = i.querySelectorAll(
-          ".nav-2023-button.nav-2023-back-button:not(.close-button)"
+          ".nav-2023-button.nav-2023-back-button:not(.close-button)",
         );
       let rt = new ResizeObserver(function () {
         it();
