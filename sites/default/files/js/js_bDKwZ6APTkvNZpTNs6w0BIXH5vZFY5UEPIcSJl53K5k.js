@@ -1611,7 +1611,10 @@
         });
     }
     _hideModal() {
-      (this._element.style.display = "none"),
+       const _element = document.querySelector('.your-selector');
+if (element) {
+  this._element.style.display = 'none';
+}
         this._element.setAttribute("aria-hidden", !0),
         this._element.removeAttribute("aria-modal"),
         this._element.removeAttribute("role"),
