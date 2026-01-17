@@ -4074,63 +4074,411 @@
   <script type="application/ld+json">
     []
   </script>
+   <style>
+    
+        /* Main Navigation Container */
+        .JindexNaviContainer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: transparent;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .JindexNaviContainerInner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            max-width: 1920px;
+            margin: 0 auto;
+        }
+
+        /* Left Side - Logo */
+        .JindexNaviLeft {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .JindexNaviLeft a {
+            display: flex;
+            align-items: center;
+        }
+
+        .JindexNaviLeftLogoW {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .JindexNaviLeftLogoB {
+            display: none;
+        }
+
+        .JindexNaviLeft p {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #999;
+            font-weight: 300;
+        }
+
+        /* Right Side */
+        .JindexNaviRight {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+        }
+
+        /* Top Section - Stock Prices & Language */
+        .JindexNaviRightTop {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .JindexNaviRightTopSub {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        /* Stock Prices */
+        .stock-prices-wrapper {
+            display: flex;
+            gap: 20px;
+        }
+
+        .stock-prices-wrapper .block {
+            font-size: 12px;
+        }
+
+        .stock-prices-wrapper a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.3s;
+        }
+
+        .stock-prices-wrapper a:hover {
+            opacity: 0.7;
+        }
+
+        .bourse_top {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .bourse_top p {
+            margin: 0;
+            font-weight: 300;
+        }
+
+        .positive {
+            color: #00ff00;
+        }
+
+        .negative {
+            color: #ff0000;
+        }
+
+        /* Language Icon */
+        .languageIcon2 {
+            width: 24px;
+            height: 24px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>') center/contain no-repeat;
+            display: block;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .languageIcon2:hover {
+            opacity: 1;
+        }
+
+        /* Bottom Section - Main Navigation */
+        .JindexNaviRightBtm {
+            position: relative;
+        }
+
+        .JindexNaviRightBtmNavi {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .JindexNaviRightBtmNavi li {
+            position: relative;
+        }
+
+        .JindexNaviRightBtmNavi a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            font-weight: 300;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .JindexNaviRightBtmNavi a:hover {
+            color: #03ad0b;
+        }
+
+        /* Mobile Menu */
+        .JindexNaviRightBtmM {
+            display: none;
+        }
+
+        /* Clear utility */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .JindexNaviContainerInner {
+                padding: 15px 30px;
+            }
+
+            .JindexNaviRightBtmNavi {
+                gap: 25px;
+            }
+
+            .JindexNaviRightBtmNavi a {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .JindexNaviContainerInner {
+                padding: 15px 20px;
+            }
+
+            .JindexNaviRightTop {
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 10px;
+            }
+
+            .stock-prices-wrapper {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            /* Hide desktop nav, show mobile */
+            .JindexNaviRightBtmNavi {
+                display: none;
+            }
+
+            .JindexNaviRightBtmM {
+                display: block;
+            }
+
+            .JindexNaviRightBtmM > ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .JindexNaviRightBtmM > ul > li {
+                margin-bottom: 10px;
+            }
+
+            .JindexNaviRightBtmM > ul > li > a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 14px;
+                display: block;
+                padding: 8px 0;
+            }
+        }
+
+        /* Social Icons (if visible in mobile) */
+        .JindexNaviRightBtmSocialM {
+            display: none;
+            list-style: none;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .JindexNaviRightBtmSocialM {
+                display: flex;
+            }
+        }
+
+        .JindexNaviRightBtmSocialM a {
+            width: 32px;
+            height: 32px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            text-indent: -9999px;
+            display: block;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .JindexNaviRightBtmSocialM a:hover {
+            opacity: 1;
+        }
+  </style>
 </head>
 
 <body data-editor="false" class="">
   <div class="app" id="app">
     <div data-component="app-root" data-theme="matrix" lang="en" dir="ltr" class="app__root -isReady">
-      <nav class="b-navigation -hasSecondaryNavigation" data-component="s01-navigation"
-      data-content="
-      {
-        &quot;scrollComponent&quot;
-        :true,&quot;logo&quot;
-        :{&quot;link&quot;
-          :{&quot;label&quot;:null,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:null,&quot;rel&quot;:null,&quot;aemEnvService&quot;:{&quot;author&quot;:false}},&quot;image&quot;:{&quot;src&quot;:&quot;/is/image/matrix/logo-matrix-en-spaced.png?fmt=png-alpha&amp;scl=1&quot;,&quot;alt&quot;:&quot;Neom Logo&quot;,&quot;sources&quot;:[{&quot;maxWidth&quot;:null,&quot;src&quot;:&quot;/is/image/matrix/logo-matrix-en-spaced.png?fmt=png-alpha&amp;scl=1&quot;,&quot;rendition&quot;:&quot;:resize&quot;,&quot;sizes&quot;:&quot;100vw &quot;,&quot;srcset&quot;:[&quot;/is/image/matrix/logo-matrix-en-spaced.png?fmt=png-alpha&amp;scl=1&quot;],&quot;widthList&quot;:[768,1024,1200]}],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/logos/logo-matrix-en-spaced.png&quot;}},&quot;navigation&quot;:{&quot;mainAriaLabel&quot;:null,&quot;main&quot;:[{&quot;label&quot;:&quot;About&quot;,&quot;type&quot;:&quot;menu&quot;,&quot;href&quot;:null,&quot;active&quot;:false,&quot;target&quot;:null,&quot;highlighted&quot;:false,&quot;items&quot;:[{&quot;label&quot;:&quot;What is MATRIX&quot;,&quot;copy&quot;:null,&quot;href&quot;:null,&quot;icon&quot;:null,&quot;target&quot;:null,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:&quot;sectorMenu&quot;,&quot;viewAllButton&quot;:null,&quot;items&quot;:[{&quot;label&quot;:&quot;About&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/about&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:null,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:null,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;viewAllButton&quot;:null,&quot;active&quot;:false,&quot;redirectPage&quot;:null,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/about/whatisneom/about-neom&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:false,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false},{&quot;label&quot;:&quot;Redefining Business&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/about/business&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:null,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:null,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;viewAllButton&quot;:null,&quot;active&quot;:false,&quot;redirectPage&quot;:null,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/about/whatisneom/business&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:false,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false}],&quot;enableClick&quot;:false},{&quot;label&quot;:&quot;MATRIX leadership team&quot;,&quot;copy&quot;:null,&quot;href&quot;:&quot;/en-us/about/leadership&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false},{&quot;label&quot;:&quot;MATRIX Social Responsibilty&quot;,&quot;copy&quot;:null,&quot;href&quot;:&quot;/en-us/about/social-responsibility&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false},{&quot;label&quot;:&quot;MATRIX Bay Airport&quot;,&quot;copy&quot;:null,&quot;href&quot;:&quot;/en-us/about/neom-airport&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false}],&quot;button&quot;:null},{&quot;label&quot;:&quot;Regions&quot;,&quot;type&quot;:&quot;menu&quot;,&quot;href&quot;:null,&quot;active&quot;:false,&quot;target&quot;:null,&quot;highlighted&quot;:false,&quot;items&quot;:[{&quot;label&quot;:&quot;Magna&quot;,&quot;copy&quot;:null,&quot;href&quot;:&quot;/en-us/regions/magna&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false},{&quot;label&quot;:&quot;Oxagon&quot;,&quot;copy&quot;:&quot;A blueprint for advanced and clean industries&quot;,&quot;href&quot;:&quot;/en-us/regions/oxagon&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/home/region-oxagon.jpg&quot;,&quot;alt&quot;:&quot;Oxagon&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/home/region-oxagon.jpg&quot;},&quot;active&quot;:false,&quot;type&quot;:&quot;projectMenu&quot;,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false},{&quot;label&quot;:&quot;Sindalah&quot;,&quot;copy&quot;:&quot;A luxury island destination in the Red Sea&quot;,&quot;href&quot;:&quot;/en-us/regions/sindalah&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/sindalah/hero/sindalah-hero-thumb-fnl.jpg&quot;,&quot;alt&quot;:&quot;Sindalah&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/sindalah/hero/sindalah-hero-thumb-fnl.jpg&quot;},&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false},{&quot;label&quot;:&quot;THE LINE&quot;,&quot;copy&quot;:&quot;New wonders for the world&quot;,&quot;href&quot;:&quot;/en-us/regions/theline&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/theline/navigation/line-2-nav-region-thumbnail.jpg&quot;,&quot;alt&quot;:&quot;THE LINE&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/theline/navigation/line-2-nav-region-thumbnail.jpg&quot;},&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false},{&quot;label&quot;:&quot;Trojena&quot;,&quot;copy&quot;:&quot;The mountains of MATRIX&quot;,&quot;href&quot;:&quot;/en-us/regions/trojena&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/trojena/nav-region-trojena.jpg&quot;,&quot;alt&quot;:&quot;Trojena&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/trojena/nav-region-trojena.jpg&quot;},&quot;active&quot;:false,&quot;type&quot;:&quot;projectMenu&quot;,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false}],&quot;button&quot;:null},{&quot;label&quot;:&quot;Our Business&quot;,&quot;type&quot;:&quot;menu&quot;,&quot;href&quot;:null,&quot;active&quot;:true,&quot;target&quot;:null,&quot;highlighted&quot;:false,&quot;items&quot;:[{&quot;label&quot;:&quot;Sectors&quot;,&quot;copy&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/design-and-construction.html#sectors&quot;,&quot;icon&quot;:null,&quot;target&quot;:null,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:true,&quot;type&quot;:&quot;sectorMenu&quot;,&quot;viewAllButton&quot;:null,&quot;items&quot;:[{&quot;label&quot;:&quot;Design and Construction&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/design-and-construction&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:&quot;design-construction&quot;,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:&quot;sectors&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Design.png&quot;,&quot;alt&quot;:&quot;Link to Design and Construction&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Design.png&quot;},&quot;viewAllButton&quot;:null,&quot;active&quot;:false,&quot;redirectPage&quot;:null,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/ourbusiness/link-to-sectors/link-to-design-and-construction&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:false,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false},{&quot;label&quot;:&quot;Education, research, and innovation&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/education-research-and-innovation&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:&quot;education&quot;,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:&quot;sectorMenu&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Education.png&quot;,&quot;alt&quot;:&quot;Link to Education&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Education.png&quot;},&quot;viewAllButton&quot;:null,&quot;active&quot;:false,&quot;redirectPage&quot;:&quot;/content/matrix/en-us/our-business/sectors/education-research-and-innovation&quot;,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/ourbusiness/link-to-sectors/link-to-education&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:false,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false},{&quot;label&quot;:&quot;Energy&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/energy&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:&quot;energy&quot;,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:&quot;sectors&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/energy-darkened.png&quot;,&quot;alt&quot;:&quot;Link to Energy&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/energy-darkened.png&quot;},&quot;viewAllButton&quot;:null,&quot;active&quot;:false,&quot;redirectPage&quot;:null,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/ourbusiness/link-to-sectors/link-to-energy&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:false,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false},{&quot;label&quot;:&quot;Entertainment and Culture&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/entertainment-and-culture&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:&quot;entertainment-culture&quot;,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:&quot;sectors&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Entertainment.png&quot;,&quot;alt&quot;:&quot;Link to Entertainment and Culture&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Entertainment.png&quot;},&quot;viewAllButton&quot;:null,&quot;active&quot;:false,&quot;redirectPage&quot;:null,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/ourbusiness/link-to-sectors/link-to-entertainment-and-culture&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:false,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false},{&quot;label&quot;:&quot;Financial Services&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/financial-services&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:&quot;services&quot;,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:&quot;sectors&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Services.png&quot;,&quot;alt&quot;:&quot;Link to Financial Services&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Services.png&quot;},&quot;viewAllButton&quot;:null,&quot;active&quot;:false,&quot;redirectPage&quot;:null,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/ourbusiness/link-to-sectors/link-to-services&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:false,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false},{&quot;label&quot;:&quot;Food&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/food&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:&quot;food&quot;,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:&quot;sectorMenu&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/food-darkened.png&quot;,&quot;alt&quot;:&quot;Link to Food&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/food-darkened.png&quot;},&quot;viewAllButton&quot;:null,&quot;active&quot;:false,&quot;redirectPage&quot;:&quot;/content/matrix/en-us/our-business/sectors/food&quot;,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/ourbusiness/link-to-sectors/link-to-food&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:false,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false},{&quot;label&quot;:&quot;Health, Well-being and Biotech&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/health-wellbeing-and-biotech&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:&quot;health-wellbeing-biotech&quot;,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:&quot;sectors&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Health.png&quot;,&quot;alt&quot;:&quot;Link to Health, Well-being and Biotech&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Health.png&quot;},&quot;viewAllButton&quot;:null,&quot;active&quot;:false,&quot;redirectPage&quot;:null,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/ourbusiness/link-to-sectors/link-to-health--well-being-and-biotech&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:false,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false},{&quot;label&quot;:&quot;Manufacturing &quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/manufacturing&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:&quot;manufacturing&quot;,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:&quot;sectors&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Manufacturing.png&quot;,&quot;alt&quot;:&quot;Link to Manufacturing&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Manufacturing.png&quot;},&quot;viewAllButton&quot;:null,&quot;active&quot;:false,&quot;redirectPage&quot;:null,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/ourbusiness/link-to-sectors/link-to-manufacturing&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:false,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false},{&quot;label&quot;:&quot;Media&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/media&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:&quot;media&quot;,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:&quot;sectorMenu&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/media_thumbnail.png&quot;,&quot;alt&quot;:&quot;Link to Media&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/media_thumbnail.png&quot;},&quot;viewAllButton&quot;:null,&quot;active&quot;:false,&quot;redirectPage&quot;:&quot;/content/matrix/en-us/our-business/sectors/media&quot;,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/ourbusiness/link-to-sectors/link-to-media&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:false,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false},{&quot;label&quot;:&quot;Mobility&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/mobility&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:&quot;mobility&quot;,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:&quot;sectors&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Mobility.png&quot;,&quot;alt&quot;:&quot;Link to Mobility&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Mobility.png&quot;},&quot;viewAllButton&quot;:null,&quot;active&quot;:false,&quot;redirectPage&quot;:null,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/ourbusiness/link-to-sectors/link-to-mobility&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:false,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false},{&quot;label&quot;:&quot;Sport&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/sport&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:&quot;sport&quot;,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:&quot;sectorMenu&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Sport.png&quot;,&quot;alt&quot;:&quot;Link to Sport&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Sport.png&quot;},&quot;viewAllButton&quot;:null,&quot;active&quot;:false,&quot;redirectPage&quot;:&quot;/content/matrix/en-us/our-business/sectors/sport&quot;,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/ourbusiness/link-to-sectors/link-to-sport&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:false,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false},{&quot;label&quot;:&quot;Technology and Digital&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/technology-and-digital&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:&quot;technology-digital&quot;,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:&quot;sectors&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Technology.png&quot;,&quot;alt&quot;:&quot;Link to Technology and Digital &quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Technology.png&quot;},&quot;viewAllButton&quot;:null,&quot;active&quot;:false,&quot;redirectPage&quot;:null,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/ourbusiness/link-to-sectors/link-to-technology-and-digital-&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:false,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false},{&quot;label&quot;:&quot;Tourism&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/tourism&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:&quot;tourism&quot;,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:&quot;sectorMenu&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Tourism.png&quot;,&quot;alt&quot;:&quot;Link to Tourism&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Tourism.png&quot;},&quot;viewAllButton&quot;:null,&quot;active&quot;:false,&quot;redirectPage&quot;:&quot;/content/matrix/en-us/our-business/sectors/tourism&quot;,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/ourbusiness/link-to-sectors/link-to-tourism&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:false,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false},{&quot;label&quot;:&quot;Water&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/water&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:&quot;water&quot;,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;childList&quot;:null,&quot;pageLevel&quot;:3,&quot;navChildListType&quot;:&quot;sectorMenu&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:{&quot;src&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Water.png&quot;,&quot;alt&quot;:&quot;Link to Water&quot;,&quot;sources&quot;:[],&quot;sizes&quot;:null,&quot;variant&quot;:null,&quot;disableTransition&quot;:false,&quot;disableDM&quot;:false,&quot;inheritAltFromDam&quot;:false,&quot;path&quot;:&quot;/content/dam/matrix/sector-navigation-imagery/Water.png&quot;},&quot;viewAllButton&quot;:null,&quot;active&quot;:true,&quot;redirectPage&quot;:&quot;/content/matrix/en-us/our-business/sectors/water&quot;,&quot;pagePath&quot;:&quot;/content/matrix/en-us/conf/nav-root/ourbusiness/link-to-sectors/link-to-water&quot;,&quot;enableActivePath&quot;:false,&quot;secondaryNavigationPage&quot;:true,&quot;copy&quot;:null,&quot;enableClick&quot;:false,&quot;asideHighlighted&quot;:false,&quot;aside&quot;:false}],&quot;enableClick&quot;:false},{&quot;label&quot;:&quot;Partners&quot;,&quot;copy&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/partners&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false},{&quot;label&quot;:&quot;Suppliers&quot;,&quot;copy&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/suppliers&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false},{&quot;label&quot;:&quot;MATRIX Hotel Division&quot;,&quot;copy&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/nhd&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false},{&quot;label&quot;:&quot;Port of MATRIX&quot;,&quot;copy&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/port-of-neom&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false}],&quot;button&quot;:null},{&quot;label&quot;:&quot;News&quot;,&quot;type&quot;:&quot;menu&quot;,&quot;href&quot;:null,&quot;active&quot;:false,&quot;target&quot;:null,&quot;highlighted&quot;:false,&quot;items&quot;:[{&quot;label&quot;:&quot;Newsroom&quot;,&quot;copy&quot;:null,&quot;href&quot;:&quot;/en-us/newsroom&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false},{&quot;label&quot;:&quot;Contact Us&quot;,&quot;copy&quot;:null,&quot;href&quot;:&quot;/en-us/newsroom/newsroom-contact-us&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false}],&quot;button&quot;:null},{&quot;label&quot;:&quot;Invest&quot;,&quot;type&quot;:&quot;menu&quot;,&quot;href&quot;:null,&quot;active&quot;:false,&quot;target&quot;:null,&quot;highlighted&quot;:false,&quot;items&quot;:[{&quot;label&quot;:&quot;Invest in MATRIX&quot;,&quot;copy&quot;:null,&quot;href&quot;:&quot;/en-us/invest/invest-in-neom&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false},{&quot;label&quot;:&quot;MATRIX Investment Office&quot;,&quot;copy&quot;:null,&quot;href&quot;:&quot;/en-us/invest/neom-investment-office&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false},{&quot;label&quot;:&quot;MATRIX Investment Fund&quot;,&quot;copy&quot;:null,&quot;href&quot;:&quot;/en-us/invest/neom-investment-fund&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false}],&quot;button&quot;:null},{&quot;label&quot;:&quot;Careers&quot;,&quot;type&quot;:&quot;menu&quot;,&quot;href&quot;:null,&quot;active&quot;:false,&quot;target&quot;:null,&quot;highlighted&quot;:false,&quot;items&quot;:[{&quot;label&quot;:&quot;Working at MATRIX&quot;,&quot;copy&quot;:&quot;test&quot;,&quot;href&quot;:&quot;/en-us/be-part-of-neom/work-at-neom&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false},{&quot;label&quot;:&quot;Job Search&quot;,&quot;copy&quot;:null,&quot;href&quot;:&quot;https://careers.neom.com/careers&quot;,&quot;icon&quot;:null,&quot;target&quot;:&quot;_self&quot;,&quot;underConstruction&quot;:false,&quot;image&quot;:null,&quot;active&quot;:false,&quot;type&quot;:null,&quot;viewAllButton&quot;:null,&quot;items&quot;:null,&quot;enableClick&quot;:false}],&quot;button&quot;:null}],&quot;aside&quot;:[{&quot;label&quot;:null,&quot;type&quot;:&quot;CTA&quot;,&quot;href&quot;:null,&quot;active&quot;:false,&quot;target&quot;:null,&quot;highlighted&quot;:false,&quot;items&quot;:null,&quot;button&quot;:{&quot;label&quot;:&quot;GET IN TOUCH&quot;,&quot;aria&quot;:null,&quot;href&quot;:&quot;/en-us/get-in-touch&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;icon&quot;:null,&quot;rel&quot;:null,&quot;aemEnvService&quot;:null,&quot;title&quot;:null,&quot;id&quot;:null,&quot;type&quot;:null,&quot;prefix&quot;:null,&quot;suffix&quot;:null,&quot;theme&quot;:&quot;white&quot;,&quot;level&quot;:&quot;primary&quot;,&quot;variant&quot;:null,&quot;secondIcon&quot;:null,&quot;iconAlignment&quot;:null,&quot;size&quot;:&quot;small&quot;,&quot;attrs&quot;:null,&quot;aemComponentName&quot;:null,&quot;aemComponentId&quot;:null,&quot;formName&quot;:null,&quot;formIntent&quot;:null,&quot;hideCta&quot;:null,&quot;video&quot;:null,&quot;videoType&quot;:null,&quot;modal&quot;:null,&quot;data&quot;:null,&quot;form&quot;:false,&quot;disabled&quot;:false,&quot;eventTracking&quot;:null,&quot;backgroundImageModel&quot;:null,&quot;imageModel&quot;:null,&quot;transparent&quot;:false}}]},&quot;languages&quot;:{&quot;activeLanguageCode&quot;:&quot;en&quot;,&quot;options&quot;:[{&quot;languageCode&quot;:&quot;en&quot;,&quot;shortLabel&quot;:&quot;English&quot;,&quot;active&quot;:true,&quot;label&quot;:&quot;English&quot;,&quot;href&quot;:&quot;/en-us/our-business/sectors/water&quot;,&quot;title&quot;:&quot;English&quot;},{&quot;languageCode&quot;:&quot;ar&quot;,&quot;shortLabel&quot;:&quot;‏العربية&quot;,&quot;active&quot;:false,&quot;label&quot;:&quot;العربية&quot;,&quot;href&quot;:&quot;/ar-sa/our-business/sectors/water&quot;,&quot;title&quot;:&quot;Arabic&quot;},{&quot;languageCode&quot;:&quot;zh_cn&quot;,&quot;shortLabel&quot;:&quot;中文 (中国)&quot;,&quot;active&quot;:false,&quot;label&quot;:&quot;中文 (中国)&quot;,&quot;href&quot;:&quot;/zh-cn/our-business/sectors/water&quot;,&quot;title&quot;:&quot;Chinese&quot;},{&quot;languageCode&quot;:&quot;ja&quot;,&quot;shortLabel&quot;:&quot;日本語&quot;,&quot;active&quot;:false,&quot;label&quot;:&quot;日本語&quot;,&quot;href&quot;:&quot;/ja-jp/our-business/sectors/water&quot;,&quot;title&quot;:&quot;Japanese&quot;},{&quot;languageCode&quot;:&quot;de&quot;,&quot;shortLabel&quot;:&quot;DEUTSCH&quot;,&quot;active&quot;:false,&quot;label&quot;:&quot;Deutsch&quot;,&quot;href&quot;:&quot;/de-de/our-business/sectors/water&quot;,&quot;title&quot;:&quot;German&quot;},{&quot;languageCode&quot;:&quot;fr&quot;,&quot;shortLabel&quot;:&quot;FRANÇAIS&quot;,&quot;active&quot;:false,&quot;label&quot;:&quot;français&quot;,&quot;href&quot;:&quot;/fr-fr/our-business/sectors/water&quot;,&quot;title&quot;:&quot;French&quot;},{&quot;languageCode&quot;:&quot;ru&quot;,&quot;shortLabel&quot;:&quot;РУССКИЙ&quot;,&quot;active&quot;:false,&quot;label&quot;:&quot;русский&quot;,&quot;href&quot;:&quot;/ru-ru/our-business/sectors/water&quot;,&quot;title&quot;:&quot;Russian&quot;}]},&quot;search&quot;:{&quot;placeholder&quot;:&quot;Search for&quot;,&quot;id&quot;:null,&quot;redirectUrl&quot;:&quot;/en-us/search&quot;,&quot;mainButtonAria&quot;:{&quot;label&quot;:&quot;Search Button&quot;,&quot;controls&quot;:null,&quot;haspopup&quot;:null},&quot;searchButtonAria&quot;:{&quot;label&quot;:&quot;Search Button&quot;,&quot;controls&quot;:null,&quot;haspopup&quot;:null},&quot;closeButtonAria&quot;:{&quot;label&quot;:&quot;Close Button&quot;,&quot;controls&quot;:null,&quot;haspopup&quot;:null},&quot;aemEnvService&quot;:{&quot;author&quot;:false}},&quot;secondaryNavigation&quot;:{&quot;parent&quot;:{&quot;label&quot;:null,&quot;target&quot;:null,&quot;aemEnvService&quot;:null,&quot;href&quot;:null,&quot;type&quot;:null,&quot;items&quot;:null,&quot;active&quot;:false,&quot;container&quot;:false},&quot;logo&quot;:null,&quot;overviewLabel&quot;:&quot;Overview&quot;,&quot;items&quot;:[{&quot;label&quot;:&quot;Overview&quot;,&quot;target&quot;:null,&quot;aemEnvService&quot;:null,&quot;href&quot;:&quot;/en-us/our-business/sectors/water&quot;,&quot;type&quot;:null,&quot;items&quot;:null,&quot;active&quot;:true,&quot;container&quot;:false},{&quot;label&quot;:&quot;MATRIX’s Innovation Hub&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;aemEnvService&quot;:{&quot;author&quot;:false},&quot;href&quot;:&quot;/en-us/our-business/sectors/water/innovation-hub&quot;,&quot;type&quot;:&quot;link&quot;,&quot;items&quot;:[],&quot;active&quot;:false,&quot;container&quot;:false},{&quot;label&quot;:&quot;MATRIX’s Water Infrastructure&quot;,&quot;target&quot;:&quot;_self&quot;,&quot;aemEnvService&quot;:{&quot;author&quot;:false},&quot;href&quot;:&quot;/en-us/our-business/sectors/water/infrastructure&quot;,&quot;type&quot;:&quot;link&quot;,&quot;items&quot;:[],&quot;active&quot;:false,&quot;container&quot;:false}]},&quot;hamburgerMenuLabel&quot;:&quot;Open the menu&quot;,&quot;languageButtonLabel&quot;:&quot;Open the language menu&quot;,&quot;languageListId&quot;:null}"
-      data-scroll-component="" data-early-display="" style="opacity: 1; display: block;">
-      <div class="b-navigation__container" data-navigation-container=""style="">
-        <div class="b-navigation__mask" data-navigation-mask=""></div>
-         <div class="o-secondaryNavigation" data-component="o36-secondary-navigation">
-          <div class="o-secondaryNavigation__container">
-            <button class="o-secondaryNavigation__sectorButton" data-sector-toggle="">
-              <span class="a-icon" data-component="a02-icon" data-icon="chevron-down"
-                aria-hidden="true">
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16"
-                  enable-background="new 0 0 16 16" xml:space="preserve">
-                  <path
-                    d="M1.4139,3.99999 L9.0699,11.65599 L7.6559,13.06999 L-0.0001,5.41399 L1.4139,3.99999 Z M14.3613,3.99999 L15.7753,5.41399 L11.5571778,9.48498 L10.1431778,8.06998 L14.3613,3.99999 Z">
-                  </path>
-                </svg>
-              </span>
-            </button>
-            <ul class="o-secondaryNavigation__items" data-navigation-collapsible="" style="" hidden="">
-              <li class="o-secondaryNavigation__item -parent" data-secondary-navigation-item="">
-                <span class="o-secondaryNavigation__itemMain">
-                </span>
-              </li>
-              <li class="o-secondaryNavigation__item" data-secondary-navigation-item="">
-                <a class="o-secondaryNavigation__itemLink" href="../index.html">HOME</a>
-              </li>
-              <li class="o-secondaryNavigation__item -isActive" data-secondary-navigation-item="">
-                <a class="o-secondaryNavigation__itemLink" href="about.html">ABOUT US</a>
-              </li>
-              <li class="o-secondaryNavigation__item" data-secondary-navigation-item="">
-                <a class="o-secondaryNavigation__itemLink" href="maxfuelrx.html">MAXFUELRX<span
-                    class="gold-letter">X</span></a>
-              </li>
-              <li class="o-secondaryNavigation__item" data-secondary-navigation-item="">
-                <a class="o-secondaryNavigation__itemLink" href="future.html">FUTURE</a>
-              </li>
-              <li class="o-secondaryNavigation__item" data-secondary-navigation-item="">
-                <a class="o-secondaryNavigation__itemLink"
-                  href="distribution.html">SUPPLY & DISTRIBUTION</a>
-              </li>
-              
-            </ul>
-          </div>
+    <div class="JindexNaviContainer" style="overflow: hidden;">
+            <div class="JindexNaviContainerInner">
+                <div class="JindexNaviLeft">
+                    <a href="/" rel="home">
+                        <img alt="MATRIX logo with text" src="/themes/custom/matrix/images/matrix-logo-white.svg"
+                            class="JindexNaviLeftLogoW">
+                        <img alt="MATRIX logo with text" src="/themes/custom/matrix/images/matrix-logo-black.svg"
+                            class="JindexNaviLeftLogoB">
+                    </a>
+                    <p>INTERNATIONAL</p>
+                </div>
+                <div class="JindexNaviRight">
+                    <div class="JindexNaviRightTop">
+                       <div class="JindexNaviRightTopSub">
+     
+     
+      <div id="block-stockpricesheader" data-block-plugin-id="total_stock_prices_header">
+            <div class="with-animation">
+                <div class="stock-prices-wrapper">
+                    <div class="block block-bean active">
+                        <h6 class="box basic clearfix action-total">
+                            <a class="stock-name desktop-bourse processed-xiti" href="https://totalenergies.com/investors/share-information/totalenergies-share-price-paris" target="_blank">
+                                <div class="bourse_top" style="display: flex; flex-direction: row; align-items: center; ">
+                                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: 100;font-size: 10px;">€54.66</p>
+                                    <p class="negative" style="font-size: 10px">
+                                        <span>↓</span> -0.44%
+                                    </p>
+                                </div>
+                            </a>
+                        </h6>
+                    </div>
+                    <div class="block block-bean">
+                        <h6 class="box basic clearfix action-total">
+                            <a class="stock-name desktop-bourse processed-xiti" href="https://totalenergies.com/investors/share-information/adr-nyse-tot-Information" target="_blank">
+                                <div class="bourse_top" style="display: flex; flex-direction: row; align-items: center">
+                                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: 100;font-size: 10px;">$62.59</p>
+                                    <p class="positive" style="font-size: 10px">
+                                        <span>↑</span> +0.90%
+                                    </p>
+                                </div>
+                            </a>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+    </div> 
+     <div>
+        <a style="position: relative;"  href="/experience/map.html" class="languageIcon2"></a>
+       
+</div>  
+    </div>
+                    </div>
+                    <div class="JindexNaviRightBtm">
+                        <ul class="clearfix JindexNaviRightBtmNavi">
+                            <li>
+                                <a href="/en_GB/about.html">About Us</a>
+                            </li>
+                            <li>
+                                <a href="/en_GB/future.html">Our Future</a>
+                            </li>
+                            <li>
+                                <a href="/en_GB/maxfuelrx.html">Max Fuel Rx </a>
+                            </li>
+                            <li>
+                                <a href="/en_GB/distribution.html">Distribution</a>
+                            </li>
+                            <li>
+                                <a href="/en_GB/emblem.html" target="_self">Our Emblem</a>
+                            </li>
+                            <li>
+                                <a href="/news-and-media.html">News & Media</a>
+                               
+                            </li>
+                            <li>
+                                <a href="/contact-us.html">Contact Us</a>
+                            </li>
+                        </ul>
+                        <div class="JindexNaviRightBtmM">
+                            <ul class="clearfix">
+                                <li class="JhasSub">
+                                    <a href="/about-us.html" class="nav-link nav-link-">About Us</a>
+                                    <div class="JhasSubInner JhasSubInnerTop">
+                                        <div class="JhasSubInnerInner">
+                                            <ul>
+                                                <li>
+                                                    <a href="/about-us" >Overview</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/about-us/our-leaders"
+                                                       >Our Leaders</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="JhasSub">
+                                    <a href="">News &amp; Media</a>
+                                 
+                                </li>
+                                <li class="JhasSub">
+                                    <a href="">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="JindexNaviRightBtmPatternM">
+                            <img alt="" src="#">
+                        </div>
+                        <ul class="clearfix JindexNaviRightBtmSocialM">
+                            <li class="nav-item">
+                                <a href="https://www.facebook.com" target="_blank" data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-once="false" 
+                                    class="JindexFooterFB JsocialFB JindexNaviRightBtmSocialFB">Facebook</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.instagram.com" target="_blank" data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-once="false" 
+                                    class="JindexFooterIN JsocialIN JindexNaviRightBtmSocialIN">Instagram</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.tiktok.com" target="_blank" data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-once="false" 
+                                    class="JsocialTok JindexNaviRightBtmSocialTok JindexFooterTok nav-link">TikTok</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://twitter.com" target="_blank" data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-once="false" 
+                                    class="JindexFooterTT JsocialTT JindexNaviRightBtmSocialTT nav-link">Twitter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.youtube.com" target="_blank" data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-once="false" 
+                                    class="JindexFooterYT JsocialYT JindexNaviRightBtmSocialYT nav-link">YouTube</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.linkedin.com" target="_blank" data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-sine" data-aos-duration="500" data-aos-once="false" 
+                                    class="JindexFooterLI JsocialLI JindexNaviRightBtmSocialLI nav-link">LinkedIn</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </nav>
       <main class="app__content" id="app-content">
         <div class="root responsivegrid">
           <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">

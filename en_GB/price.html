@@ -31,7 +31,269 @@
    }
  
     </style>
+ <style>
+    
+        /* Main Navigation Container */
+        .JindexNaviContainer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: transparent;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
+        .JindexNaviContainerInner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            max-width: 1920px;
+            margin: 0 auto;
+        }
+
+        /* Left Side - Logo */
+        .JindexNaviLeft {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .JindexNaviLeft a {
+            display: flex;
+            align-items: center;
+        }
+
+        .JindexNaviLeftLogoW {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .JindexNaviLeftLogoB {
+            display: none;
+        }
+
+        .JindexNaviLeft p {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #999;
+            font-weight: 300;
+        }
+
+        /* Right Side */
+        .JindexNaviRight {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+        }
+
+        /* Top Section - Stock Prices & Language */
+        .JindexNaviRightTop {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .JindexNaviRightTopSub {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        /* Stock Prices */
+        .stock-prices-wrapper {
+            display: flex;
+            gap: 20px;
+        }
+
+        .stock-prices-wrapper .block {
+            font-size: 12px;
+        }
+
+        .stock-prices-wrapper a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.3s;
+        }
+
+        .stock-prices-wrapper a:hover {
+            opacity: 0.7;
+        }
+
+        .bourse_top {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .bourse_top p {
+            margin: 0;
+            font-weight: 300;
+        }
+
+        .positive {
+            color: #00ff00;
+        }
+
+        .negative {
+            color: #ff0000;
+        }
+
+        /* Language Icon */
+        .languageIcon2 {
+            width: 24px;
+            height: 24px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>') center/contain no-repeat;
+            display: block;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .languageIcon2:hover {
+            opacity: 1;
+        }
+
+        /* Bottom Section - Main Navigation */
+        .JindexNaviRightBtm {
+            position: relative;
+        }
+
+        .JindexNaviRightBtmNavi {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .JindexNaviRightBtmNavi li {
+            position: relative;
+        }
+
+        .JindexNaviRightBtmNavi a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            font-weight: 300;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .JindexNaviRightBtmNavi a:hover {
+            color: #03ad0b;
+        }
+
+        /* Mobile Menu */
+        .JindexNaviRightBtmM {
+            display: none;
+        }
+
+        /* Clear utility */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .JindexNaviContainerInner {
+                padding: 15px 30px;
+            }
+
+            .JindexNaviRightBtmNavi {
+                gap: 25px;
+            }
+
+            .JindexNaviRightBtmNavi a {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .JindexNaviContainerInner {
+                padding: 15px 20px;
+            }
+
+            .JindexNaviRightTop {
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 10px;
+            }
+
+            .stock-prices-wrapper {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            /* Hide desktop nav, show mobile */
+            .JindexNaviRightBtmNavi {
+                display: none;
+            }
+
+            .JindexNaviRightBtmM {
+                display: block;
+            }
+
+            .JindexNaviRightBtmM > ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .JindexNaviRightBtmM > ul > li {
+                margin-bottom: 10px;
+            }
+
+            .JindexNaviRightBtmM > ul > li > a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 14px;
+                display: block;
+                padding: 8px 0;
+            }
+        }
+
+        /* Social Icons (if visible in mobile) */
+        .JindexNaviRightBtmSocialM {
+            display: none;
+            list-style: none;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .JindexNaviRightBtmSocialM {
+                display: flex;
+            }
+        }
+
+        .JindexNaviRightBtmSocialM a {
+            width: 32px;
+            height: 32px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            text-indent: -9999px;
+            display: block;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .JindexNaviRightBtmSocialM a:hover {
+            opacity: 1;
+        }
+  </style>
   </head>
   <body>
     <div class="nr-navigation__inner">
