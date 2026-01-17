@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="https://www.bmw.com/etc/clientlibs/wcmp/consentcontroller.fallback/epaas.js"
+        onload="epaas.api.initialize({tenant: 'rolls-roycemotorcars_com', locale: 'en_GB'})"></script>
+    <link rel="stylesheet"
+        href="/etc.clientlibs/matrix/clientlibs/clientlib-components.1f202dca6873f2a8e8f188ee7a93b08c.css"
+        type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="facebook-domain-verification" content="u1ezabos7nk7mgrrryih209l57sdye" />
+    <link rel="shortcut icon" type="image/png"
+        href="/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/img/favicon.png" />
+    <script>
+        function castNAtoRRMC(str) {
+            if (str === "N/A") return "mxrx";
+            return str || "";
+        }
+        window.onload = function () {
+            // Adobe Analytics page level tracking
+            // Collect values to push to data layer
+            var currentUrl = window.location.href;
+            // without query params and .html
+            var simpleCurrentUrl = currentUrl.split("?")[0].split(".html")[0];
+            // the date AEM page was last modified
+            window.rrFormatedDate = "2024-10-04T16:33:58.801+02:00";
+            window.rrTimestampedDate = new Date(window.rrFormatedDate).getTime();
+            var sysEnvChecker = "prod";
+            var environmentMappings = {
+                localhost: "dev",
+                awsint: "int",
+                awspreprod: "staging",
+            };
+            // build /content/rolls-royce/marketGB/rolls-royce_GB/en_GB/home
+            var host = location.host;
+            var pageMarket = "en_GB".split("_")[1];
+            var pageLanguage = "en_GB".split("_")[0];
+            var pageTitle = "Black Badge Ghost Ékleipsis";
+            if (currentUrl && Object.keys(environmentMappings).length > 0) {
+                for (var env in environmentMappings) {
+                    if (currentUrl.indexOf(env) !== -1) {
+                        sysEnvChecker = environmentMappings[env];
+                        break;
+                    }
+                }
+            }
+            // handle both normal urls - /en_GB/boutique/lifestyle-collections.html
+            // and dealers - /london/en_GB/showroom.html
+            // need to swap dealers to have the location i.e london after the market for tracking
+            var urlPastMarketCode = simpleCurrentUrl.split("en_GB")[1];
+            if (mxrx_is_dealer_page) {
+                var splitUrl = simpleCurrentUrl.split("/");
+                // we need to swap the location and locale, so position 3 and 5 any afterwards
+                urlPastMarketCode =
+                    "/" + splitUrl[3] + "/" + splitUrl.slice(5).join("/");
+                if (sysEnvChecker === "dev") {
+                    urlPastMarketCode =
+                        "/" + splitUrl[6] + "/" + splitUrl[splitUrl.length - 1];
+                }
+            }
+            // divide url by ' > ' but remove the first one
+            var urlDivided = urlPastMarketCode.split("/");
+            urlDivided.shift();
+            var urlDividedJoint = urlDivided.join(" - ");
+            var pageInstanceId =
+                "/content/rolls-royce/" +
+                "market" +
+                pageMarket +
+                "/" +
+                "rolls-royce_" +
+                pageMarket +
+                "/" +
+                "en_GB" +
+                urlPastMarketCode;
+            var pageType = castNAtoRRMC("Content");
+            var modelName = castNAtoRRMC("N/A");
+            var wheelbase = castNAtoRRMC("N/A");
+            var fueltype = castNAtoRRMC("N/A");
+            if (fueltype === "Petrol") {
+                fueltype = "P";
+            }
+            if (fueltype === "Electric") {
+                fueltype = "E";
+            }
+            var vehicle = castNAtoRRMC("N/A");
+            var pageData = {
+                event: "aem page loaded",
+                eventInfo: {
+                    reference: {
+                        linkedProducts: [...(vehicle && [vehicle])],
+                    },
+                },
+                page: {
+                    pageInfo: {
+                        pageID: pageInstanceId,
+                        version: "acdl: " + window.rrFormatedDate,
+                        sysEnv: sysEnvChecker,
+                        author: "aem page template",
+                        destinationURL: currentUrl,
+                        referringURL: document.referrer || "",
+                        variant: "real page",
+                        geoRegion: pageMarket,
+                        language: pageLanguage,
+                        pageName: "nsc > " + urlDividedJoint,
+                        pageTitle: pageTitle,
+                        reference: {
+                            defaultProducts: [...(vehicle && [vehicle])],
+                        },
+                    },
+                    category: {
+                        pageType: pageType.length !== 0 ? pageType : "content",
+                        primaryCategory: urlDivided[0],
+                        subCategory1: urlDivided.length > 1 ? urlDivided[1] : "",
+                        subCategory2: urlDivided.length > 2 ? urlDivided[2] : "",
+                        subCategory3: urlDivided.length > 3 ? urlDivided[3] : "",
+                    },
+                    attributes: {
+                        pageTitle: pageTitle,
+                        timeStamp: window.rrTimestampedDate,
+                        brand: "rolls-royce",
+                    },
+                },
+                ...(vehicle && {
+                    product: {
+                        [vehicle]: {
+                            attributes: {
+                                bodyType: wheelbase,
+                                fuelType: fueltype,
+                                series: "mxrx",
+                                mmdr: vehicle,
+                            },
+                            category: {
+                                productType: "new vehicle",
+                                primaryCategory: "new car",
+                                subCategory1: modelName,
+                            },
+                            productInfo: {
+                                productID: vehicle,
+                                manufacturer: "rolls-royce",
+                            },
+                        },
+                    },
+                }),
+            };
+            window.adobeDataLayer = window.adobeDataLayer || [];
+            try {
+                window.adobeDataLayer.push(pageData);
+            } catch (e) {
+                console.log("error pushing to Adobe", e);
+            }
+        };
+    </script>
+    <script>
+        // Prevent Salesforce method patching
+        Window.prototype.addEventListenerRR = Window.prototype.addEventListener;
+        Window.prototype.removeEventListenerRR =
+            Window.prototype.removeEventListener;
+        Node.prototype.addEventListenerRR = Node.prototype.addEventListener;
+        Node.prototype.removeEventListenerRR = Node.prototype.removeEventListener;
+    </script>
+    <script type="module">
+        const TronTrackingActivityMap = (
+            await import(
+                "/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/enhancedActivityMap/enhancedActivityMap.js"
+            )
+        ).default;
+        window.tronActivityMap = new TronTrackingActivityMap();
+        const TronTrackingVideo = (
+            await import(
+                "/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/genericVideoTracking/genericVideoTracking.js"
+            )
+        ).default;
+        window.tronVideo = new TronTrackingVideo();
+        const TronTrackingForm = (
+            await import(
+                "/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/formTracking/formTracking.js"
+            )
+        ).default;
+        window.tronForm = new TronTrackingForm();
+        const TronTrackingConfigurator = (
+            await import(
+                "/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/genericConfiguratorTracking/genericConfiguratorTracking.js"
+            )
+        ).default;
+        window.tronConfigurator = new TronTrackingConfigurator();
+        const TronTrackingSearchFilter = (
+            await import(
+                "/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/genericSearchFilterTracking/genericSearchFilterTracking.js"
+            )
+        ).default;
+        window.tronSearchFilter = new TronTrackingSearchFilter();
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
+    <script src="https://assets.adobedtm.com/717b2dc27cb7/babdcc2f0008/launch-6b20afc3e5fb.min.js" async></script>
+    <script>
+        // The Experience class is available before Evergage is initialised.
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        window.Experiences = function () {
+            this.experiences = [];
+            this.subs = [];
+        };
+        window.Experiences.prototype.push = function (elm) {
+            this.experiences.push(elm);
+            for (var i = 0; i < this.subs.length; ++i) {
+                this.subs[i](elm);
+            }
+        };
+        window.Experiences.prototype.subscribe = function (cb) {
+            this.subs.push(cb);
+            for (var i = 0; i < this.experiences.length; ++i) {
+                cb(this.experiences[i]);
+            }
+        };
+        window.mxrx_experiences = new window.Experiences();
+        window.mxrx_trigger_delayed_action = function (action, delay) {
+            setTimeout(function () {
+                var _aaq = window._aaq || (window._aaq = []);
+                _aaq.push(["trackAction", action]);
+            }, delay);
+        };
+        window.mxrx_trigger_delayed_attribute = function (
+            attribute,
+            value,
+            delay
+        ) {
+            setTimeout(function () {
+                var _aaq = window._aaq || (window._aaq = []);
+                _aaq.push(["setCustomField", attribute, value, "request"]);
+                _aaq.push(["trackAction", "mxrxAttributeUpdate"]);
+            }, delay);
+        };
+    </script>
+    <script></script>
+    <script>
+        window.mxrx_everage_src =
+            "/beacon/rollsroyce/mxrx_production/scripts/evergage.min.js";
+    </script>
+    <script>
+        window.mxrx_form_dealers = [];
+    </script>
+    <title>Maxfuelrx</title>
+    <meta name="title" content="Black Badge Ghost Ékleipsis" />
+    <meta name="description"
+        content="Inspired by the seldom-seen alignment of Sun and Moon, this Private Collection preserves the essence of a total solar eclipse — allowing owners to grasp and savour the fleeting phenomenon." />
+    <meta name="keywords" />
+    <meta property="og:title" content="Black Badge Ghost Ékleipsis" />
+    <meta property="og:description"
+        content="Inspired by the seldom-seen alignment of Sun and Moon, this Private Collection preserves the essence of a total solar eclipse — allowing owners to grasp and savour the fleeting phenomenon." />
+    <meta property="og:url" content="/en_GB/bespoke/private-collection-cars/black-badge-ghost-ekleipsis.html" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:secure_url" />
+    <meta name="twitter:title" content="Black Badge Ghost Ékleipsis" />
+    <meta name="twitter:description"
+        content="Inspired by the seldom-seen alignment of Sun and Moon, this Private Collection preserves the essence of a total solar eclipse — allowing owners to grasp and savour the fleeting phenomenon." />
+    <meta name="twitter:url" content="/en_GB/bespoke/private-collection-cars/black-badge-ghost-ekleipsis.html" />
+    <meta name="twitter:image" content="" />
+    <meta itemprop="name" content="Black Badge Ghost Ékleipsis" />
+    <meta itemprop="description"
+        content="Inspired by the seldom-seen alignment of Sun and Moon, this Private Collection preserves the essence of a total solar eclipse — allowing owners to grasp and savour the fleeting phenomenon." />
+    <meta itemprop="image" content="" />
+    <link rel="shortcut icon" type="image/png"
+        href="/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/img/favicon.png" />
+    <link rel="alternate" hreflang="x-default"
+        href="/en_GB/bespoke/private-collection-cars/black-badge-ghost-ekleipsis.html" />
+    <link rel="alternate" hreflang="en-us"
+        href="/en_US/bespoke/private-collection-cars/black-badge-ghost-ekleipsis.html" />
+    <link rel="alternate" hreflang="ko-kr"
+        href="/ko_KR/bespoke/private-collection-cars/black-badge-ghost-ekleipsis.html" />
+    <link rel="alternate" hreflang="ja-jp"
+        href="/ja_JP/bespoke/private-collection-cars/black-badge-ghost-ekleipsis.html" />
+    <link rel="preload" href="/apps/settings/wcm/designs/refresh/bp/assets.css" as="style">
+    <link rel="stylesheet" href="/apps/settings/wcm/designs/refresh/bp/assets.css" type="text/css">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, viewport-fit=cover" />
+    <link rel="apple-touch-icon"
+        href="/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/img/apple/apple-touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="76x76"
+        href="/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/img/apple/touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="120x120"
+        href="/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/img/apple/touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="152x152"
+        href="/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/img/apple/touch-icon-ipad-retina.png" />
+    <!-- apple specific end -->
+    <!-- android specific -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#0d1973" />
+    <!-- end android specific -->
+    <!-- preload fonts -->
+    <link rel="preload"
+        href="/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/fonts/riviera-nights/RivieraNights-Regular/RivieraNights-Regular.woff"
+        as="font" crossorigin="anonymous" />
+    <link rel="preload"
+        href="/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/fonts/riviera-nights/RivieraNights-Light/RivieraNights-Light.woff"
+        as="font" crossorigin="anonymous" />
+    <link rel="preload"
+        href="/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/fonts/riviera-nights/RivieraNights-Medium/RivieraNights-Medium.woff"
+        as="font" crossorigin="anonymous" />
+    <link rel="preload"
+        href="/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/fonts/riviera-nights/RivieraNights-Ultralight/RivieraNights-Ultralight.woff"
+        as="font" crossorigin="anonymous" />
+    <link rel="preload"
+        href="/etc.clientlibs/matrix/clientlibs/clientlib-components/resources/fonts/riviera-nights/RivieraNights-Bold/RivieraNights-Bold.woff"
+        as="font" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://www.facebook.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://processingwrapper.epaas.api.bmw" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" />
+    <style>
+        .js-mxrx-hero-video {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .mxrx-video-player-snippet {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        .mxrx-hero-content {
+            position: absolute;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            bottom: 40px;
+        }
+
+        .share-price-button {
+            position: fixed;
+            top: 50px;
+            right: 20px;
+            background-color: transparent;
+            color: #03ad0b;
+            padding: 10px 15px;
+            border: #03ad0b;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: normal;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .js-mxrx-hero-video .hero-video {
+                height: 100vh;
+                width: 100vw;
+                object-fit: cover;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hide-on-mobile {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        !(function (a) {
+            var e = "https://s.go-mpulse.net/boomerang/",
+                t = "addEventListener";
+            if ("False" == "True")
+                (a.BOOMR_config = a.BOOMR_config || {}),
+                    (a.BOOMR_config.PageParams = a.BOOMR_config.PageParams || {}),
+                    (a.BOOMR_config.PageParams.pci = !0),
+                    (e = "https://s2.go-mpulse.net/boomerang/");
+            if (
+                ((window.BOOMR_API_key = "MFV3H-DQX7N-VY3LF-C8DFX-V5MLN"),
+                    (function () {
+                        function n(e) {
+                            a.BOOMR_onload = (e && e.timeStamp) || new Date().getTime();
+                        }
+                        if (!a.BOOMR || (!a.BOOMR.version && !a.BOOMR.snippetExecuted)) {
+                            (a.BOOMR = a.BOOMR || {}), (a.BOOMR.snippetExecuted = !0);
+                            var i,
+                                _,
+                                o,
+                                r = document.createElement("iframe");
+                            if (a[t]) a[t]("load", n, !1);
+                            else if (a.attachEvent) a.attachEvent("onload", n);
+                            (r.src = "javascript:void(0)"),
+                                (r.title = ""),
+                                (r.role = "presentation"),
+                                ((r.frameElement || r).style.cssText =
+                                    "width:0;height:0;border:0;display:none;"),
+                                (o = document.getElementsByTagName("script")[0]),
+                                o.parentNode.insertBefore(r, o);
+                            try {
+                                _ = r.contentWindow.document;
+                            } catch (O) {
+                                (i = document.domain),
+                                    (r.src =
+                                        "javascript:var d=document.open();d.domain='" +
+                                        i +
+                                        "';void(0);"),
+                                    (_ = r.contentWindow.document);
+                            }
+                            (_.open()._l = function () {
+                                var a = this.createElement("script");
+                                if (i) this.domain = i;
+                                (a.id = "boomr-if-as"),
+                                    (a.src = e + "MFV3H-DQX7N-VY3LF-C8DFX-V5MLN"),
+                                    (BOOMR_lstart = new Date().getTime()),
+                                    this.body.appendChild(a);
+                            }),
+                                _.write("<bo" + 'dy onload="document._l();">'),
+                                _.close();
+                        }
+                    })(),
+                    "".length > 0)
+            )
+                if (
+                    a &&
+                    "performance" in a &&
+                    a.performance &&
+                    "function" == typeof a.performance.setResourceTimingBufferSize
+                )
+                    a.performance.setResourceTimingBufferSize();
+            !(function () {
+                if (
+                    ((BOOMR = a.BOOMR || {}),
+                        (BOOMR.plugins = BOOMR.plugins || {}),
+                        !BOOMR.plugins.AK)
+                ) {
+                    var e = "" == "true" ? 1 : 0,
+                        t = "cookiepresent",
+                        n = "ytpyrqyccqg2gzy3glpq-f-ad6191c30-clientnsv4-s.akamaihd.net",
+                        i = "false" == "true" ? 2 : 1,
+                        _ = {
+                            "ak.v": "39",
+                            "ak.cp": "1397993",
+                            "ak.ai": parseInt("847225", 10),
+                            "ak.ol": "0",
+                            "ak.cr": 37,
+                            "ak.ipv": 4,
+                            "ak.proto": "h2",
+                            "ak.rid": "b2d8f9a0",
+                            "ak.r": 48975,
+                            "ak.a2": e,
+                            "ak.m": "",
+                            "ak.n": "essl",
+                            "ak.bpcip": "196.223.136.0",
+                            "ak.cport": 49251,
+                            "ak.gh": "2.21.242.200",
+                            "ak.quicv": "",
+                            "ak.tlsv": "tls1.3",
+                            "ak.0rtt": "",
+                            "ak.0rtt.ed": "",
+                            "ak.csrc": "-",
+                            "ak.acc": "",
+                            "ak.t": "1729835743",
+                            "ak.ak":
+                                "hOBiQwZUYzCg5VSAfCLimQ==6NGcpPuiqQHghjfAQqpA3iP0ijcwD16bXUckwla8Jq08cfltdF+4cE4m2ESS2h4+UG3IWOKnM3tSpeSmW/KZuvK7LZo/0qUk9tSbLeju1YAn39GNDouoH1gwLYJ+9Y2oXvuA1rcqKz+zGxN0kwsnEg/7DtDvQqqX4l5QHNbzYQwAYFobuDhu2G4rIfmMjfJP3QS8fjna8/u8/1RJ392Ei22KCK6xp8KDNRCe6sdyaSnXJqipPqsQcc5CQn6ad31hGW0hrXXtXaRsGJBkej6wZgCFQUnvu5OudyNCGZ/eCpTZt73dvbz+bsZryjb89NFOLsl0YMLIfCy9LkzhSXHkPUKH8KwsaBVCpiJy4Y11bmqoLPzaCPFsp2/e2NhyWRBdQLvT28wZL+YhoIJSvYv42kUSsKG/9jGlaMflA6T6foY=",
+                            "ak.pv": "35",
+                            "ak.dpoabenc": "",
+                            "ak.tf": i,
+                        };
+                    if ("" !== t) _["ak.ruds"] = t;
+                    var o = {
+                        i: !1,
+                        av: function (e) {
+                            var t = "http.initiator";
+                            if (e && (!e[t] || "spa_hard" === e[t]))
+                                (_["ak.feo"] = void 0 !== a.aFeoApplied ? 1 : 0),
+                                    BOOMR.addVar(_);
+                        },
+                        rv: function () {
+                            var a = [
+                                "ak.bpcip",
+                                "ak.cport",
+                                "ak.cr",
+                                "ak.csrc",
+                                "ak.gh",
+                                "ak.ipv",
+                                "ak.m",
+                                "ak.n",
+                                "ak.ol",
+                                "ak.proto",
+                                "ak.quicv",
+                                "ak.tlsv",
+                                "ak.0rtt",
+                                "ak.0rtt.ed",
+                                "ak.r",
+                                "ak.acc",
+                                "ak.t",
+                                "ak.tf",
+                            ];
+                            BOOMR.removeVar(a);
+                        },
+                    };
+                    BOOMR.plugins.AK = {
+                        akVars: _,
+                        akDNSPreFetchDomain: n,
+                        init: function () {
+                            if (!o.i) {
+                                var a = BOOMR.subscribe;
+                                a("before_beacon", o.av, null, null),
+                                    a("onbeacon", o.rv, null, null),
+                                    (o.i = !0);
+                            }
+                            return this;
+                        },
+                        is_complete: function () {
+                            return !0;
+                        },
+                    };
+                }
+            })();
+        })(window);
+    </script>
+</head>
+
+<body class="page basicpage no-highlight no-touch">
+    <!--suppress ALL -->
+    <div class="mxrx-page-fixed-under">
+        <div class="fixed-under responsivegrid">
+            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+                <div class="footer aem-GridColumn aem-GridColumn--default--12">
+                    <div class="mxrx-footer-position-wrapper js-mxrx-footer">
+                        <div class="mxrx-component-grid-container mxrx-footer mxrx-footer-standard">
+                            <div class="mxrx-footer-hr-1"></div>
+                            <div class="mxrx-footer-links js-mxrx-footer-links">
+                                <a href="/" class="mxrx-footer-link">Social Responsibility</a>
+                                <a href="/" class="mxrx-footer-link">Invest in MAXFUEL RX</a>
+                                <a href="privacy-policy.html" class="mxrx-footer-link">Privacy Policy</a>
+                                <a href="cookie-policy.html" class="mxrx-footer-link">Cookie Policy</a>
+                                <a href="crypto-disclaimer.html" class="mxrx-footer-link">Crypto Disclaimer</a>
+                                <a href="terms-of-use.html" class="mxrx-footer-link">Terms Of Use</a>
+                            </div>
+
+                            <div class="mxrx-footer-social-icons"
+                                data-tracking-regionid="footer¦1¦¦footer social icons¦1¦">
+                                <div class="mxrx-footer-social-icons-list js-mxrx-footer-social-icons-list">
+                                    <a href="https://www.youtube.com/" class="mxrx-footer-social" rel="nofollow"
+                                        target="_blank" data-tracking-linkid="icon¦1¦youtube¦external link">
+                                        <span class="mxrx-icon mxrx-icon-youtube pointer-events-none"><span
+                                                class="mxrx-a17y-text">Youtube</span></span>
+                                    </a>
+                                    <a href="https://www.facebook.com/" class="mxrx-footer-social" rel="nofollow"
+                                        target="_blank" data-tracking-linkid="icon¦2¦facebook¦external link">
+                                        <span class="mxrx-icon mxrx-icon-fb pointer-events-none"><span
+                                                class="mxrx-a17y-text">Facebook</span></span>
+                                    </a>
+                                    <a href="https://instagram.com/" class="mxrx-footer-social" rel="nofollow"
+                                        target="_blank" data-tracking-linkid="icon¦3¦instagram¦external link">
+                                        <span class="mxrx-icon mxrx-icon-instagram pointer-events-none"><span
+                                                class="mxrx-a17y-text">Instagram</span></span>
+                                    </a>
+                                    <a href="https://www.linkedin.com/" class="mxrx-footer-social" rel="nofollow"
+                                        target="_blank" data-tracking-linkid="icon¦4¦linkedin¦external link">
+                                        <span class="mxrx-icon mxrx-icon-linkedin pointer-events-none"><span
+                                                class="mxrx-a17y-text">Linked
+                                                in</span></span>
+                                    </a>
+                                    <a href="https://twitter.com/" class="mxrx-footer-social" rel="nofollow"
+                                        target="_blank" data-tracking-linkid="icon¦5¦twitter¦external link">
+                                        <span class="mxrx-icon mxrx-icon-twitter pointer-events-none"><span
+                                                class="mxrx-a17y-text">Twitter</span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mxrx-footer-hr-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mxrx-hero-wrapper js-mxrx-hero-wrapper"></div>
+    <div role="main" class="mxrx-page-canvas" style="background-color: #000000">
+        <div class="root responsivegrid">
+            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+                <div class="hero-video aem-GridColumn aem-GridColumn--default--12">
+                    <section class="js-mxrx-hero-video mxrx-hero mxrx-hero--video" xmlns="http://www.w3.org/1999/html">
+                        <video aria-label="Preview Video Snippet"
+                            src="/is/content/matrix/en-cutdown-progress-video-clen-01.mp4"
+                            class="mxrx-video-player-snippet" playsinline muted loop autoplay type="video/mp4"
+                            preload="metadata">
+                        </video>
+                        <span class="mxrx-hero-scroll-icon js-mxrx-hero-scroll-icon"></span>
+                    </section>
+                </div>
+                <div class="section parsys aem-GridColumn aem-GridColumn--default--12">
+                    <div class="mxrx-section" data-experience="[]" data-remove-padding>
+                        <div class="mxrx-section-content">
+                            <div class="mxrx-section-content-wrapper">
+                               
+                                <div class="rich-text">
+                                    <div class="js-mxrx-rich-text" data-lazy-load-class="rich-text-lazy-load">
+                                        <div
+                                            class="mxrx-component-grid-container mxrx-rich-text mxrx-rich-text-six-col mxrx-rich-text-centre-align">
+                                            <div class="mxrx-rich-text-wrapper">
+                                                <h2 class="mxrx-rich-text-heading mxrx-rich-text-standard-heading"
+                                                    style="color: #ffffff">
+                                                    WHAT IS MAXFUELRX
+                                                </h2>
+                                                <div class="mxrx-rich-text-paragraph-container mxrx-rich-text-body-copy-one-lighter"
+                                                    style="color: #ffffff">
+                                                    <p>
+                                                        MaxFuel RX is an elite precision engineered fuel crafted to deeply cleanse and sustain your diesel engine’s performance over the long haul. Its advanced formula goes beyond standard fuels, ensuring continuous protection that maximises efficiency and longevity.
+
+
+                                                    </p>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="spacer">
+                                    <div class="mxrx-content-spacer mxrx-content-spacer--legacy" style="
+                        --spacer-desktop: 200px;
+                        --spacer-tablet: 150px;
+                        --spacer-mobile: 100px;
+                      " data-unique-id="444882866"></div>
+                                </div>
+                                <div>
+                                    <section class="js-mxrx-hero-video mxrx-hero mxrx-hero--video"
+                                        xmlns="http://www.w3.org/1999/html">
+                                        <video aria-label="Preview Video Snippet"
+                                            src="/content/dam/matrix/maxfuelrx/desktop_bug.mp4"
+                                            class="mxrx-video-player-snippet" playsinline muted loop autoplay
+                                            type="video/mp4" preload="metadata">
+                                        </video>
+                                        <span class="mxrx-hero-scroll-icon js-mxrx-hero-scroll-icon"></span>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mxrx-section-bg-wrapper">
+                            <div class="mxrx-section-bg">
+                                <picture class="js-mxrx-section-bg-img">
+                                    <source data-srcset="
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 1242w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 2880w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 28w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 3840w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 1920w" data-webp-srcset="
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 2880w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 1242w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 3840w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 1920w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 828w" sizes="100vw" media="(min-width: 1024px)" />
+                                    <source data-srcset="
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 1242w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 2880w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 828w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 3840w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 1920w" data-webp-srcset="
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 2880w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 1242w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 3840w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 1920w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 828w" sizes="100vw" media="(min-width: 768px)" />
+                                    <source data-srcset="
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 1242w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 2880w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 828w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 3840w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 1920w" data-webp-srcset="
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 2880w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 1242w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 3840w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 1920w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg 828w" sizes="100vw" media="(min-width: 160px)" />
+                                    <img class="mxrx-section-bg-img"
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                        data-src="/content/dam/matrix/maxfuelrx/D-blackdots.jpg"
+                                        data-webp-src="/content/dam/matrix/maxfuelrx/D-blackdots.jpg"
+                                        alt="Stars against black sky" />
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section parsys aem-GridColumn aem-GridColumn--default--12">
+                    <div class="mxrx-section" data-experience="[]" style="background-color: #000000">
+                        <div class="mxrx-section-content">
+                            <div class="mxrx-section-content-wrapper">
+                                <div class="spacer">
+                                    <div class="mxrx-content-spacer mxrx-content-spacer--legacy" style="
+                        --spacer-desktop: 140px;
+                        --spacer-tablet: 150px;
+                        --spacer-mobile: 100px;
+                      " data-unique-id="545463721"></div>
+                                </div>
+                                <div class="rich-text">
+                                    <div class="js-mxrx-rich-text" data-lazy-load-class="rich-text-lazy-load">
+                                        <div
+                                            class="mxrx-component-grid-container mxrx-rich-text mxrx-rich-text-six-col mxrx-rich-text-centre-align">
+                                            <div class="mxrx-rich-text-wrapper">
+                                                <h2 class="mxrx-rich-text-heading mxrx-rich-text-standard-heading"
+                                                    style="color: #ffffff">
+                                                    MaxFuelRx Range of fuels
+                                                </h2>
+                                                <div class="mxrx-rich-text-paragraph-container mxrx-rich-text-body-copy-one-lighter"
+                                                    style="color: #ffffff">
+                                                    <p>
+                                                        The MaxFuel RX range of fuels is the ultimate solution engineered to keep your engine impeccably clean, ensuring it operates at peak efficiency. A clean engine not only runs smoother but also lasts longer, consuming less fuel while delivering superior performance. Powered by cutting edge, energy efficient technology, Matrix MaxFuel RX goes beyond fuelling it’s an investment in extended engine life and enhanced mileage. With every drop, our customers and partners get more value for their money enjoying greater savings, unmatched performance and a commitment to sustainability. Maximise your drive, minimise your costs and experience Matrix MaxFuel RX.<br />
+
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="expanding-image-fade">
+                                    <section class="mxrx-mask-fade" style="background: #000000">
+                                        <section class="mxrx-expanding-mask-fade">
+                                            <div class="mxrx-mask-trigger-fade"></div>
+                                            <div class="wrapper">
+                                                <span class="mxrx-picture-preloader">
+                                                    <picture class="mxrx-preload-picture mxrx-preload-target">
+                                                        <source data-srcset="
+                                                                        /content/dam/matrix/maxfuelrx/D02.jpg 1242w, 
+                                                                        /content/dam/matrix/maxfuelrx/D02.jpg 2880w, 
+                                                                        /content/dam/matrix/maxfuelrx/D02.jpg 828w, 
+                                                                        /content/dam/matrix/maxfuelrx/D02.jpg 3840w, 
+                                                                        /content/dam/matrix/maxfuelrx/D02.jpg 1920w"
+                                                            data-webp-srcset="
+                                                                        /content/dam/matrix/maxfuelrx/D02.jpg 2880w, 
+                                                                        /content/dam/matrix/maxfuelrx/D02.jpg 1242w, 
+                                                                        /content/dam/matrix/maxfuelrx/D02.jpg 3840w, 
+                                                                        /content/dam/matrix/maxfuelrx/D02.jpg 1920w, 
+                                                                        /content/dam/matrix/maxfuelrx/D02.jpg 828w"
+                                                            sizes="100vw" alt="D2.jpg" media="(min-width: 1024px)" />
+                                                        <source data-srcset="
+                                                                        /content/dam/matrix/maxfuelrx/T2.jpg 1242w, 
+                                                                        /content/dam/matrix/maxfuelrx/T2.jpg 2880w, 
+                                                                        /content/dam/matrix/maxfuelrx/T2.jpg 828w, 
+                                                                        /content/dam/matrix/maxfuelrx/T2.jpg 1536w, 
+                                                                        /content/dam/matrix/maxfuelrx/T2.jpg 1920w"
+                                                            data-webp-srcset="
+                                                                        /content/dam/matrix/maxfuelrx/T2.jpg 2880w, 
+                                                                        /content/dam/matrix/maxfuelrx/T2.jpg 1242w, 
+                                                                        /content/dam/matrix/maxfuelrx/T2.jpg 1536w, 
+                                                                        /content/dam/matrix/maxfuelrx/T2.jpg 1920w, 
+                                                                        /content/dam/matrix/maxfuelrx/T2.jpg 828w"
+                                                            sizes="100vw"
+                                                            alt=""
+                                                            media="(min-width: 768px) and (max-width: 1024px)" />
+                                                        <source data-srcset="
+                                                                        /content/dam/matrix/maxfuelrx/M1.jpg 1242w, 
+                                                                        /content/dam/matrix/maxfuelrx/M1.jpg 2880w, 
+                                                                        /content/dam/matrix/maxfuelrx/M1.jpg 828w, 
+                                                                        /content/dam/matrix/maxfuelrx/M1.jpg 640w, 
+                                                                        /content/dam/matrix/maxfuelrx/M1.jpg 1920w"
+                                                            data-webp-srcset="
+                                                                        /content/dam/matrix/maxfuelrx/M1.jpg 2880w, 
+                                                                        /content/dam/matrix/maxfuelrx/M1.jpg 1242w, 
+                                                                        /content/dam/matrix/maxfuelrx/M1.jpg 640w, 
+                                                                        /content/dam/matrix/maxfuelrx/M1.jpg 1920w, 
+                                                                        /content/dam/matrix/maxfuelrx/M1.jpg 828w"
+                                                            sizes="100vw"
+                                                           
+                                                            media="(min-width: 1px) and (max-width: 767px)" />
+                                                        <img class="bg-image"
+                                                            data-src="/content/dam/matrix/maxfuelrx/D2.jpg "
+                                                            data-webp-src="/content/dam/matrix/maxfuelrx/D2.jpg "
+                                                             />
+                                                    </picture>
+                                                </span>
+                                                <div class="mxrx-mask-wrap-fade">
+                                                    <span class="mxrx-picture-preloader main-image">
+                                                        <picture class="mxrx-preload-picture-1 mxrx-preload-target">
+                                                            <source data-srcset="
+                                                                        /content/dam/matrix/maxfuelrx/D-12.jpg 1242w, 
+                                                                        /content/dam/matrix/maxfuelrx/D-12.jpg 2880w, 
+                                                                        /content/dam/matrix/maxfuelrx/D-12.jpg 828w, 
+                                                                        /content/dam/matrix/maxfuelrx/D-12.jpg 3840w, 
+                                                                        /content/dam/matrix/maxfuelrx/D-12.jpg 1920w"
+                                                                data-webp-srcset="
+                                                                        /content/dam/matrix/maxfuelrx/D-12.jpg 2880w, 
+                                                                        /content/dam/matrix/maxfuelrx/D-12.jpg 1242w, 
+                                                                        /content/dam/matrix/maxfuelrx/D-12.jpg 3840w, 
+                                                                        /content/dam/matrix/maxfuelrx/D-12.jpg 1920w, 
+                                                                        /content/dam/matrix/maxfuelrx/D-12.jpg 828w"
+                                                                sizes="100vw"
+                                                                
+                                                                media="(min-width: 1024px)" />
+                                                            <source data-srcset="
+                                  /content/dam/matrix/maxfuelrx/T-12 1242w, 
+                                  /content/dam/matrix/maxfuelrx/T-12 2880w, 
+                                  /content/dam/matrix/maxfuelrx/T-12 828w, 
+                                  /content/dam/matrix/maxfuelrx/T-12 1536w, 
+                                  /content/dam/matrix/maxfuelrx/T-12 1920w" data-webp-srcset="
+                                  /content/dam/matrix/maxfuelrx/T-12 2880w, 
+                                  /content/dam/matrix/maxfuelrx/T-12 1242w, 
+                                  /content/dam/matrix/maxfuelrx/T-12 1536w, 
+                                  /content/dam/matrix/maxfuelrx/T-12 1920w, 
+                                  /content/dam/matrix/maxfuelrx/T-12 828w" sizes="100vw" alt="T-EXP-IMG-02-EKLEIPSIS.jpg"
+                                                                media="(min-width: 768px) and (max-width: 1024px)" />
+                                                            <source data-srcset="
+                                  /content/dam/matrix/maxfuelrx/M-12.jpg 1242w, 
+                                  /content/dam/matrix/maxfuelrx/M-12.jpg 2880w, 
+                                  /content/dam/matrix/maxfuelrx/M-12.jpg 828w, 
+                                  /content/dam/matrix/maxfuelrx/M-12.jpg 640w, 
+                                  /content/dam/matrix/maxfuelrx/M-12.jpg 1920w" data-webp-srcset="
+                                  /content/dam/matrix/maxfuelrx/M-12.jpg 2880w, 
+                                  /content/dam/matrix/maxfuelrx/M-12.jpg 1242w, 
+                                  /content/dam/matrix/maxfuelrx/M-12.jpg 640w, 
+                                  /content/dam/matrix/maxfuelrx/M-12.jpg 1920w, 
+                                  /content/dam/matrix/maxfuelrx/M-12.jpg 828w" sizes="100vw"
+                                                                alt="M-EXP-IMG-02-EKLEIPSIS.jpg"
+                                                                media="(min-width: 1px) and (max-width: 767px)" />
+                                                            <img class="mxrx-mask-image-fade"
+                                                                data-src="/content/dam/matrix/maxfuelrx/D-12.jpg"
+                                                                data-webp-src="/content/dam/matrix/maxfuelrx/D-12.jpg"
+                                                                />
+                                                        </picture>
+                                                    </span>
+                                                    <span class="mxrx-picture-preloader fade-image">
+                                                        <picture class="mxrx-preload-picture-2 mxrx-preload-target">
+                                                            <source
+                                                                data-srcset="
+                                                                /content/dam/matrix/maxfuelrx/D-EXP-IMG-03-LIGHTS-ON-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.1242.jpeg 1242w, 
+                                                                /content/dam/matrix/maxfuelrx/D-EXP-IMG-03-LIGHTS-ON-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.2880.jpeg 2880w, 
+                                                                /content/dam/matrix/maxfuelrx/D-EXP-IMG-03-LIGHTS-ON-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.828.jpeg 828w, 
+                                                                /content/dam/matrix/maxfuelrx/D-EXP-IMG-03-LIGHTS-ON-EKLEIPSIS.jpg/jcr:content/renditions/original 3840w, 
+                                                                /content/dam/matrix/maxfuelrx/D-EXP-IMG-03-LIGHTS-ON-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.1920.jpeg 1920w"
+                                                                data-webp-srcset="
+                                                                /content/dam/matrix/maxfuelrx/D-EXP-IMG-03-LIGHTS-ON-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.2880.webp 2880w, 
+                                                                /content/dam/matrix/maxfuelrx/D-EXP-IMG-03-LIGHTS-ON-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.1242.webp 1242w, 
+                                                                /content/dam/matrix/maxfuelrx/D-EXP-IMG-03-LIGHTS-ON-EKLEIPSIS.jpg/jcr:content/renditions/original 3840w, 
+                                                                /content/dam/matrix/maxfuelrx/D-EXP-IMG-03-LIGHTS-ON-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.1920.webp 1920w, 
+                                                                /content/dam/matrix/maxfuelrx/D-EXP-IMG-03-LIGHTS-ON-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.828.webp 828w"
+                                                                sizes="100vw" alt="D-EXP-IMG-03-LIGHTS-ON-EKLEIPSIS.jpg"
+                                                                media="(min-width: 1024px)" />
+                                                            <source
+                                                                data-srcset="
+                                                                /content/dam/matrix/maxfuelrx/T-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.1242.jpeg 1242w, 
+                                                                /content/dam/matrix/maxfuelrx/T-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.2880.jpeg 2880w, 
+                                                                /content/dam/matrix/maxfuelrx/T-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.828.jpeg 828w, 
+                                                                /content/dam/matrix/maxfuelrx/T-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/original 1536w, 
+                                                                /content/dam/matrix/maxfuelrx/T-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.1920.jpeg 1920w"
+                                                                data-webp-srcset="
+                                                                /content/dam/matrix/maxfuelrx/T-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.2880.webp 2880w, 
+                                                                /content/dam/matrix/maxfuelrx/T-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.1242.webp 1242w, 
+                                                                /content/dam/matrix/maxfuelrx/T-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/original 1536w, 
+                                                                /content/dam/matrix/maxfuelrx/T-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.1920.webp 1920w, 
+                                                                /content/dam/matrix/maxfuelrx/T-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.828.webp 828w"
+                                                                sizes="100vw" alt="T-EXP-IMG-03-EKLEIPSIS.jpg"
+                                                                media="(min-width: 768px) and (max-width: 1024px)" />
+                                                            <source
+                                                                data-srcset="
+                                                                /content/dam/matrix/maxfuelrx/M-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.1242.jpeg 1242w, 
+                                                                /content/dam/matrix/maxfuelrx/M-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.2880.jpeg 2880w, 
+                                                                /content/dam/matrix/maxfuelrx/M-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.828.jpeg 828w, 
+                                                                /content/dam/matrix/maxfuelrx/M-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/original 640w, 
+                                                                /content/dam/matrix/maxfuelrx/M-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.1920.jpeg 1920w"
+                                                                data-webp-srcset="
+                                                                /content/dam/matrix/maxfuelrx/M-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.2880.webp 2880w, 
+                                                                /content/dam/matrix/maxfuelrx/M-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.1242.webp 1242w, 
+                                                                /content/dam/matrix/maxfuelrx/M-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/original 640w, 
+                                                                /content/dam/matrix/maxfuelrx/M-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.1920.webp 1920w, 
+                                                                /content/dam/matrix/maxfuelrx/M-EXP-IMG-03-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.828.webp 828w"
+                                                                sizes="100vw" 
+                                                                media="(min-width: 1px) and (max-width: 767px)" />
+                                                            <img class="mxrx-mask-image-fade-other-image"
+                                                                data-src="/content/dam/matrix/maxfuelrx/D-EXP-IMG-03-LIGHTS-ON-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.1920.jpeg"
+                                                                data-webp-src="/content/dam/matrix/maxfuelrx/D-EXP-IMG-03-LIGHTS-ON-EKLEIPSIS.jpg/jcr:content/renditions/cq5dam.web.1920.webp"
+                                                                />
+                                                        </picture>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </section>
+                                </div>
+                                <div class="spacer">
+                                    <div class="mxrx-content-spacer mxrx-content-spacer--legacy" style="
+                        --spacer-desktop: 20px;
+                        --spacer-tablet: 100px;
+                        --spacer-mobile: 100px;
+                      " data-unique-id="808231284"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mxrx-section-bg-wrapper">
+                            <div class="mxrx-section-bg">
+                                <picture class="js-mxrx-section-bg-img">
+                                    <source data-srcset="
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   1242w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   2880w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg  828w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg    3840w,                 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   1920w" data-webp-srcset="
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   2880w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   1242w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg    3840w,                 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   1920w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg  828w" sizes="100vw" media="(min-width: 1024px)" />
+                                    <source data-srcset="
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   1242w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   2880w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg  828w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   3840w,                  
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   1920w" data-webp-srcset="
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   2880w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   1242w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg    3840w,                 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   1920w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg  828w" sizes="100vw" media="(min-width: 768px)" />
+                                    <source data-srcset="
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   1242w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   2880w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg  828w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg    3840w,                 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   1920w" data-webp-srcset="
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   2880w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   1242w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg    3840w,                 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg   1920w, 
+                      /content/dam/matrix/maxfuelrx/D-blackdots.jpg  828w" sizes="100vw" media="(min-width: 160px)" />
+                                    <img class="mxrx-section-bg-img"
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                        data-src="/content/dam/matrix/maxfuelrx/D-blackdots.jpg"
+                                        data-webp-src="/content/dam/matrix/maxfuelrx/D-blackdots.jpg"
+                                       />
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section parsys aem-GridColumn aem-GridColumn--default--12">
+                    <div class="mxrx-section" data-experience="[]" data-remove-padding style="background-color: #000000"
+                        data-bg-asset-off>
+                        <div class="mxrx-section-content">
+                            <div class="mxrx-section-content-wrapper">
+                            
+                                <div class="rich-text">
+                                    <div class="js-mxrx-rich-text" data-lazy-load-class="rich-text-lazy-load">
+                                        <div
+                                            class="mxrx-component-grid-container mxrx-rich-text mxrx-rich-text-six-col mxrx-rich-text-centre-align">
+                                            <div class="mxrx-rich-text-wrapper">
+                                                <h2 class="mxrx-rich-text-heading mxrx-rich-text-standard-heading"
+                                                    style="color: #ffffff">
+                                                    Eliminating harmful deposits
+                                                </h2>
+                                                <div class="mxrx-rich-text-paragraph-container mxrx-rich-text-body-copy-one-lighter"
+                                                    style="color: #ffffff">
+                                                    <p>
+                                                        MaxFuel RX Petrol is engineered to give your engine the clean advantage it deserves. By effectively eliminating harmful deposits, it ensures your engine runs at peak performance, while its advanced anticorrosion technology safeguards against wear and tear. With MaxFuel RX you’re not just fuelling your vehicle you’re investing in a longer, more efficient engine life, ensuring smooth performance and protection mile after mile.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="spacer">
+                                    <div class="mxrx-content-spacer mxrx-content-spacer--legacy" style="
+                        --spacer-desktop: 230px;
+                        --spacer-tablet: 180px;
+                        --spacer-mobile: 15px;
+                      " data-unique-id="37799701"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mxrx-section-bg-wrapper">
+                            <div class="mxrx-section-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-adaptive parsys aem-GridColumn aem-GridColumn--default--12">
+                    <div class="mxrx-section-adaptive" data-experience="[]" data-remove-padding
+                        data-vertical-alignment-desktop="0.8" data-vertical-alignment-tablet="0.8"
+                        data-mobile-bg-behaviour="stack">
+                        <div class="mxrx-section-adaptive-content">
+                            <div class="mxrx-section-adaptive-content-wrapper">
+                               
+                               
+                            </div>
+                        </div>
+                        <div class="mxrx-section-adaptive-bg-wrapper">
+                            <div class="mxrx-section-adaptive-bg">
+                                <picture class="js-mxrx-section-adaptive-bg-img">
+                                    <source data-srcset="
+                      /content/dam/matrix/maxfuelrx/D-2KLEI.jpg 1242w, 
+                      /content/dam/matrix/maxfuelrx/D-2KLEI.jpg 2880w, 
+                      /content/dam/matrix/maxfuelrx/D-2KLEI.jpg 828w, 
+                      /content/dam/matrix/maxfuelrx/D-2KLEI.jpg 2832w, 
+                      /content/dam/matrix/maxfuelrx/D-2KLEI.jpg 1920w" data-webp-srcset="
+                      /content/dam/matrix/maxfuelrx/D-2KLEI.jpg 2880w, 
+                      /content/dam/matrix/maxfuelrx/D-2KLEI.jpg 1242w, 
+                      /content/dam/matrix/maxfuelrx/D-2KLEI.jpg 2832w, 
+                      /content/dam/matrix/maxfuelrx/D-2KLEI.jpg 1920w, 
+                      /content/dam/matrix/maxfuelrx/D-2KLEI.jpg 828w" sizes="100vw" media="(min-width: 1024px)" />
+                                    <source data-srcset="
+                      /content/dam/matrix/maxfuelrx/T-2KLEI.jpg 1242w, 
+                      /content/dam/matrix/maxfuelrx/T-2KLEI.jpg 2880w, 
+                      /content/dam/matrix/maxfuelrx/T-2KLEI.jpg 828w, 
+                      /content/dam/matrix/maxfuelrx/T-2KLEI.jpg 2832w, 
+                      /content/dam/matrix/maxfuelrx/T-2KLEI.jpg 1920w" data-webp-srcset="
+                      /content/dam/matrix/maxfuelrx/T-2KLEI.jpg 2880w, 
+                      /content/dam/matrix/maxfuelrx/T-2KLEI.jpg 1242w, 
+                      /content/dam/matrix/maxfuelrx/T-2KLEI.jpg 2832w, 
+                      /content/dam/matrix/maxfuelrx/T-2KLEI.jpg 1920w, 
+                      /content/dam/matrix/maxfuelrx/T-2KLEI.jpg 828w" sizes="100vw" media="(min-width: 768px)" />
+                                    <source data-srcset="
+                      /content/dam/matrix/maxfuelrx/M-2KLEI.jpg 1242w, 
+                      /content/dam/matrix/maxfuelrx/M-2KLEI.jpg 2880w, 
+                      /content/dam/matrix/maxfuelrx/M-2KLEI.jpg 828w, 
+                      /content/dam/matrix/maxfuelrx/M-2KLEI.jpg 640w, 
+                      /content/dam/matrix/maxfuelrx/M-2KLEI.jpg 1920w" data-webp-srcset="
+                      /content/dam/matrix/maxfuelrx/M-2KLEI.jpg 2880w, 
+                      /content/dam/matrix/maxfuelrx/M-2KLEI.jpg 1242w, 
+                      /content/dam/matrix/maxfuelrx/M-2KLEI.jpg 640w, 
+                      /content/dam/matrix/maxfuelrx/M-2KLEI.jpg 1920w, 
+                      /content/dam/matrix/maxfuelrx/M-2KLEI.jpg 828w" sizes="100vw" media="(min-width: 160px)" />
+                                    <img class="mxrx-section-adaptive-bg-img"
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                        data-src="/content/dam/matrix/maxfuelrx/D-2KLEI.jpg"
+                                        data-webp-src="/content/dam/matrix/maxfuelrx/D-2KLEI.jpg"
+                                        />
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section parsys aem-GridColumn aem-GridColumn--default--12">
+                    <div class="mxrx-section" data-experience="[]" data-remove-padding data-bg-asset-off>
+                        <div class="mxrx-section-content">
+                            <div class="mxrx-section-content-wrapper">
+                                <div class="spacer">
+                                    <div class="mxrx-content-spacer mxrx-content-spacer--legacy" style="
+                        --spacer-desktop: 200px;
+                        --spacer-tablet: 150px;
+                        --spacer-mobile: 80px;
+                      " data-unique-id="1463811393"></div>
+                                </div>
+                                <div class="rich-text">
+                                    <div class="js-mxrx-rich-text" data-lazy-load-class="rich-text-lazy-load">
+                                        <div
+                                            class="mxrx-component-grid-container mxrx-rich-text mxrx-rich-text-six-col mxrx-rich-text-centre-align">
+                                            <div class="mxrx-rich-text-wrapper">
+                                                <h2 class="mxrx-rich-text-heading mxrx-rich-text-standard-heading"
+                                                    style="color: #ffffff">
+                                                    MaxFuelRx Diesel
+                                                </h2>
+                                                <div class="mxrx-rich-text-paragraph-container mxrx-rich-text-body-copy-one-lighter"
+                                                    style="color: #ffffff">
+                                                    <p>
+                                                        MaxFuel RX Diesel offers equally impressive benefits, preventing up to 89% of 
+                                                        fouling with innovative detergents designed to keep sensitive components like 
+                                                        injectors spotless. Its compatibility with all diesel engines regardless of age 
+                                                        guarantees that your vehicle runs smoother, cleaner and more efficiently. The 
+                                                        facts are indisputable a cleaner engine is more efficient more durable and more 
+                                                        eco friendly. With MaxFuel RX you’re not just fuelling your journey you’re 
+                                                        protecting your engine’s future.
+
+                                                        What sets MaxFuel RX apart, however is not only its fuel optimisation but also 
+                                                        the integration of AI technology to monitor and track environmental impacts in 
+                                                        real time. Through a dedicated app, MaxFuel RX users can actively monitor the 
+                                                        air quality in their regions and observe the reduction of pollutants as MaxFuel RX 
+                                                        is implemented. This app serves as a real time dashboard, using data driven 
+                                                        insights to showcase how the reduction in diesel bug growth, neutralisation of 
+                                                        acids, and other fuel optimisations directly improve local air quality.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="spacer">
+                                    <div class="mxrx-content-spacer mxrx-content-spacer--legacy" style="
+                        --spacer-desktop: 200px;
+                        --spacer-tablet: 150px;
+                        --spacer-mobile: 40px;
+                      " data-unique-id="1673498844"></div>
+                                </div>
+                                <div class="image-switch">
+                                    <div class="mxrx-component-grid-container mxrx-image-switch-container js-mxrx-image-switch-container"
+                                        data-lazy-load-class="image-switch-lazy-load">
+                                        <div class="mxrx-image-switch-wrapper is-full-bleed">
+                                            <span class="mxrx-image-switch-transition-marker"></span>
+                                            <div class="js-mxrx-image-switch-aspect mxrx-image-switch-aspect"
+                                                style="padding-bottom: 56.6%">
+                                                <div class="mxrx-image-switch-wrapper-original">
+                                                    <picture
+                                                        class="js-mxrx-image-switch-original-img mxrx-image-switch-original-picture">
+                                                        <source data-srcset="
+                                /content/dam/matrix/maxfuelrx/D3.jpg 1242w, 
+                                /content/dam/matrix/maxfuelrx/D3.jpg 2880w, 
+                                /content/dam/matrix/maxfuelrx/D3.jpg 828w, 
+                                /content/dam/matrix/maxfuelrx/D3.jpg 3840w, 
+                                /content/dam/matrix/maxfuelrx/D3.jpg 1920w" data-webp-srcset="
+                                /content/dam/matrix/maxfuelrx/D3.jpg 2880w, 
+                                /content/dam/matrix/maxfuelrx/D3.jpg 1242w, 
+                                /content/dam/matrix/maxfuelrx/D3.jpg 3840w, 
+                                /content/dam/matrix/maxfuelrx/D3.jpg 1920w, 
+                                /content/dam/matrix/maxfuelrx/D3.jpg 828w" sizes="100vw" media="(min-width: 1024px)" />
+                                                        <source data-srcset="
+                                /content/dam/matrix/maxfuelrx/T3.jpg 1242w, 
+                                /content/dam/matrix/maxfuelrx/T3.jpg 2880w, 
+                                /content/dam/matrix/maxfuelrx/T3.jpg 828w, 
+                                /content/dam/matrix/maxfuelrx/T3.jpg 1920w, 
+                                /content/dam/matrix/maxfuelrx/T3.jpg 1920w" data-webp-srcset="
+                                /content/dam/matrix/maxfuelrx/T3.jpg 2880w, 
+                                /content/dam/matrix/maxfuelrx/T3.jpg 1242w, 
+                                /content/dam/matrix/maxfuelrx/T3.jpg 1920w, 
+                                /content/dam/matrix/maxfuelrx/T3.jpg 1920w, 
+                                /content/dam/matrix/maxfuelrx/T3.jpg 828w" sizes="100vw" media="(min-width: 768px)" />
+                                                        <source data-srcset="
+                                /content/dam/matrix/maxfuelrx/M3.jpg 1242w, 
+                                /content/dam/matrix/maxfuelrx/M3.jpg 2880w, 
+                                /content/dam/matrix/maxfuelrx/M3.jpg 828w, 
+                                /content/dam/matrix/maxfuelrx/M3.jpg 640w, 
+                                /content/dam/matrix/maxfuelrx/M3.jpg 1920w" data-webp-srcset="
+                                /content/dam/matrix/maxfuelrx/M3.jpg 2880w, 
+                                /content/dam/matrix/maxfuelrx/M3.jpg 1242w, 
+                                /content/dam/matrix/maxfuelrx/M3.jpg 640w, 
+                                /content/dam/matrix/maxfuelrx/M3.jpg 1920w, 
+                                /content/dam/matrix/maxfuelrx/M3.jpg 828w" sizes="100vw" media="(min-width: 160px)" />
+                                                        <img class="mxrx-image-switch-original-img"
+                                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                                            data-src="/content/dam/matrix/maxfuelrx/D3.jpg "
+                                                            data-webp-src="/content/dam/matrix/maxfuelrx/D3.jpg "
+                                                             />
+                                                    </picture>
+                                                </div>
+                                                <div class="mxrx-image-switch-wrapper-swap"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mxrx-section-bg-wrapper">
+                            <div class="mxrx-section-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section parsys aem-GridColumn aem-GridColumn--default--12">
+                    <div class="mxrx-section" data-experience="[]" data-bg-asset-off>
+                        <div class="mxrx-section-content">
+                            <div class="mxrx-section-content-wrapper">
+                                <div class="spacer">
+                                    <div class="mxrx-content-spacer mxrx-content-spacer--legacy" style="
+                        --spacer-desktop: 140px;
+                        --spacer-tablet: 30px;
+                        --spacer-mobile: 90px;
+                      " data-unique-id="42246712"></div>
+                                </div>
+                                <div class="rich-text">
+                                    <div class="js-mxrx-rich-text" data-lazy-load-class="rich-text-lazy-load">
+                                        <div
+                                            class="mxrx-component-grid-container mxrx-rich-text mxrx-rich-text-six-col mxrx-rich-text-centre-align">
+                                            <div class="mxrx-rich-text-wrapper">
+                                                <h2 class="mxrx-rich-text-heading mxrx-rich-text-standard-heading"
+                                                    style="color: #ffffff">
+                                                    Benefits of MaxFuelRx Petrol and Diesel
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="rich-text">
+                                    <div class="js-mxrx-rich-text" data-lazy-load-class="rich-text-lazy-load">
+                                        <div
+                                            class="mxrx-component-grid-container mxrx-rich-text mxrx-rich-text-six-col mxrx-rich-text-centre-align">
+                                            <div class="mxrx-rich-text-wrapper">
+                                                <h6 
+                                                    style="color: #ffffff">
+                                                    WE BALANCE INNOVATION,EXCELLENCE AND PROPORTION
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mxrx-section-bg-wrapper">
+                            <div class="mxrx-section-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section parsys aem-GridColumn aem-GridColumn--default--12">
+                    <div class="mxrx-section" data-experience="[]" data-remove-padding style="background-color: #000000"
+                        data-bg-asset-off>
+                        <div class="mxrx-section-content">
+                            <div class="mxrx-section-content-wrapper">
+                                <div class="scroll-video-animation parsys">
+                                    <div class="loading-icon"></div>
+                                    <div class="mxrx-scroll-video-animation js-mxrx-scroll-video-animation"
+                                        data-scroll-factor="1.0" data-background-color="#000000"
+                                        data-scroll-height-adjust="0"
+                                        data-aem-video_16_9="/content/dam/matrix/maxfuelrx/01_eclipse_coachline.mp4"
+                                        data-aem-video_4_3="/content/dam/matrix/maxfuelrx/01_eclipse_coachline_tablet_43.mp4"
+                                        data-aem-video_3_4="/content/dam/matrix/maxfuelrx/01_eclipse_coachline_tablet_34.mp4"
+                                        data-aem-video_9_16="/content/dam/matrix/maxfuelrx/01_eclipse_coachline_mobile.mp4"
+                                        data-container-height="3000" data-text-alignment_16_9="left"
+                                        data-text-vertical-pin_16_9="bottom" data-text-alignment_9_16="left"
+                                        data-text-vertical-pin_9_16="below" data-text-alignment_4_3="left"
+                                        data-text-vertical-pin_4_3="bottom" data-text-alignment_3_4="left"
+                                        data-text-vertical-pin_3_4="below" style="height: 3000px">
+                                        <div class="mxrx-scroll-video-animation-frame-block"
+                                            style="background-color: #000000">
+                                            <div class="video-scroll-container">
+                                                <video class="video-scrub" playsinline="true" webkit-playsinline="true"
+                                                    preload="metadata" muted="muted"></video>
+                                                <div class="rich-text">
+                                                    <div class="js-mxrx-rich-text"
+                                                        data-lazy-load-class="rich-text-lazy-load">
+                                                        <div
+                                                            class="mxrx-component-grid-container mxrx-rich-text mxrx-rich-text-six-col mxrx-rich-text-left-align">
+                                                            <div class="mxrx-rich-text-wrapper">
+                                                                <div class="mxrx-rich-text-paragraph-container mxrx-rich-text-body-standard"
+                                                                    style="color: #ffffff">
+                                                                    <p>
+                                                                        Maxfuel Rx petrol boasts cutting edge technology that prevents up to 93% of engine 
+                                                                        fouling, ensuring your engine remains impeccably clean mile after 
+                                                                        mile. Compatible with both new and older petrol engine technologies 
+                                                                        this advanced formula, developed by Matrix’s renowned research 
+                                                                        centers utilises state of the art additives to optimise performance. 
+                                                                        The result a cleaner engine that consumes less fuel, lasts longer 
+                                                                        and significantly reduces emissions.
+
+
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mxrx-section-bg-wrapper">
+                            <div class="mxrx-section-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section parsys aem-GridColumn aem-GridColumn--default--12">
+                    <div class="mxrx-section" data-experience="[]" data-bg-asset-off>
+                        <div class="mxrx-section-content">
+                            <div class="mxrx-section-content-wrapper">
+                                <div class="spacer">
+                                    <div class="mxrx-content-spacer mxrx-content-spacer--legacy" style="
+                        --spacer-desktop: 130px;
+                        --spacer-tablet: 150px;
+                        --spacer-mobile: 25px;
+                      " data-unique-id="41638027"></div>
+                                </div>
+                                <div class="rich-text">
+                                    <div class="js-mxrx-rich-text" data-lazy-load-class="rich-text-lazy-load">
+                                        <div
+                                            class="mxrx-component-grid-container mxrx-rich-text mxrx-rich-text-six-col mxrx-rich-text-centre-align">
+                                            <div class="mxrx-rich-text-wrapper">
+                                                <h2 class="mxrx-rich-text-heading mxrx-rich-text-standard-heading"
+                                                    style="color: #ffffff">
+                                                    MaxFuelRx Diesel
+                                                </h2>
+                                                <div class="mxrx-rich-text-paragraph-container mxrx-rich-text-body-standard"
+                                                    style="color: #ffffff">
+                                                    <p>
+                                                        MaxFuel RX Diesel offers equally impressive benefits, preventing up to 89% of fouling 
+                                                        with innovative detergents designed to keep sensitive components like injectors 
+                                                        spotless. Its compatibility with all diesel engines regardless of age guarantees 
+                                                        that your vehicle runs smoother, cleaner and more efficiently. The facts are 
+                                                        indisputable a cleaner engine is more efficient more durable and more eco friendly. 
+                                                        With MaxFuel RX you’re not just fuelling your journey you’re protecting your engine’s 
+                                                        future.
+
+                                                       What sets MaxFuel RX apart, however is not only its fuel optimisation but also the 
+                                                       integration of AI technology to monitor and track environmental impacts in real time. 
+                                                       Through a dedicated app, MaxFuel RX users can actively monitor the air quality in their 
+                                                       regions and observe the reduction of pollutants as MaxFuel RX is implemented. This app 
+                                                       serves as a real time dashboard, using data driven insights to showcase how the 
+                                                       reduction in diesel bug growth, neutralisation of acids, and other fuel optimisations 
+                                                       directly improve local air quality.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cta">
+                                    <div class="mxrx-cta-section" data-tracking-regionid="page¦1¦¦cta-section¦1¦">
+                                        <a data-tracking-linkid="button¦1¦private office¦internal link"
+                                            href="https://www.matrix.com"
+                                            class="mxrx-cta-component mxrx-button--primary js-mxrx-button"
+                                            style="color: #151515; background: #ffffff"
+                                            data-lazy-load-class="cta-lazy-load">
+                                            <span class="mxrx-button-background js-mxrx-button-background"
+                                                data-color="#FFFFFF"></span>
+                                            <span style="color: #151515"
+                                                class="mxrx-button-text js-mxrx-button-text">MATRIX PETROLEUM</span>
+                                            <span class="mxrx-button-arrow js-mxrx-button-arrow"
+                                                style="color: #151515"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="spacer">
+                                    <div class="mxrx-content-spacer mxrx-content-spacer--legacy" style="
+                        --spacer-desktop: 60px;
+                        --spacer-tablet: 150px;
+                        --spacer-mobile: 50px;
+                      " data-unique-id="1148196228"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="mxrx-section-bg-wrapper">
+                            <div class="mxrx-section-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-adaptive parsys aem-GridColumn aem-GridColumn--default--12">
+                    <div class="mxrx-section-adaptive" data-experience="[]" data-vertical-alignment-desktop="0.5"
+                        data-vertical-alignment-tablet="0.6" data-mobile-bg-behaviour="background">
+                        <div class="mxrx-section-adaptive-bg-wrapper">
+                            <div class="mxrx-section-adaptive-bg">
+                                <picture class="js-mxrx-section-adaptive-bg-img">
+                                    <source data-srcset="
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 1242w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 2880w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 828w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 3840w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 1920w" data-webp-srcset="
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 2880w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 1242w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 3840w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 1920w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 828w" sizes="100vw"
+                                        media="(min-width: 1024px)" />
+                                    <source data-srcset="
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 1242w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 2880w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 828w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 3840w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 1920w" data-webp-srcset="
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 2880w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 1242w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 3840w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 1920w, 
+                                        /content/dam/matrix/maxfuelrx/D~wheel.jpg 828w" sizes="100vw"
+                                        media="(min-width: 768px)" />
+                                    <source data-srcset="
+                                        /content/dam/matrix/maxfuelrx/M~wheel.jpg 1242w, 
+                                        /content/dam/matrix/maxfuelrx/M~wheel.jpg 2880w, 
+                                        /content/dam/matrix/maxfuelrx/M~wheel.jpg 828w, 
+                                        /content/dam/matrix/maxfuelrx/M~wheel.jpg 640w, 
+                                        /content/dam/matrix/maxfuelrx/M~wheel.jpg 1920w" data-webp-srcset="
+                                        /content/dam/matrix/maxfuelrx/M~wheel.jpg 2880w, 
+                                        /content/dam/matrix/maxfuelrx/M~wheel.jpg 1242w,
+                                         /content/dam/matrix/maxfuelrx/M~wheel.jpg 640w, 
+                                         /content/dam/matrix/maxfuelrx/M~wheel.jpg 1920w, 
+                                         /content/dam/matrix/maxfuelrx/M~wheel.jpg 828w" sizes="100vw"
+                                        media="(min-width: 160px)" />
+                                    <img class="mxrx-section-adaptive-bg-img"
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                        data-src="/content/dam/matrix/maxfuelrx/D~wheel.jpg"
+                                        data-webp-src="/content/dam/matrix/maxfuelrx/D~wheel.jpg"
+                                        alt="Close up of Black Badge Ghost Ekleipsis Wheel in bottom left corner" />
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="mxrx-section-adaptive-content">
+                            <div class="mxrx-section-adaptive-content-wrapper">
+                                <div class="spacer">
+                                    <div class="mxrx-content-spacer mxrx-content-spacer--legacy" style="
+                        --spacer-desktop: 0px;
+                        --spacer-tablet: 0px;
+                        --spacer-mobile: 850px;
+                      " data-unique-id="172505659"></div>
+                                </div>
+                                <div class="parallax-image-text">
+                                    <div class="mxrx-component-grid-container mxrx-two-col-parallax js-two-col-parallax"
+                                        data-image-disabled data-align="right" data-parallax-on>
+                                        <div class="mxrx-two-col-a">
+                                            <div class="mxrx-two-col-a-content is-init js-two-col-parallax-a">
+                                                <h2 class="mxrx-two-col-title" style="color: #ffffff"></h2>
+                                                <div class="mxrx-two-col-description mxrx-two-col-body-copy-one-lighter"
+                                                    style="color: #ffffff">
+                                                    <p>
+                                                        What sets MaxFuel RX apart is not only its fuel optimisation 
+                                                        but also the integration of AI technology to monitor and track 
+                                                        environmental impacts in real-time. Through a dedicated app,
+                                                        MaxFuel RX users can actively monitor air quality in their 
+                                                        regions and observe the reduction of pollutants as MaxFuel RX 
+                                                        is implemented. This app serves as a real-time dashboard, 
+                                                        utilizing data-driven insights to showcase how the reduction 
+                                                        of diesel bug growth, neutralization of acids, and other fuel 
+                                                        optimizations directly improve local air quality.
+                                                    </p>
+                                                </div>
+                                                <div class="mxrx-two-col-cta-container"></div>
+                                            </div>
+                                        </div>
+                                        <div class="mxrx-two-col-b">
+                                            <div class="mxrx-two-col-b-content is-init js-two-col-parallax-b">
+                                                <div class="mxrx-image-aspect" style="padding-bottom: 0%">
+                                                    <div class="mxrx-image-aspect-scale">
+                                                        <video-js data-embed="default" playsinline loop="true"
+                                                            muted="true"
+                                                            poster="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                                            data-application-id
+                                                            data-setup='{"textTrackSettings": false}'
+                                                            class="video-js vjs-fluid mxrx-two-col-video mxrx-image-aspect-img"
+                                                            id="-1589631154"></video-js>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="spacer">
+                                    <div class="mxrx-content-spacer mxrx-content-spacer--legacy" style="
+                        --spacer-desktop: 0px;
+                        --spacer-tablet: 0px;
+                        --spacer-mobile: 100px;
+                      " data-unique-id="969692150"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section parsys aem-GridColumn aem-GridColumn--default--12">
+                    <div class="mxrx-section" data-experience="[]" data-remove-padding data-bg-asset-off>
+                        <div class="mxrx-section-content">
+                            <div class="mxrx-section-content-wrapper">
+                                <div class="spacer">
+                                    <div class="mxrx-content-spacer mxrx-content-spacer--legacy" style="
+                        --spacer-desktop: 200px;
+                        --spacer-tablet: 150px;
+                        --spacer-mobile: 10px;
+                      " data-unique-id="1619327052"></div>
+                                </div>
+                                <div class="rich-text">
+                                    <div class="js-mxrx-rich-text" data-lazy-load-class="rich-text-lazy-load">
+                                        <div
+                                            class="mxrx-component-grid-container mxrx-rich-text mxrx-rich-text-six-col mxrx-rich-text-centre-align">
+                                            <div class="mxrx-rich-text-wrapper">
+                                                <h2 class="mxrx-rich-text-heading mxrx-rich-text-standard-heading"
+                                                    style="color: #ffffff">
+                                                    Increasing Fuel Combustibility
+                                                </h2>
+                                                <div class="mxrx-rich-text-paragraph-container mxrx-rich-text-body-standard"
+                                                    style="color: #ffffff">
+                                                    <p>
+                                                        With enhanced combustibility, MaxFuel RX ensures that engines
+                                                        burn
+                                                        fuel more completely, translating to higher performance, lower
+                                                        emissions and greater fuel efficiency.
+                                                        This not only saves costs but directly contributes to reducing
+                                                        the carbon footprint of vehicles.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section parsys aem-GridColumn aem-GridColumn--default--12">
+                    <div class="mxrx-section" data-experience="[]" style="background-color: #000000" data-bg-asset-off>
+                        <div class="mxrx-section-content">
+                            <div class="mxrx-section-content-wrapper">
+                                <div class="article-tiles-container">
+                                    <section
+                                        class="mxrx-article-tiles-master mxrx-article-tile-carousel-wrapper js-mxrx-article-tiles-master">
+                                        <div class="mxrx-article-tiles-desc">
+                                            <section class="mxrx-article-desc-block">
+                                                <h3 class="mxrx-article-desc-title" style="color: #FFFFFF">UNCOVER THE LAYERS OF INSIGHT AND KNOWLEDGE</h3>
+                        <p class="mxrx-article-desc-intro" style="color: #FFFFFF">AWAITING DISCOVERY</p>
+                                            </section>
+                                        </div>
+                                         <div class="mxrx-cta-section" data-tracking-regionid="page¦1¦¦cta-section¦1¦">
+                        <button data-tracking-linkid="button¦1¦make an enquiry¦open content" data-action="open-default-form"
+                          data-overlay="g-enq" data-lazy-load-class="cta-lazy-load" aria-label="MAKE AN ENQUIRY"
+                          style="color: #FFFFFF; background: "
+                          class="mxrx-cta-component mxrx-button--secondary js-mxrx-button">
+                          <span class="mxrx-button-background js-mxrx-button-background" data-color="#FFFFFF"></span>
+                          <span style="color: #FFFFFF" class="mxrx-button-text js-mxrx-button-text">MAKE AN ENQUIRY</span>
+                          <span class="mxrx-button-arrow js-mxrx-button-arrow" style="color: #FFFFFF></span>
+                        </button>
+                        <a data-tracking-linkid="button¦2¦configure spectre¦internal link"
+                            href=""
+                            class="mxrx-cta-component mxrx-button--secondary js-mxrx-button"
+                            style="color: #FFFFFF; background: " data-lazy-load-class="cta-lazy-load">
+                            <span class="mxrx-button-background js-mxrx-button-background" data-color="#FFFFFF"></span>
+                            <span style="color: #FFFFFF" class="mxrx-button-text js-mxrx-button-text">CONFIGURE
+                              MAXFUELRX</span>
+                            <span class="mxrx-button-arrow js-mxrx-button-arrow" style="color: #FFFFFF"></span>
+                            </a>
+                      </div>
+                                        <div class="mxrx-article-tiles-grid mxrx-article-tiles-carousel js-mxrx-article-tiles-carousel
+                                                                    mxrx-article-tiles-grid--transparent-white-text
+                                                                    ">
+                                            <div class="mxrx-article-tiles-row-container" data-row-to-animate="false">
+                                                <div class="mxrx-article-tile-slide mxrx-article-tile"
+                                                    data-tracking-regionid="article tile wrapper¦1¦explore further¦article tiles¦1¦"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <div class="mxrx-article-tile-img-wrapper">
+                                                        <img alt="The marque’s first all-electric motor car is a prophecy fulfilled. "
+                                                            data-src="
+                                            /content/dam/matrix/maxfuelrx/shadow.jpg"
+                                                            data-webp-src="/content/dam/matrix/maxfuelrx/shadow.jpg"
+                                                            src="/content/dam/matrix/maxfuelrx/shadow.jpg">
+                                                    </div>
+                                                    <section class="mxrx-article-tile--description">
+                                                        <a aria-label="MAXFUELRX"
+                                                            data-tracking-linkid="tile¦1¦spectre ¦internal link"
+                                                            class="mxrx-article-tile-wrapping-link" href="/"></a>
+                                                        <h4 class="mxrx-article-tile--title">MAXFUELRX </h4>
+                                                        <p class="mxrx-article-tile--text">An elite precision engineered
+                                                            fuel crafted to
+                                                            deeply
+                                                            cleanse and sustain your diesel
+                                                            engine's performance over the long haul. Its advanced
+                                                            formula goes beyond standard
+                                                            fuels ensuring
+                                                            continuous protection that maximises fuel efficiency boosts
+                                                            engine longevity and
+                                                            enhances overall
+                                                            economy. </p>
+                                                    </section>
+                                                </div>
+                                                <div class="mxrx-article-tile-slide mxrx-article-tile"
+                                                    data-tracking-regionid="article tile wrapper¦1¦explore further¦article tiles¦1¦"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <div class="mxrx-article-tile-img-wrapper">
+                                                        <img alt="This Private Collection celebrates the fleeting presence, fluid motion, and storied legacy of the Spirit of Ecstasy — the winged figurine that graces the bonnet of every Rolls-Royce motor car."
+                                                            data-src="/content/dam/matrix/maxfuelrx/futureai.jpg"
+                                                            data-webp-src="/content/dam/matrix/maxfuelrx/futureai.jpg"
+                                                            src="/content/dam/matrix/maxfuelrx/futureai.jpg">
+                                                    </div>
+                                                    <section class="mxrx-article-tile--description">
+                                                        <a aria-label="Phantom Scintilla"
+                                                            data-tracking-linkid="tile¦2¦phantom scintilla¦internal link"
+                                                            class="mxrx-article-tile-wrapping-link"
+                                                            href="maxfuelrx.html"></a>
+                                                        <h4 class="mxrx-article-tile--title">FUTURE OF MAXFUELRX</h4>
+                                                        <p class="mxrx-article-tile--text">The future is one where
+                                                            technology and
+                                                            sustainability
+                                                            are inextricably linked and MaxFuel RX is at the
+                                                            forefront of this evolution. The combination of fuel
+                                                            innovation and AI-powered
+                                                            monitoring allows for a
+                                                            holistic approach to both reducing pollution and improving
+                                                            fuel efficiency.</p>
+                                                    </section>
+                                                </div>
+                                                <div class="mxrx-article-tile-slide mxrx-article-tile"
+                                                    data-tracking-regionid="article tile wrapper¦1¦explore further¦article tiles¦1¦"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <div class="mxrx-article-tile-img-wrapper">
+                                                        <img alt="More torque, control and power. "
+                                                            data-src="/content/dam/matrix/maxfuelrx/cheetahsmall.jpg"
+                                                            data-webp-src="/content/dam/matrix/maxfuelrx/cheetahsmall.jpg"
+                                                            src="/content/dam/matrix/maxfuelrx/cheetahsmall.jpg">
+                                                    </div>
+                                                    <section class="mxrx-article-tile--description">
+                                                        <a aria-label="FUEL OPTIMIZATION"
+                                                            data-tracking-linkid="tile¦3¦discover black badge¦internal link"
+                                                            class="mxrx-article-tile-wrapping-link"
+                                                            href="future.html"></a>
+                                                        <h4 class="mxrx-article-tile--title">FUEL OPTIMIZATION</h4>
+                                                        <p class="mxrx-article-tile--text">MaxFuel RX achieves this
+                                                            through its unique,
+                                                            six-pronged approach to fuel optimization. It tackles issues
+                                                            that have long plagued the fuel industry while delivering
+                                                            results that are both
+                                                            immediate and longlasting </p>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mxrx-section-bg-wrapper">
+                            <div class="mxrx-section-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section parsys aem-GridColumn aem-GridColumn--default--12">
+                    <div class="mxrx-section" id="emission" data-experience="[]" style="background-color: #151515"
+                        data-bg-asset-off>
+                        <div class="mxrx-section-content">
+                            <div class="mxrx-section-content-wrapper">
+                                <div class="emissions-tout">
+                                    <div class="js-mxrx-emissions-tout" data-parallax-on>
+                                        <div class="mxrx-component-grid-container mxrx-emissions-tout">
+                                            <div class="mxrx-emissions-tout-description-left-wrapper">
+                                                <div class="mxrx-emissions-tout-description-left"
+                                                    style="color: #ffffff">
+                                                    <h2>
+                                                        MAXFUEL RX BENEFITS
+                                                    </h2>
+                                                    <p>
+                                                        1.Neutralising Acids –  MaxFuel RX neutralises harmful acids that 
+                                                        can corrode engine components over time. This not only prolongs 
+                                                        the life of machinery but also reduces the environmental footprint 
+                                                        of fuel consumption by decreasing the need for repairs and replacements.
+
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="mxrx-emissions-tout-description-right-wrapper">
+                                                <div class="mxrx-emissions-tout-description-right"
+                                                    style="color: #ffffff">
+                                                    <p>
+                                                        2. Decreasing Diesel Bug Growth – Diesel bug growth is a persistent 
+                                                        issue that compromises fuel quality and engine performance. By 
+                                                        preventing microbial contamination, MaxFuel RX ensures that engines 
+                                                        run cleaner and more efficiently, further reducing harmful emissions.
+
+                                                    </p>
+                                                    <p>
+                                                        3.Lubricating Engine Components – Effective lubrication reduces wear 
+                                                        and tear on engine components, improving overall efficiency. MaxFuel RX’s 
+                                                        proprietary formula significantly enhances the lubrication of engine parts, 
+                                                        reducing maintenance needs and extending the life of vehicles and equipment.
+
+                                                    </p>
+                                                    <p>
+                                                        4.Actively Cleaning the Combustion Process – Clean combustion is key to 
+                                                        reducing pollutants released into the atmosphere. MaxFuel RX cleans the 
+                                                        combustion process, ensuring that harmful byproducts are minimised and 
+                                                        energy output is maximised.
+
+                                                    </p>
+                                                    <p>
+                                                        5.Increasing Fuel Combustibility – With enhanced combustibility, MaxFuel RX 
+                                                        ensures that engines burn fuel more completely, resulting in higher performance, 
+                                                        lower emissions and greater fuel efficiency. This not only saves costs but also 
+                                                        directly contributes to reducing the carbon footprint of vehicles.
+
+                                                    </p>
+                                                    <p>
+                                                        6.Passively Cleaning Exhaust-Related Components – Over time, exhaust systems 
+                                                        accumulate residues that decrease their effectiveness in filtering harmful 
+                                                        gases. MaxFuel RX cleans these components, ensuring that exhaust systems 
+                                                        operate at their peak, thereby significantly reducing emissions.
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mxrx-section-bg-wrapper">
+                            <div class="mxrx-section-bg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mxrx-page-spacer"></div>
+    <div class="mxrx-page-fixed">
+        <div class="fixed responsivegrid">
+            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+                <div class="primary-navigation aem-GridColumn aem-GridColumn--default--12">
+                    <script>
+                        window.mxrx_is_dealer_page = false;
+                        window.mxrx_dealer_info = {};
+                    </script>
+                    <div aria-label="menu navigation" role="navigation" class="mxrx-primary-nav--menu-wrapper"
+                        data-tracking-regionid="page¦1¦¦header¦1¦">
+                        <button class="global-menu-button js-global-menu-cta mxrx-primary-nav-cta--gradient-black"
+                            data-trigger="globalMenu" data-tracking-linkid="icon-text¦1¦menu open¦open content">
+                            <span class="mxrx-primary-nav-icon js-mxrx-primary-nav-icon"
+                                data-style="gradient-black"></span>
+                            <div class="mxrx-primary-nav-copy-container">
+                                <span class="mxrx-primary-nav-copy-open js-primary-nav-open">Menu</span>
+                                <span class="mxrx-primary-nav-copy-close js-primary-nav-close">CLOSE</span>
+                                <span class="mxrx-primary-nav-copy-phantom">Menu</span>
+                            </div>
+                        </button>
+                    </div>
+                    <nav aria-label="primary navigation" role="navigation" data-is-dealer-page="false" data-blur="false"
+                        class="mxrx-component-grid-container js-mxrx-primary-nav mxrx-primary-nav mxrx-primary-nav--gradient-black"
+                        data-tracking-regionid="page¦1¦¦header¦1¦">
+                        <span class="global-menu-button js-global-menu-cta button-placeholder"
+                            data-tracking-linkid="icon-text¦1¦menu open¦open content"></span>
+                        <span class="mxrx-logo">
+                           
+                        </span>
+                        <div class="global-enquire-button js-global-enquire-button" data-style="gradient-black">
+                            <a class="mxrx-cta-component mxrx-button--primary mxrx-button--brand mxrx-button--add js-mxrx-button no-padding no-animation"
+                                href="" data-tracking-linkid="icon-text¦3¦find a supplier¦open content">
+                                <span class="mxrx-button-text js-mxrx-button-text js-mxrx-nav-dealer-locator"
+                                    id="mxrx-nav-enquire-text">
+                                    <span
+                                        class="mxrx-nav-dealer-locator-icon mxrx-nav-dealer-locator-icon-search"></span>
+                                    <span class="mxrx-nav-dealer-locator-copy"></span>
+                                </span>
+                                <span class="mxrx-button-arrow js-mxrx-button-arrow"></span>
+                            </a>
+                        </div>
+                        <span class="mxrx-keyline mxrx-primary-nav-keyline"></span>
+                    </nav>
+                    <button id="sharePriceButton" class="share-price-button">
+                  Loading share prices...
+                </button>
+                    <div class="mxrx-secondary-nav--menu-container mxrx-secondary-nav--gradient-black"
+                        data-tracking-regionid="secondary navigation¦1¦secondary nav¦secondary-nav-dropdown-cta¦1¦">
+                        <div class="secondary_navigation_container responsivegrid">
+                            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+                                <div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+                                    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+                                        <div class="secondary-navigation aem-GridColumn aem-GridColumn--default--12">
+                                            <div aria-label="secondary navigation" role="navigation"
+                                                class="mxrx-secondary-nav--menu-wrapper mxrx-component-grid-container gradient-black"
+                                                data-nav="modelsEnq" data-tracking-regionid="secondary nav¦1¦¦nav|1¦1¦"
+                                                style="opacity: 1;">
+
+                                                <div class="mxrx-secondary-keyline"></div>
+                                                <div class="mxrx-secondary-nav-cta-wrapper"
+                                                    data-tracking-regionid="secondary nav">
+                                                    <button class="mxrx-secondary-nav-dropdown-cta"
+                                                        data-tracking-linkid="icon-text¦open content">
+                                                        <span
+                                                            class="mxrx-secondary-nav-arrow mxrx-secondary-nav-arrow-desktop"
+                                                            style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);"></span>MAXFUELRX</button>
+                                                </div>
+                                                <div class="mxrx-secondary-nav-models-links-container">
+
+
+                                                    <a class="mxrx-secondary-nav-models-link"
+                                                        href="../index.html">HOME</a>
+                                                    <a class="mxrx-secondary-nav-models-link" href="/">ABOUT US</a>
+                                                    <a class="mxrx-secondary-nav-models-link"
+                                                        href="maxfuelrx.html">MAXFUELRX</a>
+                                                    <a class="mxrx-secondary-nav-models-link"
+                                                        href="future.html">FUTURE</a>
+                                                    <a class="mxrx-secondary-nav-models-link"
+                                                        href="distribution.html">SUPPLY & DISTRIBUTION</a>
+
+                                                    <p class="mxrx-secnav-divider"> | </p>
+                                                </div>
+                                                <div class="mxrx-secondary-nav--models-dropdown-bg mxrx-component-grid-container"
+                                                    style="height: 0px;">
+                                                    <div class="mxrx-secondary-nav--models-dropdown"
+                                                        data-tracking-regionid="secondary nav" style="">
+                                                        <a class="js-mxrx-secnav-model-dropdown-entry"
+                                                            href="../index.html">HOME</a>
+                                                        <a class="js-mxrx-secnav-model-dropdown-entry" href="/">ABOUT
+                                                            US</a>
+                                                        <a class="js-mxrx-secnav-model-dropdown-entry"
+                                                            href="maxfuelrx.html">MAXFUELRX</a>
+                                                        <a class="js-mxrx-secnav-model-dropdown-entry"
+                                                            href="future.html">FUTURE</a>
+                                                        <a class="js-mxrx-secnav-model-dropdown-entry"
+                                                            href="distribution.html">SUPPLY & DISTRIBUTION</a>
+                                                    </div>
+
+                                                    <button aria-hidden="true" class="mxrx-secondary-nav-scroller-right"
+                                                        data-tracking-linkid="icon¦scroll right¦scroll content"
+                                                        style="opacity: 1;"></button>
+                                                </div>
+                                                <button class="mxrx-secondary-nav-dropdown-cta-mobile"
+                                                    data-tracking-linkid="secondary navigation¦1¦mobile secondary nav¦secondary-nav-mobile-cta">
+                                                    <span
+                                                        class="mxrx-secondary-nav-arrow mxrx-secondary-nav-arrow-mobile"
+                                                        style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);"></span>MAXFUELRX
+                                                </button>
+                                                <div class="mxrx-secondary-nav--menu-mobile mxrx-component-grid-container"
+                                                    data-tracking-regionid="secondary nav" totallinks="4"
+                                                    style="height: 0px; display: none;">
+
+                                                    <a class="mxrx-secondary-nav-models-link"
+                                                        href="../index.html">HOME</a>
+                                                    <a class="mxrx-secondary-nav-models-link" href="/">ABOUT US</a>
+                                                    <a class="mxrx-secondary-nav-models-link"
+                                                        href="maxfuelrx.html">MAXFUELRX</a>
+                                                    <a class="mxrx-secondary-nav-models-link"
+                                                        href="future.html">FUTURE</a>
+                                                    <a class="mxrx-secondary-nav-models-link"
+                                                        href="distribution.html">SUPPLY & DISTRIBUTION</a>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-background-container nav-background-container--gradient-black"></div>
+                    <div class="mobile-nav-background-blur"></div>
+                    <div class="mxrx-global-menu js-menu">
+                        <div class="mxrx-component-grid-container mxrx-global-menu-grid">
+                            <div class="mxrx-menu-bg-left js-menu-pane-left">
+                                <div class="mxrx-menu-video-container js-menu-video-container">
+                                    <video-js data-video-id="6305819692112" data-account="1634657725001"
+                                        data-player="3Ev5jVtXB" data-embed="default" loop="true" muted="true"
+                                        poster="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                        data-application-id data-setup='{"textTrackSettings": false}'
+                                        class="video-js vjs-fluid mxrx-menu-video mxrx-menu-video-default"></video-js>
+                                    <video-js data-video-id="6305819395112" data-account="1634657725001"
+                                        data-player="3Ev5jVtXB" data-embed="default" loop="true" muted="true"
+                                        poster="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                        data-application-id data-setup='{"textTrackSettings": false}'
+                                        class="video-js vjs-fluid mxrx-menu-video"></video-js>
+                                    <video-js data-video-id="6313746974112" data-account="1634657725001"
+                                        data-player="3Ev5jVtXB" data-embed="default" loop="true" muted="true"
+                                        poster="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                        data-application-id data-setup='{"textTrackSettings": false}'
+                                        class="video-js vjs-fluid mxrx-menu-video"></video-js>
+                                    <video-js data-video-id="6362717517112" data-account="1634657725001"
+                                        data-player="3Ev5jVtXB" data-embed="default" loop="true" muted="true"
+                                        poster="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                        data-application-id data-setup='{"textTrackSettings": false}'
+                                        class="video-js vjs-fluid mxrx-menu-video"></video-js>
+                                    <video-js data-video-id="6362795047112" data-account="1634657725001"
+                                        data-player="3Ev5jVtXB" data-embed="default" loop="true" muted="true"
+                                        poster="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                        data-application-id data-setup='{"textTrackSettings": false}'
+                                        class="video-js vjs-fluid mxrx-menu-video"></video-js>
+                                    <video-js data-video-id="6352036781112" data-account="1634657725001"
+                                        data-player="3Ev5jVtXB" data-embed="default" loop="true" muted="true"
+                                        poster="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                        data-application-id data-setup='{"textTrackSettings": false}'
+                                        class="video-js vjs-fluid mxrx-menu-video"></video-js>
+                                    <video-js data-video-id="6362717767112" data-account="1634657725001"
+                                        data-player="3Ev5jVtXB" data-embed="default" loop="true" muted="true"
+                                        poster="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                        data-application-id data-setup='{"textTrackSettings": false}'
+                                        class="video-js vjs-fluid mxrx-menu-video"></video-js>
+                                </div>
+                                <span class="mxrx-bg-left-image" style="
+                                  background-image: url(/content/dam/matrix/marketUK/common/navigation/desktop/left-panel.jpg);
+                                "></span>
+                            </div>
+
+                            <div class="mxrx-menu-links" data-tracking-regionid="primary nav¦1¦">
+                                <div class="mxrx-menu-links-container">
+                                    <div class="mxrx-scrollhide">
+                                        <div class="js-menu-link mxrx-menu-link-anim">
+                                            <a href="emblem.html" aria-label="Models"
+                                                class="mxrx-cta mxrx-menu-link js-menu-section-link"
+                                                data-tracking-linkid="text¦1¦open content" data-featured-section="true"
+                                                data-section="Models">
+                                                <span class="mxrx-menu-link-copy">THE EMBLEM</span>
+                                            </a>
+                                        </div>
+                                        <div class="js-menu-link mxrx-menu-link-anim">
+                                            <a href="maxfuelrx.html" aria-label=""
+                                                class="mxrx-cta mxrx-menu-link js-menu-section-link"
+                                                data-tracking-linkid="text¦open content" data-featured-section="true"
+                                                data-section="Models">
+                                                <span class="mxrx-menu-link-copy">MAXFUEL RX BENEFITS</span>
+                                            </a>
+                                        </div>
+                                        <div class="js-menu-link mxrx-menu-link-anim">
+                                            <a href="future.html" aria-label="Models"
+                                                class="mxrx-cta mxrx-menu-link js-menu-section-link"
+                                                data-tracking-linkid="text¦2¦open content" data-featured-section="true"
+                                                data-section="Models">
+                                                <span class="mxrx-menu-link-copy">ELEGANCE OF INNOVATION</span>
+                                            </a>
+                                        </div>
+                                        <div class="js-menu-link mxrx-menu-link-anim">
+                                            <a href="about.html" aria-label="Models"
+                                                class="mxrx-cta mxrx-menu-link js-menu-section-link"
+                                                data-tracking-linkid="text¦3¦open content" data-featured-section="true"
+                                                data-section="Models">
+                                                <span class="mxrx-menu-link-copy">SUSTAINABILITY</span>
+                                            </a>
+                                        </div>
+                                        <div class="js-menu-link mxrx-menu-link-anim">
+                                            <a href="distribution.html" aria-label="Models"
+                                                class="mxrx-cta mxrx-menu-link js-menu-section-link"
+                                                data-tracking-linkid="text¦3¦open content" data-featured-section="true"
+                                                data-section="Models">
+                                                <span class="mxrx-menu-link-copy">DISTRIBUTION/span>
+                                            </a>
+                                        </div>
+                                      <div
+                                            class="js-menu-link js-menu-link-dealers mxrx-menu-link-hidden mxrx-menu-link-anim">
+                                            <a aria-hidden="true"
+                                                data-tracking-linkid="icon-text¦8¦dealer|%dealer_location%¦internal link"
+                                                aria-label="" class="mxrx-cta mxrx-menu-link js-menu-section-link"
+                                                href="#">
+                                                <span
+                                                    class="mxrx-menu-link-copy mxrx-menu-link-copy-dealer js-mxrx-menu-link-copy-dealers"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cookie-banner aem-GridColumn aem-GridColumn--default--12">
+                    <div class="mxrx-cookie-banner-position-wrapper js-mxrx-cookie-banner">
+                        <div class="mxrx-component-grid-container mxrx-cookie-banner">
+                            <div class="mxrx-cookie-banner-content">
+                                <h2 class="mxrx-cookie-banner-title">
+                                    we use cookies to bring you the finest website experience
+                                </h2>
+                                <p class="mxrx-cookie-banner-description">
+                                    If you continue, we'll assume you are happy to receive all
+                                    cookies on our website. You can disable cookies at any time
+                                    by changing your browser settings. Learn more about how we
+                                    use cookies
+                                    <a title="here" href="/en_GB/cookie-policy.html"
+                                        target="_blank">here</a>.
+                                </p>
+                                <div class="mxrx-cookie-banner-ctas">
+                                    <div class="mxrx-cookie-banner-ctas-aligner">
+                                        <button tabindex="-1"
+                                            class="mxrx-cta mxrx-cta-tick js-mxrx-cookie-banner-accept" type="button">
+                                            <span class="mxrx-cta-i"></span>
+                                            <span class="mxrx-button-text js-mxrx-button-text">Continue</span>
+                                            <span class="mxrx-button-arrow js-mxrx-button-arrow"></span>
+                                        </button>
+                                        <button tabindex="-1"
+                                            class="mxrx-cta mxrx-cta-cross js-mxrx-cookie-banner-reject" type="button">
+                                            <span class="mxrx-cta-i"></span>
+                                            <span class="mxrx-button-text js-mxrx-button-text">No thanks</span>
+                                            <span class="mxrx-button-arrow js-mxrx-button-arrow"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tertiary-navigation aem-GridColumn aem-GridColumn--default--12">
+                    <div class="mxrx-tertiary-nav js-mxrx-tertiary-nav">
+                        <div class="mxrx-tertiary-nav-container">
+                            <div class="mxrx-tertiary-nav-wrapper">
+                                <div class="mxrx-tertiary-nav-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mxrx-page-overlay-container-local js-overlay" id="js-mxrx-page-overlay-container-local">
+        <div class="overlay-local responsivegrid">
+            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+                <div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+                    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <iframe aria-hidden="true" class="js-mxrx-height-change-listener" tabindex="-1"></iframe>
+    <script src="/etc.clientlibs/clientlibs/granite/jquery.js"></script>
+    <script src="/etc.clientlibs/clientlibs/granite/utils.js"></script>
+    <script src="/etc.clientlibs/matrix/clientlibs/clientlib-components.js"></script>
+    <script src="/apps/settings/wcm/designs/refresh/bp/assets.js" async=""></script>
+    <script src="/etc.clientlibs/clientlibs/granite/jquery/granite/csrf.js"></script>
+    <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const sharePriceData = localStorage.getItem('sharePriceData');
+            const sharePriceButton = document.getElementById('sharePriceButton');
+            if (sharePriceData) {
+              sharePriceButton.textContent = sharePriceData;
+            } else {
+              sharePriceButton.textContent = "Share prices unavailable";
+            }
+            setInterval(() => {
+              const updatedData = localStorage.getItem('sharePriceData');
+              if (updatedData) {
+                sharePriceButton.textContent = updatedData;
+              }
+            }, 10000);
+          });
+        </script>
+    
+</body>
+
+</html>

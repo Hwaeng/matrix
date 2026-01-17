@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="preload"
+      href="/apps/settings/wcm/designs/refresh/bp/assets.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="/apps/settings/wcm/designs/refresh/bp/assets.css"
+      type="text/css"
+    />
+    <style>
+   .nr-navigation__shareprice {
+    text-align: left; 
+    padding: 0; 
+     }
+
+.nr-navigation__shareprice p {
+    margin: 0;
+    padding: 0; 
+    display: inline-block; 
+    margin-right: 10px; 
+    }
+
+.nr-navigation__shareprice a,
+.nr-navigation__shareprice span {
+    margin: 0 5px;
+    padding: 0;
+   }
+ 
+    </style>
+
+  </head>
+  <body>
+    <div class="nr-navigation__inner">
+      <div
+        class="nr-navigation__shareprice nr-navigation__shareprice--mobile-type nr-navigation__shareprice--initialized"
+        data-format="ticker"
+        data-feed-timeout="60000"
+        data-feed-url="https://apps.bp.com/SharePriceFeed"
+        data-x-api-key="8tmAkp0htLAW4cq1zSPk8YGgKpG4dU62gl80C6Cj"
+      >
+        <p
+          class="nr-navigation__shareprice-text nr-navigation__shareprice--up"
+          data-test-id="shareprice-mobile-gbp"
+        >
+          <a
+            class="nr-plainlinks"
+            href=""
+            target="_self"
+          >
+            GBp
+            <span
+              class="nr-navigation__shareprice--amount"
+              data-key="ldn-currentPrice"
+              >384.35</span
+            >
+          </a>
+          <span class="nr-navigation__shareprice-change">
+            (<span data-key="ldn-positiveTrend">+</span
+            ><span data-key="ldn-currentTrend">2.35</span>)
+          </span>
+        </p>
+        <p
+          class="nr-navigation__shareprice-text nr-navigation__shareprice--up"
+          data-test-id="shareprice-mobile-usd"
+        >
+          <a
+            class="nr-plainlinks"
+            href=""
+            target="_self"
+          >
+            USD
+            <span
+              class="nr-navigation__shareprice--amount"
+              data-key="nyc-currentPrice"
+              >29.73</span
+            >
+          </a>
+          <span class="nr-navigation__shareprice-change">
+            (<span data-key="nyc-positiveTrend">+</span
+            ><span data-key="nyc-currentTrend">0.5</span>)*
+          </span>
+        </p>
+        <p class="nr-navigation__shareprice-error-message">
+          Share price unavailable
+        </p>
+      </div>
+      <div class="nr-navigation__controller" style="max-height: 100px">
+          <div class="nr-navigation__quick-links">
+          </div>
+          <div
+            class="nr-navigation__shareprice nr-navigation__shareprice--desktop-type nr-navigation__shareprice--initialized"
+            data-format="ticker"
+            data-feed-timeout="60000"
+            data-feed-url="https://apps.bp.com/SharePriceFeed"
+            data-x-api-key="8tmAkp0htLAW4cq1zSPk8YGgKpG4dU62gl80C6Cj"
+          >
+            <p
+              class="nr-navigation__shareprice-text nr-navigation__shareprice--up"
+              data-test-id="shareprice-desktop-gbp"
+            >
+              <a
+                class="nr-plainlinks"
+                href="/en/global/corporate/investors/share-price-tools.html"
+                target="_self"
+              >
+                GBp
+                <span
+                  class="nr-navigation__shareprice--amount"
+                  data-key="ldn-currentPrice"
+                  >384.35</span
+                >
+              </a>
+              <span class="nr-navigation__shareprice-change">
+                (<span data-key="ldn-positiveTrend">+</span
+                ><span data-key="ldn-currentTrend">2.35</span>)
+              </span>
+            </p>
+            <p
+              class="nr-navigation__shareprice-text nr-navigation__shareprice--up"
+              data-test-id="shareprice-desktop-usd"
+            >
+              <a
+                class="nr-plainlinks"
+                href="/en/global/corporate/investors/share-price-tools.html"
+                target="_self"
+              >
+                USD
+                <span
+                  class="nr-navigation__shareprice--amount"
+                  data-key="nyc-currentPrice"
+                  >29.73</span
+                >
+              </a>
+              <span class="nr-navigation__shareprice-change">
+                (<span data-key="nyc-positiveTrend">+</span
+                ><span data-key="nyc-currentTrend">0.5</span>)*
+              </span>
+            </p>
+          </div>
+       
+      </div>
+    </div>
+    <script
+      src="/apps/settings/wcm/designs/refresh/bp/assets.js"
+      async=""
+    ></script>
+    <script src="/etc.clientlibs/clientlibs/granite/jquery/granite/csrf.js"></script>
+    <script> 
+    function fetchAndStoreSharePrices() {
+        const gbpPrice = document.querySelector('[data-key="ldn-currentPrice"]')?.textContent || 'N/A';
+        const gbpTrend = document.querySelector('[data-key="ldn-currentTrend"]')?.textContent || 'N/A';
+        const usdPrice = document.querySelector('[data-key="nyc-currentPrice"]')?.textContent || 'N/A';
+        const usdTrend = document.querySelector('[data-key="nyc-currentTrend"]')?.textContent || 'N/A';
+        const gbpText = `GBp: ${gbpPrice} (${gbpTrend})`;
+        const usdText = `USD: ${usdPrice} (${usdTrend})`;
+        const sharePriceData = `${gbpText} | ${usdText}`;
+        localStorage.setItem('sharePriceData', sharePriceData);
+    }
+
+setInterval(fetchAndStoreSharePrices, 60000);
+
+</script>
+  </body>
+</html>
