@@ -661,7 +661,7 @@
             </div>
     </div> 
      <div>
-        <a style="position: relative;"  href="/experience/map.html" class="languageIcon2"></a>
+       <a style="position: relative;"  href="/experience/map.html" class="languageIcon2"><img src="/themes/custom/matrix/images/top-language2.svg" alt=""></a>
        
 </div>  
     </div>
@@ -691,33 +691,7 @@
                                 <a href="/contact-us.html">Contact Us</a>
                             </li>
                         </ul>
-                        <div class="JindexNaviRightBtmM">
-                            <ul class="clearfix">
-                                <li class="JhasSub">
-                                    <a href="/about-us.html" class="nav-link nav-link-">About Us</a>
-                                    <div class="JhasSubInner JhasSubInnerTop">
-                                        <div class="JhasSubInnerInner">
-                                            <ul>
-                                                <li>
-                                                    <a href="/about-us" >Overview</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/about-us/our-leaders"
-                                                       >Our Leaders</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="JhasSub">
-                                    <a href="">News &amp; Media</a>
-                                 
-                                </li>
-                                <li class="JhasSub">
-                                    <a href="">Contact Us</a>
-                                </li>
-                            </ul>
-                        </div>
+                       
                         <div class="JindexNaviRightBtmPatternM">
                             <img alt="" src="#">
                         </div>
@@ -816,6 +790,69 @@
   <!-- End Google Tag Manager (noscript) -->
   <script src="https://players.brightcove.net/1634657725001/3Ev5jVtXB_default/index.min.js"></script>
   <script src="https://players.brightcove.net/1634657725001/khh451qp5_default/index.min.js"></script>
+  <script>
+        // Hamburger menu functionality
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const body = document.body;
+
+        function toggleMenu() {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        }
+
+        function closeMenu() {
+            hamburgerBtn.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+
+        // Toggle menu on hamburger click
+        hamburgerBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking overlay
+        menuOverlay.addEventListener('click', closeMenu);
+
+        // Close menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+
+        // Simple scroll effect
+        let lastScroll = 0;
+        const nav = document.querySelector('.JindexNaviContainer');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                nav.style.background = 'rgba(0, 0, 0, 0.98)';
+            } else {
+                nav.style.background = 'rgba(0, 0, 0, 0.95)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024) {
+                closeMenu();
+            }
+        });
+    </script>
 </body>
 
 </html>

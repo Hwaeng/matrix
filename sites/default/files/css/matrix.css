@@ -14264,10 +14264,10 @@ form.contact-us .form__row.row {
   }
   .search__form input[type="search"] {
     padding-top: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
   }
   .search__form input[type="search"]:focus {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
   }
   .search__form .close-icon {
     width: 21px;
