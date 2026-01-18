@@ -20670,26 +20670,6 @@ ul.pagination li.pager__item--prev a.page-link:hover {
   color: #000
 }
 
-.node--type-media-gallery .JindexNaviContainer .JindexNaviLeft p {
-  color: #000;
-  border-color: #000
-}
-
-.node--type-media-gallery .JindexNaviContainer .JindexNaviRightBtm {
-  border-color: rgba(0, 0, 0, .3)
-}
-
-.node--type-media-gallery .JindexNaviContainer .JindexNaviContainerInner {
-  background: rgba(255, 255, 255, .9);
-  -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .16);
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .16)
-}
-
-.node--type-media-gallery .JindexNaviContainer .JindexNaviRightTopSub a,
-.node--type-media-gallery .JindexNaviContainer .JindexNaviRightTopSub div {
-  -webkit-filter: invert(100%) sepia(0) saturate(0) hue-rotate(0) brightness(0) contrast(100%);
-  filter: invert(100%) sepia(0) saturate(0) hue-rotate(0) brightness(0) contrast(100%)
-}
 
 .node--type-media-gallery .JindexNaviLeft a img.JindexNaviLeftLogoB {
   display: block
@@ -20719,21 +20699,14 @@ ul.pagination li.pager__item--prev a.page-link:hover {
   display: block
 }
 
-.path-petcms-admin .JindexNaviContainer,
-.path-petcms-admin .JindexNaviContainer a,
-.path-petcms-admin .JindexNaviLeft p {
-  border-color: #000 !important;
-  color: #000 !important
-}
+
 
 .path-petcms-admin .user-login-form {
   margin: 0 auto;
   max-width: 640px
 }
 
-.toolbar-horizontal .JindexNaviContainer {
-  top: 78px
-}
+
 
 .alert-wrapper {
   z-index: 9999999
@@ -21111,14 +21084,7 @@ h6 p {
   *zoom: 1;
 }
 
-.JindexNaviContainer {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  z-index: 10;
-  top: -299px;
-}
+
 
 .JindexNaviContainerInner {
   display: flex;
@@ -21126,361 +21092,14 @@ h6 p {
   position: relative;
 }
 
-.JindexNaviLeft {
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-  position: relative;
-  z-index: 1;
-}
 
-.JindexNaviLeft a {
-  display: block;
-  width: 110px;
-}
 
-.JindexNaviLeft a img {
-  display: block;
-  max-width: 110px;
-  width: 100%;
-}
-
-.JindexNaviLeft a img.JindexNaviLeftLogoB {
-  display: none;
-}
-
-.JindexNaviLeft p {
-  margin-bottom: 0;
-  margin-left: 20px;
-  padding-left: 20px;
-  margin-top: 0;
-  border-left: 1px solid #fff;
-  color: #fff;
-  font-size: 12px;
-  line-height: 14px;
-}
 
 .JindexNaviRight {
-  margin-left: 15px;
-  width: calc(100% - 223px);
-}
-
-.JindexNaviRightTop {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.JindexNaviRightTop ul {
-  list-style-type: none;
-  display: flex;
-  padding: 0px;
-  margin: 0px;
-  margin-right: 0px;
-}
-
-.JindexNaviRightTop ul li {}
-
-.JindexNaviRightTop ul li a {
-  font-family: 'Museo Sans', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 12px;
-  display: block;
-  color: #fff;
-  padding: 25px 25px 23px;
-}
-
-.JindexNaviRightTopSub {
-  display: flex;
-  align-items: center;
-  padding-right: 20px;
-}
-
-.JindexNaviRightTopSub a {
-  margin-left: 26px;
-  display: block;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.JindexNaviRightTopSub a:first-child {
   margin-left: 0px;
-}
-
-.JindexNaviRightTopSub .languageIcon {
-  width: 21px;
-  height: 20px;
-  background-image: url(/themes/custom/matrix/images/top-language.svg);
-}
-
-.JindexNaviRightTopSub .languageIcon2 {
-  width: 21px;
-  height: 20px;
-  background-image: url(/themes/custom/matrix/images/top-language2.svg);
-}
-
-.JindexNaviRightTopSub a.burgerMenuIconM {
-  width: 22px;
-  height: 11px;
-  display: none;
-  position: relative;
-}
-
-.JindexNaviRightTopSub a.burgerMenuIconM span {
   width: 100%;
-  height: 2px;
-  background: #000;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  border-radius: 100px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  -webkit-transition: all 300ms ease;
-  -moz-transition: all 300ms ease;
-  -ms-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
-  transition: all 300ms ease;
 }
 
-.JindexNaviRightTopSub a.burgerMenuIconM span:nth-child(2) {
-  top: 5px;
-}
-
-.JindexNaviRightTopSub a.burgerMenuIconM span:nth-child(3) {
-  top: 10px;
-  width: 12px;
-  left: auto;
-  right: 0px;
-}
-
-.JindexNaviRightBtm {
-  padding-top: 18px;
-  border-top: 1px solid rgba(255, 255, 255, .3);
-  padding-right: 20px;
-  padding-top: 0px;
-}
-
-.JindexNaviRightBtmM,
-.JindexNaviRightBtmPatternM,
-.JindexNaviRightBtmSocialM {
-  display: none;
-}
-
-.JindexNaviRightBtm ul.JindexNaviRightBtmNavi {
-  list-style-type: none;
-  display: flex;
-  padding: 0px;
-  margin: 0px;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.JindexNaviRightBtm ul.JindexNaviRightBtmNavi li {}
-
-.JindexNaviRightBtm ul.JindexNaviRightBtmNavi li a {
-  font-size: 14px;
-  line-height: 14px;
-  font-family: 'Museo Sans', sans-serif;
-  font-weight: 700;
-  display: block;
-  color: #fff;
-  padding: 18px 36px;
-}
-
-.JindexNaviRightBtm ul.JindexNaviRightBtmNavi li a:hover,
-.JindexNaviRightBtm ul.JindexNaviRightBtmM li a:hover {
-  opacity: 1;
-}
-
-.JindexNaviRightBtm ul.JindexNaviRightBtmNavi li:last-child a {
-  padding-right: 0px;
-}
-
-.JindexNaviContainer.active .JindexNaviContainerInner,
-.JindexNaviContainer.force-active .JindexNaviContainerInner {
-  background: rgba(255, 255, 255, 0.9);
-  -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .16);
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .16);
-}
-
-.JindexNaviContainer.active .JindexNaviLeft a img.JindexNaviLeftLogoW,
-.JindexNaviContainer.force-active .JindexNaviLeft a img.JindexNaviLeftLogoW {
-  display: none;
-}
-
-.JindexNaviContainer.active .JindexNaviLeft a img.JindexNaviLeftLogoB,
-.JindexNaviContainer.force-active .JindexNaviLeft a img.JindexNaviLeftLogoB {
-  display: block;
-}
-
-.JindexNaviContainer.active .JindexNaviLeft p,
-.JindexNaviContainer.force-active .JindexNaviLeft p {
-  color: #000;
-  border-color: #000;
-}
-
-.JindexNaviContainer.active .JindexNaviRightBtm,
-.JindexNaviContainer.force-active .JindexNaviRightBtm {
-  border-color: rgba(0, 0, 0, .3);
-}
-
-.JindexNaviContainer.active .JindexNaviRightTop ul li a,
-.JindexNaviContainer.active .JindexNaviRightBtm ul li a,
-.JindexNaviContainer.force-active .JindexNaviRightTop ul li a,
-.JindexNaviContainer.force-active .JindexNaviRightBtm ul li a {
-  color: #000;
-}
-
-.JindexNaviContainer.active .JindexNaviRightTop ul li a:hover,
-.JindexNaviContainer.force-active .JindexNaviRightTop ul li a:hover {
-  color: var(--petronas-green);
-  opacity: 1;
-}
-
-.JindexNaviContainer.active .JindexNaviRightTop ul li a,
-.JindexNaviContainer.force-active .JindexNaviRightTop ul li a {
-  font-family: 'Museo Sans', sans-serif;
-  font-weight: 700;
-}
-
-.JindexNaviContainer.active .JindexNaviRightTopSub a,
-.JindexNaviContainer.active .JindexNaviRightTopSub div,
-.JindexNaviContainer.force-active .JindexNaviRightTopSub a,
-.JindexNaviContainer.force-active .JindexNaviRightTopSub div {
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
-}
-
-.JhasSubInner {
-  display: none;
-  position: absolute;
-  top: 110px;
-  width: 100%;
-  left: 0px;
-  background: rgba(255, 255, 255, 0.9);
-  -webkit-box-shadow: 0 6px 6px 0 rgb(0 0 0 / 16%);
-  box-shadow: 0 6px 6px 0 rgb(0 0 0 / 16%);
-}
-
-.JindexNaviRightBtmNavi .JhasSubInner {
-  border-top: 1px solid rgba(0, 0, 0, .3);
-}
-
-.JhasSubInnerTop {
-  top: 61px;
-}
-
-.JhasSubInnerInner {
-  max-width: 842px;
-  margin-left: auto;
-  padding: 35px 0px 40px;
-}
-
-.JhasSubInner ul {
-  display: flex;
-  padding: 0px;
-  margin: 0px;
-  list-style-type: none;
-  flex-wrap: wrap;
-}
-
-.JhasSubInner ul li {
-  width: calc(33.3333% - 20px);
-  margin-right: 30px;
-  margin-left: 0px !important;
-  margin-bottom: 25px;
-}
-
-.JhasSubInner ul li:nth-child(3n) {
-  margin-right: 0px;
-}
-
-.JhasSubInner ul li a {
-  font-family: 'Museo Sans', sans-serif;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 14px;
-  color: #000;
-  padding: 0px !important;
-}
-
-.JindexNaviRightBtm ul.JindexNaviRightBtmNavi li a.activeNavi,
-.JindexNaviContainer.active .JindexNaviRightBtm ul.JindexNaviRightBtmNavi li>a:hover,
-.JindexNaviContainer.force-active .JindexNaviRightBtm ul.JindexNaviRightBtmNavi li>a:hover {
-  color: #CFB53B;
-}
-
-.JsideNaviContainer {
-  position: fixed;
-  right: 0px;
-  top: 50%;
-  -moz-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  z-index: 1000;
-  right: -60px;
-}
-
-.JsideNaviContainer ul {
-  padding: 0px;
-  margin: 0px;
-  list-style-type: none;
-  width: 60px;
-  -webkit-border-top-left-radius: 15px;
-  -webkit-border-bottom-left-radius: 15px;
-  -moz-border-radius-topleft: 15px;
-  -moz-border-radius-bottomleft: 15px;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  -webkit-box-shadow: 0 7px 7px 0 rgba(0, 0, 0, .2);
-  box-shadow: 0 7px 7px 0 rgba(0, 0, 0, .2);
-  overflow: hidden;
-}
-
-.JsideNaviContainer ul li {
-  border-bottom: 1px solid #fff;
-}
-
-.JsideNaviContainer ul li:last-child {
-  border-bottom: none;
-}
-
-.JsideNaviContainer ul li a {
-  background-color: #CFB53B;
-  width: 100%;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.JsideNaviContainer ul li a i {
-  width: 25px;
-  height: 25px;
-  display: block;
-  background-image: url(/themes/custom/matrix/images/icon-sprite.png);
-  background-repeat: no-repeat;
-  background-size: 500px auto;
-}
-
-.JsideNaviContainer ul li a.JsideNavi01 i {
-  background-position: -10px -185px;
-}
-
-.JsideNaviContainer ul li a.JsideNavi02 i {
-  background-position: -10px -220px;
-}
-
-.JsideNaviContainer ul li a.JsideNavi03 i {
-  background-position: -10px -255px;
-}
 
 .JsideNaviFooter {
   position: fixed;
@@ -21534,6 +21153,7 @@ h6 p {
   width: 100%;
   overflow: hidden;
   background-color: #000000;
+  margin-bottom: 20px;
 }
 
 .JindexImg01 {
@@ -21588,42 +21208,7 @@ h6 p {
   padding: 0;
   box-sizing: border-box;
 }
-.JindexImgContent {
-  position: fixed;
-  bottom: 80px !important;
-  left: 125px !important;
-  top: auto !important;
-  right: auto !important;
-  color: #fff;
-  width: calc(100% - 250px);
-  z-index: 2;
-  text-shadow: var(--text-shadow);
-}
 
-.JindexImgContent p {
-  font-size: 18px;
-  line-height: 22px;
-  font-family: 'Museo Sans', sans-serif;
-  font-weight: 300;
-  position: relative;
-  opacity: 0;
-  left: 50px;
-}
-
-.JindexImgContent h2 {
-  font-size: 50px;
-  line-height: 55px;
-  font-weight: 500;
-  max-width: 700px;
-  margin-top: 18px;
-  position: relative;
-  opacity: 0;
-  left: 50px;
-}
-
-.JindexImgContent h2 span {
-  font-weight: 600;
-}
 
 .JindexImg02HT {
   position: absolute;
@@ -25979,256 +25564,14 @@ h6 p {
     display: block;
   }
 
-  .JindexNaviRightTopSub.active a.burgerMenuIconM span:nth-child(1) {
-    -moz-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: 6px;
-  }
-
-  .JindexNaviRightTopSub.active a.burgerMenuIconM span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .JindexNaviRightTopSub.active a.burgerMenuIconM span:nth-child(3) {
-    width: 100%;
-    -moz-transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    top: 6px;
-  }
-
-  .JindexNaviRightTopSub.active .languageIcon,
-  .JindexNaviRightTopSub.active .searchIcon,
-  .JindexNaviRightTopSub.active .languageIcon2 {
-    display: none;
-  }
-
-  .JindexNaviRightBtmM,
-  .JindexNaviRightBtmPatternM,
-  .JindexNaviRightBtmSocialM {
-    display: block;
-  }
-
-  .JindexNaviContainer {}
-
-  .JindexNaviContainer.active .JindexNaviRightTopSub .languageIcon,
-  .JindexNaviContainer.active .JindexNaviRightTopSub a.searchIcon,
-  .JindexNaviContainer.active .JindexNaviRightTopSub .languageIcon2,
-  .JindexNaviContainer.force-active .JindexNaviRightTopSub .languageIcon,
-  .JindexNaviContainer.force-active .JindexNaviRightTopSub a.searchIcon,
-  .JindexNaviContainer.force-active .JindexNaviRightTopSub .languageIcon2 {
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
-  }
-
-  .JindexNaviRightTopSub a.burgerMenuIconM span {
-    background: #fff;
-  }
-
-  .JindexNaviContainer.active .JindexNaviRightTopSub a.burgerMenuIconM span,
-  .JindexNaviContainer.force-active .JindexNaviRightTopSub a.burgerMenuIconM span {
-    background: #000;
-  }
-
-  .JindexNaviContainer.active .JindexNaviLeft p,
-  .JindexNaviContainer.force-active .JindexNaviLeft p,
-  .JindexNaviRightTop ul {
-    display: none;
-  }
-
-  .JindexNaviRightBtm {
-    margin-top: 0px;
-    padding-top: 0px;
-    border: none;
-    position: absolute;
-    width: 100%;
-    top: 96px;
-    left: 0px;
-    height: calc(100% - 96px);
-    background: rgba(255, 255, 255, 0.9);
-    overflow: auto;
-    display: none;
-    padding-right: 0px;
-  }
-
+  
+  
   .JindexNaviLeft a img.JindexNaviLeftLogoW {
     max-width: 80px;
   }
 
   .JindexNaviLeft a img.JindexNaviLeftLogoB {
     max-width: 80px;
-  }
-
-  .JindexNaviContainer.active .JindexNaviLeft a img.JindexNaviLeftLogoW,
-  .JindexNaviContainer.force-active .JindexNaviLeft a img.JindexNaviLeftLogoW {
-    display: none;
-  }
-
-  .JindexNaviContainer.active .JindexNaviLeft a img.JindexNaviLeftLogoB,
-  .JindexNaviContainer.force-active .JindexNaviLeft a img.JindexNaviLeftLogoB {
-    display: block;
-  }
-
-  .JindexNaviLeft p {
-    display: none;
-  }
-
-  .JindexNaviLeft {
-    padding-left: 33px;
-  }
-
-  .JindexNaviRight {
-    margin-left: auto;
-  }
-
-  .JindexNaviRightBtm.show {
-    height: 100vh;
-  }
-
-  .JindexNaviRightBtm ul.JindexNaviRightBtmNavi {
-    display: block;
-    width: 100%;
-    margin-top: 22px;
-  }
-
-  .JindexNaviRightBtm ul.JindexNaviRightBtmNavi>li,
-  .JindexNaviRightBtm ul.JindexNaviRightBtmM>li {
-    position: relative;
-  }
-
-  .JindexNaviRightBtm ul.JindexNaviRightBtmNavi>li>a,
-  .JindexNaviRightBtm ul.JindexNaviRightBtmM>li>a {
-    font-size: 24px;
-    line-height: 29px;
-    padding: 18px 15px 15px 33px;
-    color: #000;
-    font-family: 'Museo Sans', sans-serif;
-    display: inline-block;
-    background: none;
-    font-weight: normal;
-  }
-
-  .JindexNaviRightBtmNavi .JhasSubInner {
-    border-top: none;
-  }
-
-  .JindexNaviRightBtmM li a.activeNavi {
-    font-weight: 900;
-    color: #CFB53B;
-    background: #fff;
-    display: inline-block;
-  }
-
-  .JhasSub {
-    position: relative;
-  }
-
-  .JindexNaviRightBtmM li a.activeNavi:after {
-    content: '';
-    position: absolute;
-    background: #CFB53B;
-    width: calc(100% - 33px);
-    height: 1px;
-    top: 35px;
-    z-index: -1;
-    left: 33px;
-  }
-
-  .JindexNaviRightBtm ul.JindexNaviRightBtmNavi>li>a.activeNavi,
-  .JindexNaviRightBtm ul.JindexNaviRightBtmM>li>a.activeNavi {
-    color: #CFB53B;
-    font-family: 'Museo Sans', sans-serif;
-    font-weight: 900;
-  }
-
-  .JindexNaviRightBtm ul.JindexNaviRightBtmNavi>li>a.activeNavi:before,
-  .JindexNaviRightBtm ul.JindexNaviRightBtmM>li>a.activeNavi:before {
-    content: '';
-    position: absolute;
-    background: #CFB53B;
-    width: calc(100% - 33px);
-    height: 1px;
-    top: 35px;
-    z-index: -1;
-  }
-
-  .JindexNaviRightBtmM>ul {
-    margin: 0px;
-    padding: 0px;
-    list-style-type: none;
-  }
-
-  .JindexNaviRightBtmM li a {
-    font-size: 24px;
-    line-height: 29px;
-    padding: 18px 33px 15px;
-    font-family: 'Museo Sans', sans-serif;
-    font-weight: normal;
-    display: block;
-    color: #000;
-  }
-
-  .JindexNaviRightBtmPatternM {}
-
-  .JindexNaviRightBtmPatternM img {
-    margin-left: auto;
-    margin-top: -50px;
-    display: block;
-  }
-
-  .JindexNaviRightBtmSocialM {
-    margin: 0px;
-    padding: 0px;
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 35px;
-  }
-
-  .JindexNaviRightBtmSocialM li {
-    width: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .JindexNaviRightBtmSocialM li a {
-    display: block;
-    width: 25px;
-    height: 25px;
-    background-image: url(/themes/custom/matrix/images/icon-sprite.png);
-    background-repeat: no-repeat;
-    background-size: 500px auto;
-    text-indent: -999em;
-  }
-
-  .JindexNaviRightBtmSocialM li a.JindexNaviRightBtmSocialFB {
-    background-position: -10px -10px;
-  }
-
-  .JindexNaviRightBtmSocialM li a.JindexNaviRightBtmSocialIN {
-    background-position: -10px -80px;
-  }
-
-  .JindexNaviRightBtmSocialM li a.JindexNaviRightBtmSocialTT {
-    background-position: -10px -45px;
-  }
-
-  .JindexNaviRightBtmSocialM li a.JindexNaviRightBtmSocialYT {
-    background-position: -10px -150px;
-  }
-
-  .JindexNaviRightBtmSocialM li a.JindexNaviRightBtmSocialLI {
-    background-position: -10px -115px;
-  }
-
-  .JindexNaviRightBtmSocialM li a.JindexNaviRightBtmSocialTok {
-    background-position: -39px -10px;
   }
 
   .JhasSubInner {
@@ -30091,10 +29434,6 @@ body {
   overflow: hidden;
 }
 
-.JindexNaviContainer.show .JindexNaviContainerInner,
-.JindexNaviContainer.show .JhasSubInner {
-  background: rgba(255, 255, 255, 1);
-}
 
 .JsideNaviContainer ul {
   overflow: visible;
@@ -31555,40 +30894,13 @@ body {
   top: 54px;
 }
 
-.JindexNaviContainer.show .JindexNaviContainerInner:before,
-.JindexNaviContainer.show .JhasSubInner:before {
-  content: '';
-  position: absolute;
-  top: 0px;
-  width: calc(100% - 223px);
-  height: 1px;
-  background: rgba(0, 0, 0, .3);
-  left: 223px;
-}
 
-.JindexNaviContainer.show .JindexNaviRightBtmNavi .JhasSubInner:before {
-  display: none;
-}
-
-.JindexNaviRightBtm ul.JindexNaviRightBtmNavi li .JhasSubInnerInner li a,
-.JindexNaviContainer.active .JindexNaviRightTop ul li .JhasSubInnerInner li a {
-  font-weight: 500;
-}
 
 .JgeneralPopupTitle h2 {
   width: calc(100% - 20px);
 }
 
-.JindexImgContent h1 {
-  font-size: 50px;
-  line-height: 55px;
-  font-weight: 500;
-  max-width: 700px;
-  margin-top: 18px;
-  position: relative;
-  opacity: 0;
-  left: 50px;
-}
+
 
 .JmasterRowContent h1 {
   font-size: 50px;
@@ -31600,23 +30912,7 @@ body {
 
 @media only screen and (max-width:1180px) {
 
-  .JindexNaviContainer.show .JindexNaviContainerInner:before,
-  .JindexNaviContainer.show .JhasSubInner:before {
-    opacity: 0;
-  }
-
-  .JindexNaviContainerInner {
-    padding: 16px 0px;
-  }
-
-  .JindexNaviRightBtm {
-    top: 62px;
-    height: calc(100% - 62px);
-  }
-
-  .JindexNaviContainer.show .JindexNaviRightBtm {
-    background: rgba(255, 255, 255, 1);
-  }
+  
 
   .JindexNaviRightBtm ul.JindexNaviRightBtmNavi li a.activeNavi {
     background: #fff;
@@ -31630,10 +30926,7 @@ body {
     width: 100%;
   }
 
-  .JindexNaviContainer.active .JindexNaviRightBtm ul li.JhasSub a.activeNavi {
-    color: #CFB53B;
-    opacity: 1;
-  }
+ 
 
   .JindexHomeMobile .JindexRow2M,
   .JindexHomeMobile .JindexRow3M,
