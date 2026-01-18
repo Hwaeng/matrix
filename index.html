@@ -627,7 +627,6 @@ section, .aem-GridColumn--default--12, .aem-Grid--12 {
   width: 50%;
   height: 100vh;
   background: #000000;
-  background-image: url('/images/left-mobile.png'); /* Mobile image by default */
   background-size: cover;
   background-position: center;
   position: relative;
@@ -638,7 +637,6 @@ section, .aem-GridColumn--default--12, .aem-Grid--12 {
   width: 50%;
   height: 100vh;
   background: #000000;
-  background-image: url('/images/right-mobile.png'); /* Mobile image by default */
   background-size: cover;
   background-position: center;
   position: relative;
@@ -648,11 +646,11 @@ section, .aem-GridColumn--default--12, .aem-Grid--12 {
 /* Desktop styles - applies at 768px and above */
 @media (min-width: 768px) {
   .curtain-left {
-    background-image: url('/images/left.png');
+    background-color: black;
   }
   
   .curtain-right {
-    background-image: url('/images/right.png');
+    background-color: black;
   }
 }
       .curtain-left::before,
