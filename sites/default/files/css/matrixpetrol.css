@@ -23688,10 +23688,6 @@ h6 p {
   max-width: 700px;
 }
 
-.JmasterRow1Container .JindexImgContent {
-  position: absolute;
-}
-
 .JmasterRow2Container {
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -24693,7 +24689,7 @@ h6 p {
 
 .JbopRow1Container .JindexImgContent {
   position: absolute;
-  bottom: calc(80px + 190px) !important;
+  bottom: 40px;
 }
 
 .JbopImg01BG {
@@ -25061,8 +25057,9 @@ h6 p {
 .JmasterInnerRow1Container {}
 
 .JmasterInnerRow1Container .JindexImgContent {
-  position: absolute;
-  bottom: 80px !important;
+  top: auto;
+  position: fixed;
+  bottom: 0px !important;
   left: 125px !important;
 }
 

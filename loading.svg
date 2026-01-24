@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="403.70099"
+   height="116.669"
+   viewBox="0 0 106.81323 30.868868"
+   version="1.1"
+   id="svg428"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs425">
+    <style>
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      #path252 {
+        opacity: 0;
+        animation: fadeIn 0.6s ease-in forwards;
+        animation-delay: 0s;
+      }
+      
+      #path256 {
+        opacity: 0;
+        animation: fadeIn 0.6s ease-in forwards;
+        animation-delay: 0.3s;
+      }
+      
+      #path260 {
+        opacity: 0;
+        animation: fadeIn 0.6s ease-in forwards;
+        animation-delay: 0.6s;
+      }
+      
+      #path264 {
+        opacity: 0;
+        animation: fadeIn 0.6s ease-in forwards;
+        animation-delay: 0.9s;
+      }
+      
+      #path268 {
+        opacity: 0;
+        animation: fadeIn 0.6s ease-in forwards;
+        animation-delay: 1.2s;
+      }
+      
+      #path272 {
+        opacity: 0;
+        animation: fadeIn 0.6s ease-in forwards;
+        animation-delay: 1.5s;
+      }
+      
+      #path276 {
+        opacity: 0;
+        animation: fadeIn 0.6s ease-in forwards;
+        animation-delay: 1.8s;
+      }
+    </style>
+  </defs>
+  <g id="layer1">
+    <g
+       id="g250"
+       transform="matrix(1.2750503,0,0,1.2330751,20.350777,8.0933682)"
+       style="fill:#ffffff">
+      <path
+         d="M 0,0 -4.8,10.88 -9.6,0 h -2.72 v 14.4 h 2.4 V 4.48 l 4,9.92 h 2.24 L 0.16,4.48 v 9.92 h 2.4 V 0 Z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path252" />
+    </g>
+    <g
+       id="g254"
+       transform="matrix(1.2750503,0,0,1.2330751,45.851774,25.849684)"
+       style="fill:#ffffff">
+      <path
+         d="m 0,0 h -2.88 l -1.6,-4 -0.96,-2.24 -2.24,-5.44 -4.8,11.68 h -2.72 l 6.08,-14.4 h 2.88 z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path256" />
+    </g>
+    <g
+       id="g258"
+       transform="matrix(1.2750503,0,0,1.2330751,58.704297,8.0933682)"
+       style="fill:#ffffff">
+      <path
+         d="m 0,0 v 2.4 h -4.16 v 12 h -2.56 v -12 h -4.16 V 0 Z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path260" />
+    </g>
+    <g
+       id="g262"
+       transform="matrix(1.2750503,0,0,1.2330751,61.152409,25.849684)"
+       style="fill:#ffffff">
+      <path
+         d="m 0,0 v -14.4 h 6.56 c 2.88,0 4.32,1.28 4.32,3.84 0,1.76 -1.12,3.2 -3.36,4.32 L 12,0 H 8.64 L 4.32,-6.24 V -7.52 C 6.88,-7.84 8.16,-8.96 8.16,-10.4 8.16,-11.52 7.52,-12 6.4,-12 H 2.72 V 0 Z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path264" />
+    </g>
+    <g
+       id="g266"
+       transform="matrix(1.2750503,0,0,1.2330751,-44.115762,-111.071)"
+       style="fill:#ffffff">
+      <path
+         d="M 99.040001,111.04 H 96.32 V 96.639999 h 2.720001 z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path268" />
+    </g>
+    <g
+       id="g270"
+       transform="matrix(1.2750503,0,0,1.2330751,-44.115762,-111.071)"
+       style="fill:#ffff00">
+      <path
+         d="m 107.52,100.64 v 0 l -1.6,1.92 v 0 l -4.64,-5.920001 h 3.36 z"
+         style="fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path272" />
+    </g>
+    <g
+       id="g274"
+       transform="matrix(1.2750503,0,0,1.2330751,99.301881,8.0933682)"
+       style="fill:#ffffff">
+      <path
+         d="m 0,0 -3.84,5.28 -1.76,1.92 -5.6,7.2 h 3.36 l 4,-5.28 L 0,14.4 H 3.36 L -2.24,7.2 3.36,0 Z"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="path276" />
+    </g>
+  </g>
+</svg>
