@@ -59,6 +59,17 @@
       type="font/woff2"
       crossorigin="anonymous"
     />
+    <style>
+      @font-face {
+        font-family: 'Roboto';
+        src: url('/assets/fonts/Roboto-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+
+    <link rel="preload" href="/assets/fonts/Roboto-Regular.woff" as="font" type="font/woff" crossorigin="anonymous" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -630,128 +641,128 @@
       }
     </style>
     <style>
-       .pelement.subtitle-pet.paragraph.paragraph--type--section-wide-video-player.paragraph--view-mode--default.JindexContainer.JmasterInnerRow1Container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            width: 100%;
-            height: 100vh;
-            gap: 0;
-        }
+      .pelement.subtitle-pet.paragraph.paragraph--type--section-wide-video-player.paragraph--view-mode--default.JindexContainer.JmasterInnerRow1Container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        width: 100%;
+        height: 100vh;
+        gap: 0;
+      }
 
-        .video-item {
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+      .video-item {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
 
-        .video-item:hover {
-            transform: scale(1.02);
-            z-index: 10;
-        }
+      .video-item:hover {
+        transform: scale(1.02);
+        z-index: 10;
+      }
 
-        .video-item video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+      .video-item video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
 
-        /* Poster image styling */
-        .video-item .video-poster {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1;
-            transition: opacity 0.3s ease;
-        }
+      /* Poster image styling */
+      .video-item .video-poster {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        transition: opacity 0.3s ease;
+      }
 
-        .video-item:hover .video-poster {
-            opacity: 0;
-        }
+      .video-item:hover .video-poster {
+        opacity: 0;
+      }
 
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            padding-bottom: 20px;
-            text-align: center;
-            z-index: 2;
-        }
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        padding-bottom: 20px;
+        text-align: center;
+        z-index: 2;
+      }
 
-        .video-overlay .label {
-            font-size: 14px;
-            font-weight: 300;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            opacity: 0.9;
+      .video-overlay .label {
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        opacity: 0.9;
+      }
+
+      .video-overlay .title {
+        font-size: 48px;
+        font-weight: 300;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 0px;
+        line-height: 1.2;
+      }
+
+      .discover-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        background: transparent;
+        border: 2px solid white;
+        padding: 2px 24px;
+        border-radius: 50px;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .discover-btn:hover {
+        background: white;
+        color: #000;
+      }
+
+      .arrow-circle {
+        width: 30px;
+        height: 30px;
+        border: 2px solid white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+
+      @media (max-width: 768px) {
+        .pelement.subtitle-pet.paragraph.paragraph--type--section-wide-video-player.paragraph--view-mode--default.JindexContainer.JmasterInnerRow1Container {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(4, 1fr);
+          height: auto;
         }
 
         .video-overlay .title {
-            font-size: 48px;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            line-height: 1.2;
+          font-size: 32px;
         }
-
-        .discover-btn {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            background: transparent;
-            border: 2px solid white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .discover-btn:hover {
-            background: white;
-            color: #000;
-        }
-
-        .arrow-circle {
-            width: 30px;
-            height: 30px;
-            border: 2px solid white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-        }
-
-        @media (max-width: 768px) {
-            .pelement.subtitle-pet.paragraph.paragraph--type--section-wide-video-player.paragraph--view-mode--default.JindexContainer.JmasterInnerRow1Container {
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(4, 1fr);
-                height: auto;
-            }
-
-            .video-overlay .title {
-                font-size: 32px;
-            }
-        }
+      }
     </style>
     <style>
       .promo-block-extended {
@@ -1381,7 +1392,7 @@
         right: 0;
         z-index: 1000;
         background: transparent;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(0px);
         width: 100%;
         padding-top: 40px;
       }
@@ -1491,12 +1502,19 @@
       .languageIcon2 {
         width: 24px;
         height: 24px;
-        background: url(/themes/custom/matrix/images/top-language2.svg);
+        background: url(/themes/custom/matrix/images/globe.svg);
         display: block;
         opacity: 0.8;
         transition: opacity 0.3s;
       }
-
+      .instagramIcon2 {
+        width: 24px;
+        height: 24px;
+        background: url(/images/instagram.svg);
+        display: block;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+      }
       .languageIcon2:hover {
         opacity: 1;
       }
@@ -1857,6 +1875,7 @@
       .timeline-item {
         flex: 0 0 calc(33.333% - 27px);
         min-width: 350px;
+        height: 600px;
         position: relative;
         text-align: center;
       }
@@ -1977,6 +1996,7 @@
 
       .logo-container {
         text-align: center;
+        margin-left: 50px;
       }
 
       /* SVG Animation */
@@ -2043,76 +2063,140 @@
   <body class="layout-no-sidebars page-node-1673 path-frontpage node--type-page" background="">
     <div id="loading-screen">
       <div class="logo-container">
-        <svg
-          width="403.70099"
-          height="116.669"
-          viewBox="0 0 106.81323 30.868868"
-          version="1.1"
-          id="svg428"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:svg="http://www.w3.org/2000/svg"
-        >
-          <defs id="defs425" />
-          <g id="layer1">
-            <g id="g250" transform="matrix(1.2750503,0,0,1.2330751,20.350777,8.0933682)" style="fill: #ffffff">
-              <path
-                d="M 0,0 -4.8,10.88 -9.6,0 h -2.72 v 14.4 h 2.4 V 4.48 l 4,9.92 h 2.24 L 0.16,4.48 v 9.92 h 2.4 V 0 Z"
-                style="fill: #ffffff; fill-opacity: 1; fill-rule: nonzero; stroke: none"
-                id="path252"
-              />
-            </g>
-            <g id="g254" transform="matrix(1.2750503,0,0,1.2330751,45.851774,25.849684)" style="fill: #ffffff">
-              <path
-                d="m 0,0 h -2.88 l -1.6,-4 -0.96,-2.24 -2.24,-5.44 -4.8,11.68 h -2.72 l 6.08,-14.4 h 2.88 z"
-                style="fill: #ffffff; fill-opacity: 1; fill-rule: nonzero; stroke: none"
-                id="path256"
-              />
-            </g>
-            <g id="g258" transform="matrix(1.2750503,0,0,1.2330751,58.704297,8.0933682)" style="fill: #ffffff">
-              <path
-                d="m 0,0 v 2.4 h -4.16 v 12 h -2.56 v -12 h -4.16 V 0 Z"
-                style="fill: #ffffff; fill-opacity: 1; fill-rule: nonzero; stroke: none"
-                id="path260"
-              />
-            </g>
-            <g id="g262" transform="matrix(1.2750503,0,0,1.2330751,61.152409,25.849684)" style="fill: #ffffff">
-              <path
-                d="m 0,0 v -14.4 h 6.56 c 2.88,0 4.32,1.28 4.32,3.84 0,1.76 -1.12,3.2 -3.36,4.32 L 12,0 H 8.64 L 4.32,-6.24 V -7.52 C 6.88,-7.84 8.16,-8.96 8.16,-10.4 8.16,-11.52 7.52,-12 6.4,-12 H 2.72 V 0 Z"
-                style="fill: #ffffff; fill-opacity: 1; fill-rule: nonzero; stroke: none"
-                id="path264"
-              />
-            </g>
-            <g id="g266" transform="matrix(1.2750503,0,0,1.2330751,-44.115762,-111.071)" style="fill: #ffffff">
-              <path
-                d="M 99.040001,111.04 H 96.32 V 96.639999 h 2.720001 z"
-                style="fill: #ffffff; fill-opacity: 1; fill-rule: nonzero; stroke: none"
-                id="path268"
-              />
-            </g>
-            <g id="g270" transform="matrix(1.2750503,0,0,1.2330751,-44.115762,-111.071)" style="fill: #ffff00">
-              <path
-                d="m 107.52,100.64 v 0 l -1.6,1.92 v 0 l -4.64,-5.920001 h 3.36 z"
-                style="fill: #ffff00; fill-opacity: 1; fill-rule: nonzero; stroke: none"
-                id="path272"
-              />
-            </g>
-            <g id="g274" transform="matrix(1.2750503,0,0,1.2330751,99.301881,8.0933682)" style="fill: #ffffff">
-              <path
-                d="m 0,0 -3.84,5.28 -1.76,1.92 -5.6,7.2 h 3.36 l 4,-5.28 L 0,14.4 H 3.36 L -2.24,7.2 3.36,0 Z"
-                style="fill: #ffffff; fill-opacity: 1; fill-rule: nonzero; stroke: none"
-                id="path276"
-              />
-            </g>
-          </g>
-        </svg>
-        <div class="loading-text">LOADING...</div>
+       <svg
+   width="403.70099"
+   height="116.669"
+   viewBox="0 0 106.81323 30.868868"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg">
+  
+  <defs>
+    <style>
+      @keyframes glowAndColor {
+        0% {
+          filter: drop-shadow(0 0 0px transparent);
+          opacity: 0.3;
+          fill: #e0e0e0;
+        }
+        14% {
+          filter: drop-shadow(0 0 0px transparent);
+          opacity: 0.3;
+          fill: #e0e0e0;
+        }
+        28% {
+          filter: drop-shadow(0 0 10px #ffd700) drop-shadow(0 0 20px #ffd700);
+          opacity: 1;
+          fill: #ffd700;
+        }
+        42% {
+          filter: drop-shadow(0 0 0px transparent);
+          opacity: 0.3;
+          fill: #e0e0e0;
+        }
+        100% {
+          filter: drop-shadow(0 0 0px transparent);
+          opacity: 0.3;
+          fill: #e0e0e0;
+        }
+      }
+      
+      /* Bottom left triangle */
+      #path204 {
+        animation: glowAndColor 7s ease-in-out infinite;
+        animation-delay: 0s;
+      }
+      
+      /* Left middle triangle */
+      #path244 {
+        animation: glowAndColor 7s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+      
+      /* Center-left triangle */
+      #path228 {
+        animation: glowAndColor 7s ease-in-out infinite;
+        animation-delay: 2s;
+      }
+      
+      /* Center triangle (gold) */
+      #path224 {
+        animation: glowAndColor 7s ease-in-out infinite;
+        animation-delay: 3s;
+      }
+      
+      /* Center-right triangle */
+      #path240 {
+        animation: glowAndColor 7s ease-in-out infinite;
+        animation-delay: 4s;
+      }
+      
+      /* Top right triangle */
+      #path208 {
+        animation: glowAndColor 7s ease-in-out infinite;
+        animation-delay: 5s;
+      }
+      
+      /* Right middle triangle */
+      #path248 {
+        animation: glowAndColor 7s ease-in-out infinite;
+        animation-delay: 6s;
+      }
+    </style>
+  </defs>
+
+  <g id="g202" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#f9f9f9">
+    <path d="M 47.040001,37.599998 V 54.560001 L 62.080002,46.080002 Z" style="fill:#f9f9f9;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path204" />
+  </g>
+  
+  <g id="g206" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#ececec">
+    <path d="m 92,46.080002 15.04,8.479999 V 37.599998 Z" style="fill:#ececec;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path208" />
+  </g>
+  
+  <g id="g210" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#ffffff">
+    <path d="M 62.080002,81.599998 47.040001,90.080002 V 73.120003 Z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path212" />
+  </g>
+  
+  <g id="g214" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#ececec">
+    <path d="m 76.959999,54.560001 -14.879997,8.48 V 46.080002 Z" style="fill:#ececec;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path216" />
+  </g>
+  
+  <g id="g218" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#e6e6e6">
+    <path d="m 92,81.599998 15.04,-8.479995 v 16.959999 z" style="fill:#e6e6e6;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path220" />
+  </g>
+  
+  <g id="g222" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)">
+    <path d="M 92,63.040001 76.959999,71.519997 V 54.560001 Z" style="fill:#dbdea1;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path224" />
+  </g>
+  
+  <g id="g226" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#e6e6e6">
+    <path d="m 62.080002,63.040001 14.879997,-8.48 v 16.959996 z" style="fill:#e6e6e6;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path228" />
+  </g>
+  
+  <g id="g230" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#f9f9f9">
+    <path d="M 76.959999,54.560001 92,63.040001 V 46.080002 Z" style="fill:#f9f9f9;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path232" />
+  </g>
+  
+  <g id="g238" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#ffffff">
+    <path d="m 92,63.040001 -15.040001,-8.48 v 16.959996 z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path240" />
+  </g>
+  
+  <g id="g242" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#f2f2f2">
+    <path d="M 47.040001,54.560001 62.080002,46.080002 V 63.040001 Z" style="fill:#f2f2f2;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path244" />
+  </g>
+  
+  <g id="g246" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#f2f2f2">
+    <path d="M 107.04,54.560001 92,46.080002 v 16.959999 z" style="fill:#f2f2f2;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path248" />
+  </g>
+</svg>
       </div>
     </div>
     <div class="root" id="page-wrapper" style="background-color: #ffffff">
       <div class="JindexNaviContainer">
-        <!-- TOP SECTION: Logo on left, Stock Prices and Language Icon on right -->
-        <div class="JindexNaviTop" style="display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid #686868;">
-          <div class="JindexNaviTopLeft" style="align-items: center; padding-left: 40px;">
+        <div
+          class="JindexNaviTop"
+          style="display: flex; justify-content: space-between; align-items: center; border-top: 0px solid #686868"
+        >
+          <div class="JindexNaviTopLeft" style="align-items: center; padding-left: 40px">
             <a href="/" rel="home">
               <img
                 alt="MATRIX logo with text"
@@ -2130,7 +2214,7 @@
                 padding: 1px;
                 background: transparent;
                 border-radius: 12px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
                 width: auto;
                 height: 80px;
               "
@@ -2139,40 +2223,44 @@
               <div
                 class="stock-card"
                 style="
-                  background: #ffffff60;
+                  background: transparent;
                   border-radius: 8px;
                   padding: 1px 1px;
                   min-width: 100px;
-                  border-left: #ffffff 4px solid;
+                  border-left: #ffffff 0px solid;
                   transition: transform 0.2s;
                 "
               >
                 <a href="#" target="_blank" style="text-decoration: none; color: inherit">
-                  <div style="text-align: center; padding: 5px; display: flex; flex-direction: row; align-items: center">
+                  <div
+                    style="text-align: center; padding: 5px; display: flex; flex-direction: row; align-items: center"
+                  >
+                  <span style="font-size: 12px; padding-right: 5px;">↓</span>
                     <p
                       style="
-                        margin: 0 0 4px 0;
+                        margin: 0;
                         font-size: 12px;
-                        font-weight: 400;
+                        font-weight: 300;
                         color: #ffffff;
-                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+                        font-family: 'Roboto', sans-serif;
                       "
                     >
-                      €54.66
+                     £54.66
                     </p>
                     <p
                       style="
                         margin: 0;
-                        font-size: 14px;
-                        font-weight: 600;
+                        font-size: 12px;
+                        font-weight: 300;
                         color: #e53e3e;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         gap: 4px;
+                         font-family: 'Roboto', sans-serif;
                       "
                     >
-                      <span style="font-size: 12px">↓</span> -0.44%
+                     (-0.44)
                     </p>
                   </div>
                 </a>
@@ -2182,23 +2270,25 @@
               <div
                 class="stock-card"
                 style="
-                  background: #ffffff60;
+                  background: transparent;
                   border-radius: 8px;
                   padding: 1px 1px;
-                  border-left: #f87a04 4px solid;
+                  border-left: #f87a04 0px solid;
                   width: 100px;
                   transition: transform 0.2s;
                 "
               >
                 <a href="#" target="_blank" style="text-decoration: none; color: inherit">
-                  <div style="text-align: center; padding: 5px; display: flex; flex-direction: row; align-items: center">
-                    <p
+                  <div
+                    style="text-align: center; padding: 5px; display: flex; flex-direction: row; align-items: center"
+                  >
+                   <span style="font-size: 12px; padding-right: 5px;">↑</span> <p
                       style="
-                        margin: 0 0 4px 0;
+                        margin: 0;
                         font-size: 12px;
-                        font-weight: 400;
+                        font-weight: 300;
                         color: #ffffff;
-                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+                        font-family: 'Roboto', sans-serif;
                       "
                     >
                       $62.59
@@ -2207,15 +2297,16 @@
                       style="
                         margin: 0;
                         font-size: 12px;
-                        font-weight: 600;
+                        font-weight: 300;
                         color: #38a169;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         gap: 4px;
+                        font-family: 'Roboto', sans-serif;
                       "
                     >
-                      <span style="font-size: 12px">↑</span> +0.90%
+                       (0.90)
                     </p>
                   </div>
                 </a>
@@ -2229,18 +2320,21 @@
               }
             </style>
             <div>
+              <a href="/experience/map.html" class="instagramIcon2"></a>
+            </div>
+            <div>
               <a href="/experience/map.html" class="languageIcon2"></a>
             </div>
           </div>
         </div>
-        <hr style="width: 100%; border: 0; border-top: 1px solid rgba(255, 255, 255); margin: 0" class="desktop-only" />
+        <hr style="width: 100%; border: 0; border-top: 0px solid rgba(255, 255, 255); margin: 0" class="desktop-only" />
         <div class="JindexNaviBottom">
           <div class="collapsible-nav">
             <button
               class="nav-toggle"
               style="padding-left: 40px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
             >
-              <span style="display: block">menu</span>
+              <span style="display: block"></span>
               <svg
                 class="toggle-icon"
                 width="20"
@@ -2344,7 +2438,7 @@
               <div class="JindexRow4ContainerInner">
                 <div class="JindexRow4Content">
                   <p data-aos="fade-left" data-aos-anchor-placement="top-bottom">EXPLORE</p>
-                  <h2 data-aos="fade-left">Brand Identity & Ethos</h2>
+                  <h2 data-aos="fade-left">BRAND IDENTITY & ETHOS</h2>
                   <div class="JindexRow4ContentInner">
                     <a
                       href="/en_GB/distribution.html"
@@ -2361,7 +2455,6 @@
                 </div>
               </div>
             </div>
-            
           </div>
           <div class="JindexContainerInner">
             <div class="JindexImg01">
@@ -2393,7 +2486,7 @@
               <div class="JindexRow4ContainerInner">
                 <div class="JindexRow4Content">
                   <p data-aos="fade-left" data-aos-anchor-placement="top-bottom">EXPLORE</p>
-                  <h2 data-aos="fade-left">The Black Label Series</h2>
+                  <h2 data-aos="fade-left">THE BLACK LABEL SERIES</h2>
                   <div class="JindexRow4ContentInner">
                     <a
                       href="/en_GB/distribution.html"
@@ -2410,7 +2503,6 @@
                 </div>
               </div>
             </div>
-           
           </div>
           <div class="JindexContainerInner">
             <div class="JindexImg01">
@@ -2442,7 +2534,7 @@
               <div class="JindexRow4ContainerInner">
                 <div class="JindexRow4Content">
                   <p data-aos="fade-left" data-aos-anchor-placement="top-bottom">EXPLORE</p>
-                  <h2 data-aos="fade-left">Engineering & Performance</h2>
+                  <h2 data-aos="fade-left">ENGINEERING & PERFORMANCE</h2>
                   <div class="JindexRow4ContentInner">
                     <a
                       href="/en_GB/distribution.html"
@@ -2459,7 +2551,6 @@
                 </div>
               </div>
             </div>
-           
           </div>
           <div class="JindexContainerInner">
             <div class="JindexImg01">
@@ -2487,11 +2578,11 @@
               </div>
             </div>
             <div class="JbopImg01BG"></div>
-             <div class="JindexRow4ContainerOuter">
+            <div class="JindexRow4ContainerOuter">
               <div class="JindexRow4ContainerInner">
                 <div class="JindexRow4Content">
                   <p data-aos="fade-left" data-aos-anchor-placement="top-bottom">EXPLORE</p>
-                  <h2 data-aos="fade-left">Innovation & Chemistry Section</h2>
+                  <h2 data-aos="fade-left">INNOVATION & CHEMISTRY</h2>
                   <div class="JindexRow4ContentInner">
                     <a
                       href="/en_GB/distribution.html"
@@ -2508,7 +2599,6 @@
                 </div>
               </div>
             </div>
-            
           </div>
           <div class="JindexContainerInner">
             <div class="JindexImg01">
@@ -2540,7 +2630,7 @@
               <div class="JindexRow4ContainerInner">
                 <div class="JindexRow4Content">
                   <p data-aos="fade-left" data-aos-anchor-placement="top-bottom">Explore</p>
-                  <h2 data-aos="fade-left">Product Line Section</h2>
+                  <h2 data-aos="fade-left">PRODUCT LINE</h2>
                   <div class="JindexRow4ContentInner">
                     <a
                       href="/en_GB/distribution.html"
@@ -2557,7 +2647,6 @@
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
       </div>
@@ -2614,7 +2703,7 @@
             <div class="b-transitionSlider__background"></div>
             <div class="b-transitionSlider__index">
               <div class="b-transitionSlider__heading">
-                <h2 class="a-heading-h5" data-component="a03-heading">DISTRIBUTION</h2>
+                <h3 class="a-heading-h5" data-component="a03-heading">DISTRIBUTION</h3>
               </div>
               <div style="position: relative; width: 100%; z-index: 2">
                 <ul class="b-transitionSlider__titlePagination" style="position: relative; z-index: 3">
@@ -2721,6 +2810,28 @@
                     </button>
                   </li>
                 </ul>
+              </div>
+            </div>
+            <div class="JbopImg01BG"></div>
+            <div class="JindexRow4ContainerOuter">
+              <div class="JindexRow4ContainerInner">
+                <div class="JindexRow4Content">
+                  <p data-aos="fade-left" data-aos-anchor-placement="top-bottom">EXPLORE</p>
+                  <h2 data-aos="fade-left">ENGINEERING & PERFORMANCE</h2>
+                  <div class="JindexRow4ContentInner">
+                    <a
+                      href="/en_GB/distribution.html"
+                      class="JindexRow4ContentList"
+                      data-aos="fade-left"
+                      data-aos-anchor-placement="top-bottom"
+                      target="_self"
+                      style="padding: 12px 8px; font-size: 1rem"
+                    >
+                      <i></i>
+                      <p style="font-size: 1rem; margin: 0"></p>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -4268,76 +4379,96 @@
                 ><span class="a-pageIndicators__item"></span>
               </div>
             </div>
+            
           </section>
         </div>
       </div>
-    <div class="pelement subtitle-pet paragraph paragraph--type--section-wide-video-player paragraph--view-mode--default JindexContainer JmasterInnerRow1Container">
+      <div
+        class="pelement subtitle-pet paragraph paragraph--type--section-wide-video-player paragraph--view-mode--default JindexContainer JmasterInnerRow1Container"
+      >
         <!-- Video 1: Maxfuel Rx -->
         <div class="video-item">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" alt="Maxfuel Rx" class="video-poster">
-            <video muted loop playsinline>
-                <source src="/videos/Desktop/beerlines1.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay">
-                <div class="label">Products</div>
-                <div class="title">Maxfuel Rx</div>
-                <button class="discover-btn">
-                    DISCOVER
-                    <div class="arrow-circle">›</div>
-                </button>
-            </div>
+          <img
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop"
+            alt="Maxfuel Rx"
+            class="video-poster"
+          />
+          <video muted loop playsinline>
+            <source src="/videos/Desktop/beerlines1.mp4" type="video/mp4" />
+          </video>
+          <div class="video-overlay">
+            <div class="label">Products</div>
+            <div class="title">Maxfuel Rx</div>
+            <a href="/en_GB/maxfuelrx.html" class="discover-btn">
+              DISCOVER
+              <div class="arrow-circle">›</div>
+            </a>
+          </div>
         </div>
 
         <!-- Video 2: Matrix Brochure -->
         <div class="video-item">
-            <img src="https://res.cloudinary.com/dgljpmcvc/image/upload/v1749817762/brochure_ht9zsb.png" alt="Matrix Brochure" class="video-poster">
-            <video muted loop playsinline>
-                <source src="/videos/Desktop/globe.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay">
-                <div class="label">Magazine</div>
-                <div class="title">Matrix Brochure</div>
-                <button class="discover-btn">
-                    Download
-                    <div class="arrow-circle">›</div>
-                </button>
-            </div>
+          <img
+            src="https://res.cloudinary.com/dgljpmcvc/image/upload/v1749817762/brochure_ht9zsb.png"
+            alt="Matrix Brochure"
+            class="video-poster"
+          />
+          <video muted loop playsinline>
+            <source src="/videos/Desktop/globe.mp4" type="video/mp4" />
+          </video>
+          <div class="video-overlay">
+            <div class="label">Magazine</div>
+            <div class="title">Matrix Brochure</div>
+            <a href="/brochures/MaxFuelRX Brochure (African Version 2022).pdf" class="discover-btn">
+              Download
+              <div class="arrow-circle">›</div>
+            </a>
+          </div>
         </div>
 
         <!-- Video 3: Our Future -->
         <div class="video-item">
-            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop" alt="Our Future" class="video-poster">
-            <video muted loop playsinline>
-                <source src="/videos/Desktop/carlines.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay">
-                <div class="label">Future</div>
-                <div class="title">Our Future</div>
-                <button class="discover-btn">
-                    DISCOVER
-                    <div class="arrow-circle">›</div>
-                </button>
-            </div>
+          <img
+            src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop"
+            alt="Our Future"
+            class="video-poster"
+          />
+          <video muted loop playsinline>
+            <source src="/videos/Desktop/carlines.mp4" type="video/mp4" />
+          </video>
+          <div class="video-overlay">
+            <div class="label">Future</div>
+            <div class="title">Our Future</div>
+             <a href="/en_GB/future.html" class="discover-btn">
+              DISCOVER
+              <div class="arrow-circle">›</div>
+            </a>
+            
+          </div>
         </div>
 
         <!-- Video 4: Distribution -->
         <div class="video-item">
-            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=600&fit=crop" alt="Distribution" class="video-poster">
-            <video muted loop playsinline>
-                <source src="/videos/Desktop/engine.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay">
-                <div class="label">Corporate</div>
-                <div class="title">Distribution</div>
-                <button class="discover-btn">
-                    DISCOVER
-                    <div class="arrow-circle">›</div>
-                </button>
-            </div>
+          <img
+            src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=600&fit=crop"
+            alt="Distribution"
+            class="video-poster"
+          />
+          <video muted loop playsinline>
+            <source src="/videos/Desktop/engine.mp4" type="video/mp4" />
+          </video>
+          <div class="video-overlay">
+            <div class="label">Corporate</div>
+            <div class="title">Distribution</div>
+             <a href="/en_GB/distribution.html" class="discover-btn">
+              DISCOVER
+              <div class="arrow-circle">›</div>
+            </a>
+          </div>
         </div>
-    </div>
-       
-       <div
+      </div>
+
+      <div
         class="pelement subtitle-pet paragraph paragraph--type--section-wide-video-player paragraph--view-mode--default JindexContainer JmasterInnerRow1Container"
       >
         <div class="JgeneralBanner"></div>
@@ -4421,7 +4552,7 @@
           </div>
         </div>
       </div>
-     
+
       <div
         class="pelement subtitle-pet paragraph paragraph--type--section-wide-video-player paragraph--view-mode--default JindexContainer JmasterInnerRow1Container"
       >
@@ -4451,7 +4582,7 @@
                   style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1"
                 >
                   <source src="/videos/phone/rx.mp4" type="video/mp4" />
-                  <!-- Fallback image if video fails to load -->
+                 
                   <img
                     src="/images/fallback-mobile.jpg"
                     style="width: 100%; height: 100%; object-fit: cover"
@@ -4506,8 +4637,8 @@
           </div>
         </div>
       </div>
-     
-     <!-- <div class="widget sustainability-cards" style="overflow: hidden">
+
+      <!-- <div class="widget sustainability-cards" style="overflow: hidden">
         <div class="swiper-container">
           <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px)">
             <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0">
@@ -6674,16 +6805,16 @@
           </div>
         </section>
 
-      </div>
-      <div style="overflow: hidden"></div>-->
+      </div>-->
+      <div style="overflow: hidden"></div>
       <div class="cmp cmp-c103-vertical-carousel t-dark aem-GridColumn aem-GridColumn--default--12 timeline-container">
         <div class="timeline-overlay">
           <h1 class="timeline-header">Our Story</h1>
 
-         <div class="timeline-nav">
-                <button class="nav-btn" onclick="scrollTimeline('left')">←</button>
-                <button class="nav-btn" onclick="scrollTimeline('right')">→</button>
-            </div>
+          <div class="timeline-nav">
+            <button class="nav-btn" onclick="scrollTimeline('left')">←</button>
+            <button class="nav-btn" onclick="scrollTimeline('right')">→</button>
+          </div>
 
           <div class="timeline-wrapper">
             <div class="timeline-line"></div>
@@ -6762,7 +6893,8 @@
             </div>
           </div>
         </div>
-      </div>-->
+      </div>
+
       <div class="JgeneralFooterContainer" style="background-color: #000000">
         <div class="JgeneralFooter JgeneralFooter2" style="background-color: #000000">
           <div class="JgeneralFooterInner">
@@ -6839,10 +6971,9 @@
                       <p style="color: #fff">
                         Copyright ©
                         <script>
-                          <!--//-->
-                                                                      < ![CDATA[// ><!--
-                                                                              document.write(new Date().getFullYear())
-                                                                          //--><!]]>
+                          
+                    document.write(new Date().getFullYear())
+                                                                        
                         </script>
                         Matrix Petroleum LTD .<br />
                         All rights reserved.
@@ -7498,19 +7629,19 @@
       }
     </script>
     <script>
-        // Handle video play/pause on hover
-        document.querySelectorAll('.video-item').forEach(item => {
-            const video = item.querySelector('video');
-            
-            item.addEventListener('mouseenter', () => {
-                video.play();
-            });
-            
-            item.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0; // Reset to beginning
-            });
+      // Handle video play/pause on hover
+      document.querySelectorAll('.video-item').forEach((item) => {
+        const video = item.querySelector('video');
+
+        item.addEventListener('mouseenter', () => {
+          video.play();
         });
+
+        item.addEventListener('mouseleave', () => {
+          video.pause();
+          video.currentTime = 0; // Reset to beginning
+        });
+      });
     </script>
   </body>
 </html>

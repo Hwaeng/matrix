@@ -1,127 +1,126 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    width="403.70099"
    height="116.669"
    viewBox="0 0 106.81323 30.868868"
    version="1.1"
-   id="svg428"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs id="defs425">
+   xmlns="http://www.w3.org/2000/svg">
+  
+  <defs>
     <style>
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+      @keyframes glowAndColor {
+        0% {
+          filter: drop-shadow(0 0 0px transparent);
+          opacity: 0.3;
+          fill: #e0e0e0;
+        }
+        14% {
+          filter: drop-shadow(0 0 0px transparent);
+          opacity: 0.3;
+          fill: #e0e0e0;
+        }
+        28% {
+          filter: drop-shadow(0 0 10px #ffd700) drop-shadow(0 0 20px #ffd700);
+          opacity: 1;
+          fill: #ffd700;
+        }
+        42% {
+          filter: drop-shadow(0 0 0px transparent);
+          opacity: 0.3;
+          fill: #e0e0e0;
+        }
+        100% {
+          filter: drop-shadow(0 0 0px transparent);
+          opacity: 0.3;
+          fill: #e0e0e0;
+        }
       }
       
-      #path252 {
-        opacity: 0;
-        animation: fadeIn 0.6s ease-in forwards;
+      /* Bottom left triangle */
+      #path204 {
+        animation: glowAndColor 7s ease-in-out infinite;
         animation-delay: 0s;
       }
       
-      #path256 {
-        opacity: 0;
-        animation: fadeIn 0.6s ease-in forwards;
-        animation-delay: 0.3s;
+      /* Left middle triangle */
+      #path244 {
+        animation: glowAndColor 7s ease-in-out infinite;
+        animation-delay: 1s;
       }
       
-      #path260 {
-        opacity: 0;
-        animation: fadeIn 0.6s ease-in forwards;
-        animation-delay: 0.6s;
+      /* Center-left triangle */
+      #path228 {
+        animation: glowAndColor 7s ease-in-out infinite;
+        animation-delay: 2s;
       }
       
-      #path264 {
-        opacity: 0;
-        animation: fadeIn 0.6s ease-in forwards;
-        animation-delay: 0.9s;
+      /* Center triangle (gold) */
+      #path224 {
+        animation: glowAndColor 7s ease-in-out infinite;
+        animation-delay: 3s;
       }
       
-      #path268 {
-        opacity: 0;
-        animation: fadeIn 0.6s ease-in forwards;
-        animation-delay: 1.2s;
+      /* Center-right triangle */
+      #path240 {
+        animation: glowAndColor 7s ease-in-out infinite;
+        animation-delay: 4s;
       }
       
-      #path272 {
-        opacity: 0;
-        animation: fadeIn 0.6s ease-in forwards;
-        animation-delay: 1.5s;
+      /* Top right triangle */
+      #path208 {
+        animation: glowAndColor 7s ease-in-out infinite;
+        animation-delay: 5s;
       }
       
-      #path276 {
-        opacity: 0;
-        animation: fadeIn 0.6s ease-in forwards;
-        animation-delay: 1.8s;
+      /* Right middle triangle */
+      #path248 {
+        animation: glowAndColor 7s ease-in-out infinite;
+        animation-delay: 6s;
       }
     </style>
   </defs>
-  <g id="layer1">
-    <g
-       id="g250"
-       transform="matrix(1.2750503,0,0,1.2330751,20.350777,8.0933682)"
-       style="fill:#ffffff">
-      <path
-         d="M 0,0 -4.8,10.88 -9.6,0 h -2.72 v 14.4 h 2.4 V 4.48 l 4,9.92 h 2.24 L 0.16,4.48 v 9.92 h 2.4 V 0 Z"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path252" />
-    </g>
-    <g
-       id="g254"
-       transform="matrix(1.2750503,0,0,1.2330751,45.851774,25.849684)"
-       style="fill:#ffffff">
-      <path
-         d="m 0,0 h -2.88 l -1.6,-4 -0.96,-2.24 -2.24,-5.44 -4.8,11.68 h -2.72 l 6.08,-14.4 h 2.88 z"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path256" />
-    </g>
-    <g
-       id="g258"
-       transform="matrix(1.2750503,0,0,1.2330751,58.704297,8.0933682)"
-       style="fill:#ffffff">
-      <path
-         d="m 0,0 v 2.4 h -4.16 v 12 h -2.56 v -12 h -4.16 V 0 Z"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path260" />
-    </g>
-    <g
-       id="g262"
-       transform="matrix(1.2750503,0,0,1.2330751,61.152409,25.849684)"
-       style="fill:#ffffff">
-      <path
-         d="m 0,0 v -14.4 h 6.56 c 2.88,0 4.32,1.28 4.32,3.84 0,1.76 -1.12,3.2 -3.36,4.32 L 12,0 H 8.64 L 4.32,-6.24 V -7.52 C 6.88,-7.84 8.16,-8.96 8.16,-10.4 8.16,-11.52 7.52,-12 6.4,-12 H 2.72 V 0 Z"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path264" />
-    </g>
-    <g
-       id="g266"
-       transform="matrix(1.2750503,0,0,1.2330751,-44.115762,-111.071)"
-       style="fill:#ffffff">
-      <path
-         d="M 99.040001,111.04 H 96.32 V 96.639999 h 2.720001 z"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path268" />
-    </g>
-    <g
-       id="g270"
-       transform="matrix(1.2750503,0,0,1.2330751,-44.115762,-111.071)"
-       style="fill:#ffff00">
-      <path
-         d="m 107.52,100.64 v 0 l -1.6,1.92 v 0 l -4.64,-5.920001 h 3.36 z"
-         style="fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path272" />
-    </g>
-    <g
-       id="g274"
-       transform="matrix(1.2750503,0,0,1.2330751,99.301881,8.0933682)"
-       style="fill:#ffffff">
-      <path
-         d="m 0,0 -3.84,5.28 -1.76,1.92 -5.6,7.2 h 3.36 l 4,-5.28 L 0,14.4 H 3.36 L -2.24,7.2 3.36,0 Z"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path276" />
-    </g>
+
+  <g id="g202" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#f9f9f9">
+    <path d="M 47.040001,37.599998 V 54.560001 L 62.080002,46.080002 Z" style="fill:#f9f9f9;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path204" />
+  </g>
+  
+  <g id="g206" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#ececec">
+    <path d="m 92,46.080002 15.04,8.479999 V 37.599998 Z" style="fill:#ececec;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path208" />
+  </g>
+  
+  <g id="g210" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#ffffff">
+    <path d="M 62.080002,81.599998 47.040001,90.080002 V 73.120003 Z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path212" />
+  </g>
+  
+  <g id="g214" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#ececec">
+    <path d="m 76.959999,54.560001 -14.879997,8.48 V 46.080002 Z" style="fill:#ececec;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path216" />
+  </g>
+  
+  <g id="g218" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#e6e6e6">
+    <path d="m 92,81.599998 15.04,-8.479995 v 16.959999 z" style="fill:#e6e6e6;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path220" />
+  </g>
+  
+  <g id="g222" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)">
+    <path d="M 92,63.040001 76.959999,71.519997 V 54.560001 Z" style="fill:#dbdea1;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path224" />
+  </g>
+  
+  <g id="g226" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#e6e6e6">
+    <path d="m 62.080002,63.040001 14.879997,-8.48 v 16.959996 z" style="fill:#e6e6e6;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path228" />
+  </g>
+  
+  <g id="g230" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#f9f9f9">
+    <path d="M 76.959999,54.560001 92,63.040001 V 46.080002 Z" style="fill:#f9f9f9;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path232" />
+  </g>
+  
+  <g id="g238" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#ffffff">
+    <path d="m 92,63.040001 -15.040001,-8.48 v 16.959996 z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path240" />
+  </g>
+  
+  <g id="g242" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#f2f2f2">
+    <path d="M 47.040001,54.560001 62.080002,46.080002 V 63.040001 Z" style="fill:#f2f2f2;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path244" />
+  </g>
+  
+  <g id="g246" transform="matrix(0.55233586,0,0,0.53415277,11.010763,-18.090707)" style="fill:#f2f2f2">
+    <path d="M 107.04,54.560001 92,46.080002 v 16.959999 z" style="fill:#f2f2f2;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path248" />
   </g>
 </svg>
