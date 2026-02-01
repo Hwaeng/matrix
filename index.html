@@ -1837,9 +1837,9 @@
       }
 
       .timeline-header {
-        font-size: 3rem;
-        align-content: center;
-        font-weight: bold;
+        font-size: 32px;
+        align-items: center;
+        font-weight: 300;
         letter-spacing: 2px;
         margin-bottom: 80px;
         font-family: monospace, monospace;
@@ -1878,14 +1878,21 @@
         height: 600px;
         position: relative;
         text-align: center;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
       }
 
       .timeline-year {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 40px;
+        font-size: 36px;
+        font-weight: 300;
+        margin-bottom: 20px;
         opacity: 0.9;
-        font-family: serif;
+        font-family: roboto;
+        padding-top: 40px;
+        -webkit-text-stroke: 0.2px #ffffff; /* Adjust width and color */
+        -webkit-text-fill-color: transparent;
+        color: transparent; 
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       }
 
       .timeline-dot {
@@ -1905,8 +1912,7 @@
       }
 
       .timeline-content {
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(10px);
+       
         padding: 80px;
         min-height: 250px;
         display: flex;
@@ -1914,7 +1920,7 @@
         align-items: center;
         justify-content: center;
         text-align: left;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        
       }
 
       .timeline-content p {
@@ -1972,7 +1978,7 @@
         }
 
         .timeline-header {
-          font-size: 2rem;
+          font-size: 32px;
         }
       }
       #loading-screen {
