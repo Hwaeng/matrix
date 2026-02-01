@@ -746,6 +746,68 @@ var ajaxurlAttNonce = {"url":"https:\/\/media.astonmartin.com\/wp-admin\/admin-a
           transform: translateX(-50%) translateY(0);
         }
       }
+       .collapsible-nav {
+        position: relative;
+      } 
+      .nav-toggle {
+        background: none;
+        border: none;
+        padding: 10px;
+        padding-right: 40px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Add this line */
+        gap: 10px;
+        width: 100%;
+        text-align: left;
+      }
+
+      .nav-toggle:hover {
+        opacity: 0.7;
+      }
+
+      .toggle-icon {
+        transition: none;
+      }
+
+      .nav-toggle.active .toggle-icon {
+        transform: rotate(180deg);
+      }
+
+      .nav-content {
+        margin-right: 40px;
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.3s ease,
+          opacity 0.3s ease;
+        opacity: 0;
+      }
+
+      .nav-content.active {
+        max-height: 500px;
+        opacity: 1;
+      }
+      @media (max-width: 1024px) {
+        .nav-content {
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+        }
+
+        .nav-content li {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-content li a {
+          display: block;
+          padding: 15px 0;
+          color: #fff;
+        }
+      }
     </style>
 </head>
 <!--SCHEMA.ORG WEBPAGE-->
@@ -1364,69 +1426,7 @@ var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"4d30128c
  gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "5", currentPage: "1", abort: function() { this.preventDefault(); } }]);                if (event && event.defaultPrevented) {                return;         }        const gformWrapperDiv = document.getElementById( "gform_wrapper_5" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_5";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_5" );        let postRenderFired = false;                function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            jQuery( document ).trigger( 'gform_post_render', [5, 1] );            gform.utils.trigger( { event: 'gform/postRender', native: false, data: { formId: 5, currentPage: 1 } } );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } ); 
 /* ]]> */
 </script>
-<script>
-        // Hamburger menu functionality
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuOverlay = document.getElementById('menuOverlay');
-        const body = document.body;
 
-        function toggleMenu() {
-            hamburgerBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            menuOverlay.classList.toggle('active');
-            body.classList.toggle('menu-open');
-        }
-
-        function closeMenu() {
-            hamburgerBtn.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            menuOverlay.classList.remove('active');
-            body.classList.remove('menu-open');
-        }
-
-        // Toggle menu on hamburger click
-        hamburgerBtn.addEventListener('click', toggleMenu);
-
-        // Close menu when clicking overlay
-        menuOverlay.addEventListener('click', closeMenu);
-
-        // Close menu when clicking a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        // Close menu on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-                closeMenu();
-            }
-        });
-
-        // Simple scroll effect
-        let lastScroll = 0;
-        const nav = document.querySelector('.JindexNaviContainer');
-        
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                nav.style.background = 'rgba(0, 0, 0, 0.98)';
-            } else {
-                nav.style.background = 'rgba(0, 0, 0, 0.95)';
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 1024) {
-                closeMenu();
-            }
-        });
-    </script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         // Configuration for each block/component
@@ -1459,6 +1459,14 @@ var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"4d30128c
             'radial-gradient(circle at 1004px -170.984px, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%)';
         });
       }
+    </script>
+    <script>
+      document.querySelector('.nav-toggle').addEventListener('click', function () {
+        const content = document.querySelector('.nav-content');
+
+        this.classList.toggle('active');
+        content.classList.toggle('active');
+      });
     </script>
 </body>
 </html>

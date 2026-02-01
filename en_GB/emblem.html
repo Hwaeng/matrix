@@ -917,6 +917,68 @@
           transform: translateX(-50%) translateY(0);
         }
       }
+       .collapsible-nav {
+        position: relative;
+      } 
+      .nav-toggle {
+        background: none;
+        border: none;
+        padding: 10px;
+        padding-right: 40px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Add this line */
+        gap: 10px;
+        width: 100%;
+        text-align: left;
+      }
+
+      .nav-toggle:hover {
+        opacity: 0.7;
+      }
+
+      .toggle-icon {
+        transition: none;
+      }
+
+      .nav-toggle.active .toggle-icon {
+        transform: rotate(180deg);
+      }
+
+      .nav-content {
+        margin-right: 40px;
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.3s ease,
+          opacity 0.3s ease;
+        opacity: 0;
+      }
+
+      .nav-content.active {
+        max-height: 500px;
+        opacity: 1;
+      }
+      @media (max-width: 1024px) {
+        .nav-content {
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+        }
+
+        .nav-content li {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-content li a {
+          display: block;
+          padding: 15px 0;
+          color: #fff;
+        }
+      }
     </style>
 </head>
 
@@ -1747,69 +1809,7 @@
     <script src="/etc.clientlibs/matrix/clientlibs/clientlib-components.js"></script>
     <script src="/apps/settings/wcm/designs/refresh/bp/assets.js" async=""></script>
     <script src="/etc.clientlibs/clientlibs/granite/jquery/granite/csrf.js"></script>
-   <script>
-        // Hamburger menu functionality
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuOverlay = document.getElementById('menuOverlay');
-        const body = document.body;
-
-        function toggleMenu() {
-            hamburgerBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            menuOverlay.classList.toggle('active');
-            body.classList.toggle('menu-open');
-        }
-
-        function closeMenu() {
-            hamburgerBtn.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            menuOverlay.classList.remove('active');
-            body.classList.remove('menu-open');
-        }
-
-        // Toggle menu on hamburger click
-        hamburgerBtn.addEventListener('click', toggleMenu);
-
-        // Close menu when clicking overlay
-        menuOverlay.addEventListener('click', closeMenu);
-
-        // Close menu when clicking a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        // Close menu on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-                closeMenu();
-            }
-        });
-
-        // Simple scroll effect
-        let lastScroll = 0;
-        const nav = document.querySelector('.JindexNaviContainer');
-        
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                nav.style.background = 'rgba(0, 0, 0, 0.98)';
-            } else {
-                nav.style.background = 'rgba(0, 0, 0, 0.95)';
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 1024) {
-                closeMenu();
-            }
-        });
-    </script>
+   
     <script>
       // Dynamic mask-image following mouse position
       const footerContainer = document.querySelector('.footer-container');
@@ -1831,6 +1831,14 @@
             'radial-gradient(circle at 1004px -170.984px, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%)';
         });
       }
+    </script>
+    <script>
+      document.querySelector('.nav-toggle').addEventListener('click', function () {
+        const content = document.querySelector('.nav-content');
+
+        this.classList.toggle('active');
+        content.classList.toggle('active');
+      });
     </script>
 </body>
 

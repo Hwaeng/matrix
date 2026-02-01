@@ -3723,5 +3723,13 @@
         });
       }
     </script>
+    <script>
+      document.querySelector('.nav-toggle').addEventListener('click', function () {
+        const content = document.querySelector('.nav-content');
+
+        this.classList.toggle('active');
+        content.classList.toggle('active');
+      });
+    </script>
   </body>
 </html>
